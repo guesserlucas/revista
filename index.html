@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revista Sul Brasileira de Contabilidade e Economia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos para fontes personalizadas */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Um cinza azulado claro para o fundo */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Merriweather', serif;
+        }
+        /* Cor principal extraída da capa */
+        .primary-blue {
+            background-color: #0a2c5a;
+        }
+        .text-primary-blue {
+            color: #0a2c5a;
+        }
+        .border-primary-blue {
+            border-color: #0a2c5a;
+        }
+        /* Estilo para a barra de rolagem do modal */
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .modal-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .modal-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        .modal-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="primary-blue text-white shadow-lg">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <h1 class="text-3xl md:text-5xl font-bold">Revista Sul Brasileira de Contabilidade e Economia</h1>
+            <!-- ALTERADO: Subtítulo -->
+            <p class="mt-2 text-lg md:text-xl text-gray-300">Um periódico científico sobre Contabilidade e Economia</p>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container mx-auto p-4 md:p-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- Coluna Esquerda (Capa e Informações) -->
+            <aside class="lg:col-span-1">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <!-- Imagem da Capa -->
+                    <img src="https://i.ibb.co/r2bZfSCN/4ba6e94c-5be3-44c9-85a4-3516b818a396.jpg" alt="Capa da Edição 001 da Revista Sul Brasileira de Contabilidade e Economia" class="rounded-lg shadow-lg w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x565/0a2c5a/ffffff?text=Capa+da+Revista';">
+                    
+                    <!-- Informações da Revista -->
+                    <div class="mt-6">
+                        <h3 class="text-xl font-bold text-primary-blue mb-4 border-b-2 border-gray-200 pb-2">Informações</h3>
+                        <!-- ALTERADO: Informações simplificadas -->
+                        <ul class="space-y-2 text-gray-700">
+                            <li><strong>Periodicidade:</strong> Semestral</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Coluna Direita (Conteúdo Principal) -->
+            <div class="lg:col-span-2 space-y-8">
+                
+                <!-- Seção: Edições -->
+                <section class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold text-primary-blue mb-4 border-b-2 border-gray-200 pb-2">Edições</h2>
+                    <div class="space-y-3">
+                        <p><a href="#" class="text-gray-400 cursor-not-allowed" aria-disabled="true">Edição 010 - (Em breve)</a></p>
+                        <p><a href="#" class="text-gray-400 cursor-not-allowed" aria-disabled="true">Edição 009 - (Em breve)</a></p>
+                        <p><a href="#" class="text-gray-400 cursor-not-allowed" aria-disabled="true">Edição 008 - (Em breve)</a></p>
+                        <p><a href="#" class="text-gray-400 cursor-not-allowed" aria-disabled="true">Edição 007 - (Em breve)</a></p>
+                        <p><a href="#" class="text-gray-400 cursor-not-allowed" aria-disabled="true">Edição 006 - (Em breve)</a></p>
+                        <p><a href="#" class="text-gray-400 cursor-not-allowed" aria-disabled="true">Edição 005 - (Em breve)</a></p>
+                        <p><a href="#" class="text-gray-400 cursor-not-allowed" aria-disabled="true">Edição 004 - (Em breve)</a></p>
+                        <p><a href="#" class="text-gray-400 cursor-not-allowed" aria-disabled="true">Edição 003 - (Em breve)</a></p>
+                        <p><a href="#" class="text-gray-400 cursor-not-allowed" aria-disabled="true">Edição 002 - (Em breve)</a></p>
+                        <p><a href="Edição 001 - Revista Sul-Brasileira de Contabilidade e Economia.html" class="text-blue-600 hover:text-blue-800 hover:underline font-semibold">Edição 001 - Revista Sul-Brasileira de Contabilidade e Economia</a></p>
+                    </div>
+                </section>
+
+                <!-- Seção: Sobre a Revista -->
+                <section class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold text-primary-blue mb-4 border-b-2 border-gray-200 pb-2">Sobre a Revista</h2>
+                    <p class="text-gray-700 leading-relaxed">
+                        A Revista Sul Brasileira de Contabilidade e Economia é um periódico científico dedicado à publicação de artigos, ensaios e resenhas nas áreas de Ciências Contábeis, Economia, Administração e afins. Nossa missão é fomentar o debate acadêmico e a disseminação de conhecimento relevante para a comunidade científica e profissional, com foco em pesquisas aplicadas e teóricas que contribuam para o desenvolvimento regional e nacional.
+                    </p>
+                </section>
+
+                <!-- Seção: Submissão de Artigos -->
+                <section class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold text-primary-blue mb-4 border-b-2 border-gray-200 pb-2">Submissão de Artigos</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Convidamos pesquisadores, professores e estudantes a submeterem seus trabalhos para avaliação. O processo de submissão é contínuo e realizado através de nossa plataforma online. Consulte as normas de publicação e o guia para autores para mais detalhes.
+                    </p>
+                    <!-- ALTERADO: Botão para abrir o modal -->
+                    <button id="openModalBtn" class="inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                        Normas e Submissão
+                    </button>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="mt-12 primary-blue text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <!-- ALTERADO: Ano do copyright -->
+            <p>&copy; 2025 - Revista Sul Brasileira de Contabilidade e Economia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- NOVO: Modal de Normas de Submissão -->
+    <div id="submissionModal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] flex flex-col">
+            <div class="p-6 border-b flex justify-between items-center">
+                <h2 class="text-2xl font-bold text-primary-blue">Normas de Submissão</h2>
+                <button id="closeModalBtn" class="text-3xl font-light text-gray-500 hover:text-gray-800">&times;</button>
+            </div>
+            <div class="p-6 md:p-8 space-y-4 overflow-y-auto modal-content text-gray-700 leading-relaxed">
+                <p>A Revista Sul Brasileira de Contabilidade e Economia (RSBCE) tem o prazer de convidar a comunidade acadêmica e profissional a submeter seus trabalhos científicos para publicação. Com o objetivo de fomentar a pesquisa e o debate qualificado nas áreas de Ciências Contábeis e Economia, a RSBCE publica artigos originais e inéditos que contribuam significativamente para o avanço do conhecimento.</p>
+                <p>A seguir, apresentamos as diretrizes detalhadas para a submissão de artigos. A estrita observância a estas normas é essencial para a aceitação e agilidade no processo de avaliação.</p>
+                
+                <h3 class="text-xl font-bold text-primary-blue pt-4">1. Política Editorial e Escopo</h3>
+                <p>A RSBCE aceita trabalhos que se enquadrem nas seguintes áreas temáticas, sem prejuízo de outras correlatas:</p>
+                <ul class="list-disc list-inside pl-4 space-y-1">
+                    <li>Contabilidade Financeira e Mercados de Capitais</li>
+                    <li>Contabilidade Gerencial e Controle</li>
+                    <li>Auditoria e Perícia Contábil</li>
+                    <li>Contabilidade Tributária</li>
+                    <li>Contabilidade para o Terceiro Setor e Governamental</li>
+                    <li>Educação e Pesquisa em Contabilidade</li>
+                    <li>Microeconomia e Macroeconomia</li>
+                    <li>Economia do Setor Público</li>
+                    <li>Economia Brasileira</li>
+                    <li>Economia Internacional</li>
+                    <li>Desenvolvimento Econômico</li>
+                    <li>Métodos Quantitativos em Economia e Contabilidade</li>
+                </ul>
+                <p>Os manuscritos submetidos devem ser originais, não tendo sido publicados anteriormente nem estando em processo de avaliação por outro periódico. Trabalhos apresentados em anais de congressos podem ser submetidos, desde que tal informação seja claramente indicada no momento da submissão e que o artigo apresente evolução substancial em relação à versão do evento.</p>
+
+                <h3 class="text-xl font-bold text-primary-blue pt-4">2. Processo de Avaliação</h3>
+                <p>Os artigos recebidos são submetidos a uma avaliação preliminar pelo corpo editorial para verificar o atendimento ao escopo da revista e às normas de formatação. Em seguida, os trabalhos aprovados nesta fase são encaminhados para avaliação por pares, utilizando o sistema de double-blind review (avaliação cega por pares), no qual tanto os autores quanto os avaliadores permanecem anônimos. A decisão final sobre a publicação é de responsabilidade do Comitê Editorial, baseada nos pareceres dos avaliadores.</p>
+
+                <h3 class="text-xl font-bold text-primary-blue pt-4">3. Preparação do Manuscrito</h3>
+                <h4 class="text-lg font-semibold text-gray-800 pt-2">3.1. Formatação Geral</h4>
+                <ul class="list-disc list-inside pl-4 space-y-1">
+                    <li><strong>Arquivo:</strong> O artigo deve ser submetido em formato Microsoft Word (.docx).</li>
+                    <li><strong>Idioma:</strong> Serão aceitos artigos redigidos em português, inglês ou espanhol.</li>
+                    <li><strong>Papel:</strong> Formato A4 (210 x 297 mm).</li>
+                    <li><strong>Margens:</strong> Superior e esquerda de 3 cm; inferior e direita de 2 cm.</li>
+                    <li><strong>Fonte:</strong> Times New Roman, tamanho 12 para o corpo do texto.</li>
+                    <li><strong>Espaçamento:</strong> 1,5 entre linhas em todo o texto.</li>
+                    <li><strong>Parágrafos:</strong> Justificados, com recuo de 1,25 cm na primeira linha.</li>
+                    <li><strong>Paginação:</strong> As páginas devem ser numeradas no canto superior direito.</li>
+                </ul>
+
+                <h4 class="text-lg font-semibold text-gray-800 pt-2">3.2. Estrutura do Artigo</h4>
+                <p>O manuscrito deve seguir a seguinte estrutura:</p>
+                <p><strong>Folha de Rosto (em arquivo separado):</strong></p>
+                <ul class="list-disc list-inside pl-4 space-y-1">
+                    <li>Título do artigo (em português e inglês).</li>
+                    <li>Nome completo de todos os autores, com a respectiva afiliação institucional, titulação máxima e e-mail.</li>
+                    <li>Indicação do autor correspondente.</li>
+                    <li>Breve biografia de cada autor (máximo de 3 linhas por autor).</li>
+                    <li>Identificador ORCID de todos os autores.</li>
+                    <li>Declaração de contribuição de cada autor.</li>
+                    <li>Agradecimentos (se houver).</li>
+                </ul>
+                <p class="pt-2"><strong>Corpo do Artigo (arquivo principal, sem identificação dos autores):</strong></p>
+                <ul class="list-disc list-inside pl-4 space-y-1">
+                    <li>Título: Em português (ou no idioma original do artigo) e em inglês, em negrito e centralizado.</li>
+                    <li>Resumo: Na língua original do artigo, com no mínimo 150 e no máximo 250 palavras, contendo objetivo, metodologia, principais resultados e conclusões.</li>
+                    <li>Palavras-chave: De três a cinco palavras-chave, separadas por ponto, na língua original do artigo.</li>
+                    <li>Abstract: Versão em inglês do resumo.</li>
+                    <li>Keywords: Versão em inglês das palavras-chave.</li>
+                    <li>Classificação JEL (para artigos de Economia): Indicar de um a três códigos da classificação do Journal of Economic Literature.</li>
+                    <li>1. Introdução: Contextualização do tema, problema de pesquisa, objetivos do trabalho e justificativa da sua relevância.</li>
+                    <li>2. Referencial Teórico: Revisão da literatura pertinente ao tema.</li>
+                    <li>3. Metodologia: Descrição detalhada dos procedimentos metodológicos utilizados na pesquisa.</li>
+                    <li>4. Resultados e Discussão: Apresentação e análise dos resultados obtidos.</li>
+                    <li>5. Conclusão: Considerações finais, limitações do estudo e sugestões para futuras pesquisas.</li>
+                    <li>Referências: Listagem completa de todo o material citado no texto.</li>
+                </ul>
+
+                <h4 class="text-lg font-semibold text-gray-800 pt-2">3.3. Citações e Referências</h4>
+                <p>As citações e referências devem seguir as normas da American Psychological Association (APA), 7ª edição. As referências devem ser listadas em ordem alfabética no final do artigo e não devem ser numeradas.</p>
+
+                <h4 class="text-lg font-semibold text-gray-800 pt-2">3.4. Tabelas, Quadros e Figuras</h4>
+                <ul class="list-disc list-inside pl-4 space-y-1">
+                    <li>Devem ser inseridos no corpo do texto, logo após sua primeira menção.</li>
+                    <li>A fonte utilizada deve ser a Times New Roman, tamanho 10.</li>
+                    <li>Devem ser numerados consecutivamente com algarismos arábicos.</li>
+                    <li>O título deve ser posicionado acima do elemento, e a fonte (com a devida autoria ou "Elaborado pelos autores") deve ser posicionada abaixo.</li>
+                    <li>Devem ser editáveis e não inseridos como imagem.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-primary-blue pt-4">4. Submissão do Artigo</h3>
+                <p>A submissão deve ser realizada exclusivamente através do sistema online da RSBCE (link a ser disponibilizado no site da revista). No ato da submissão, deverão ser carregados dois arquivos distintos:</p>
+                <ul class="list-disc list-inside pl-4 space-y-1">
+                    <li><strong>Folha de Rosto:</strong> Contendo a identificação completa dos autores.</li>
+                    <li><strong>Corpo do Artigo:</strong> Sem qualquer tipo de identificação de autoria, para garantir o processo de avaliação cega.</li>
+                </ul>
+                <p>Os autores devem assegurar que todas as informações de identificação foram removidas das propriedades do arquivo Word.</p>
+
+                <h3 class="text-xl font-bold text-primary-blue pt-4">5. Considerações Éticas</h3>
+                <p>A RSBCE preza pela integridade e ética na pesquisa. Casos de plágio, autoplágio, fabricação ou falsificação de dados resultarão na rejeição sumária do artigo e na impossibilidade de novas submissões pelos autores envolvidos. Ao submeter um trabalho, os autores declaram estar cientes e de acordo com todas as políticas editoriais da revista.</p>
+                <p class="pt-4">Para mais informações, entre em contato com o corpo editorial da Revista Sul Brasileira de Contabilidade e Economia através do e-mail: <a href="mailto:revistasubrasileira@movcont.com.br" class="text-blue-600 hover:underline">revistasubrasileira@movcont.com.br</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Script para controlar o modal
+        const openModalBtn = document.getElementById('openModalBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const submissionModal = document.getElementById('submissionModal');
+
+        // Função para abrir o modal
+        function openModal() {
+            submissionModal.classList.remove('hidden');
+            submissionModal.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Impede o scroll do fundo
+        }
+
+        // Função para fechar o modal
+        function closeModal() {
+            submissionModal.classList.add('hidden');
+            submissionModal.classList.remove('flex');
+            document.body.style.overflow = 'auto'; // Restaura o scroll do fundo
+        }
+
+        // Event listeners
+        openModalBtn.addEventListener('click', openModal);
+        closeModalBtn.addEventListener('click', closeModal);
+
+        // Fechar o modal ao clicar fora da área de conteúdo
+        submissionModal.addEventListener('click', (event) => {
+            if (event.target === submissionModal) {
+                closeModal();
+            }
+        });
+
+        // Fechar o modal ao pressionar a tecla 'Escape'
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+
+</body>
+</html>
