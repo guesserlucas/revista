@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revista Sul-Brasileira de Contabilidade e Economia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .page-container {
+                page-break-after: always;
+            }
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f0f0;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+            color: #1a3a64;
+            break-after: avoid;
+        }
+        
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.6em; border-bottom: 2px solid #d1e0ec; padding-bottom: 0.3em; margin-top: 1.5em;}
+        h3 { font-size: 1.3em; margin-top: 1em; }
+        h4 { font-size: 1.1em; font-weight: bold; margin-top: 1.2em; }
+        h5 { font-size: 1em; font-weight: bold; margin-top: 1em; }
+        p, li { text-align: justify; }
+
+        .page-container {
+            width: 21cm;
+            min-height: 29.7cm;
+            margin: 1cm auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 1.5cm;
+            box-sizing: border-box;
+        }
+
+        .cover-container {
+            width: 21cm;
+            height: 29.7cm;
+            margin: 1cm auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            padding: 0;
+        }
+
+        .cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .page-content {
+            flex-grow: 1;
+            overflow: hidden;
+        }
+
+        .two-columns {
+            column-count: 2;
+            column-gap: 1cm;
+        }
+        .two-columns p, .two-columns h3, .two-columns h4, .two-columns h5, .two-columns ul, .two-columns table {
+            break-inside: avoid;
+        }
+
+        .page-footer {
+            flex-shrink: 0;
+            text-align: center;
+            font-size: 0.8em;
+            color: #555;
+            padding-top: 0.5cm;
+            border-top: 1px solid #ccc;
+            margin-top: 1cm;
+        }
+        
+        .page-header {
+            width: 100%;
+            text-align: right;
+            font-size: 0.8em;
+            color: #555;
+            padding-bottom: 0.5cm;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 1cm;
+            flex-shrink: 0;
+        }
+        
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted #ccc;
+            padding: 0.5em 0;
+        }
+        .toc-title {
+            max-width: 85%;
+        }
+
+        .article-abstract {
+            background-color: #f0f5f9;
+            border-left: 4px solid #1a3a64;
+            padding: 1em;
+            margin: 1em 0;
+            font-style: italic;
+            break-inside: avoid;
+        }
+        
+        .article-authors {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 1em;
+        }
+        
+        .full-width-image {
+            width: 100%;
+            margin: 1.5em 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            break-inside: avoid;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+            font-size: 0.9em;
+            break-inside: avoid;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #1a3a64;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+    
+    <!-- Capa -->
+    <div class="cover-container page">
+        <div class="cover">
+            <img src="https://i.ibb.co/r2bZfSCN/4ba6e94c-5be3-44c9-85a4-3516b818a396.jpg" alt="Capa da Revista Sul-Brasileira de Contabilidade e Economia">
+            <div class="absolute bottom-8 left-0 right-0 text-center text-white text-lg" style="background-color: rgba(26, 58, 100, 0.7); padding: 0.5rem;">
+                REVISTASULBRASILEIRA.NET.BR
+            </div>
+        </div>
+    </div>
+
+    <!-- Sumário -->
+    <div class="page-container page">
+        <div class="page-header">
+            Revista Sul-Brasileira de Contabilidade e Economia | Nº 1 | JUNHO 2026
+        </div>
+        <div class="page-content">
+            <h1>Sumário</h1>
+            <div class="mt-8">
+                <div class="toc-item"><span class="toc-title">Palavra do Editor</span><span>3</span></div>
+                <div class="toc-item"><span class="toc-title"><b>Artigo em Destaque:</b> Cenários e Perspectivas da Contabilidade na Região Sul do Brasil</span><span>4</span></div>
+                <div class="toc-item"><span class="toc-title">Fluxo de Caixa e Capital de Giro: Práticas e Desafios Enfrentados pelos Gestores de Minimercados</span><span>6</span></div>
+                <div class="toc-item"><span class="toc-title">Impactos da Alteração de Regime Tributário na Incorporação de Imóveis: Estudo de Caso</span><span>11</span></div>
+                <div class="toc-item"><span class="toc-title">Análise das Demonstrações Financeiras da Celesc S.A.: Desempenho Econômico-Financeiro no Exercício de 2024</span><span>17</span></div>
+                <div class="toc-item"><span class="toc-title">Transformação Digital na Contabilidade: Um Estudo da Percepção de Profissionais Contábeis</span><span>19</span></div>
+                <div class="toc-item"><span class="toc-title">Teoria e Prática: A Importância do Trabalho na Área Contábil Durante a Graduação de Ciências Contábeis</span><span>25</span></div>
+                <div class="toc-item"><span class="toc-title">Relatório do Auditor Independente: Uma Análise das Opiniões Emitidas às Empresas do Setor de Tecnologia da Informação Listadas na B3</span><span>28</span></div>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 2</div>
+    </div>
+
+    <!-- Palavra do Editor -->
+    <div class="page-container page">
+        <div class="page-header">
+            Revista Sul-Brasileira de Contabilidade e Economia | Nº 1 | JUNHO 2026
+        </div>
+        <div class="page-content">
+            <h2>Palavra do Editor</h2>
+            <div class="two-columns">
+                <div class="flex items-center mb-6" style="break-inside: avoid;">
+                    <img src="https://placehold.co/100x100/e2e8f0/333333?text=LG" alt="Foto do Editor" class="rounded-full mr-4">
+                    <div>
+                        <p class="font-bold text-lg">Lucas Guesser</p>
+                        <p class="text-sm text-gray-600">Editor-Chefe</p>
+                    </div>
+                </div>
+                <p>É com grande satisfação que apresentamos a primeira edição da Revista Sul-Brasileira de Contabilidade e Economia. Nascemos com o propósito de ser um veículo de excelência para a disseminação do conhecimento científico, fomentando o debate qualificado e a reflexão crítica sobre temas relevantes para o desenvolvimento econômico e social da nossa região e do país.</p>
+                <p class="mt-4">Nesta edição inaugural, reunimos uma seleção de artigos que abordam desde os desafios da gestão financeira em micro e pequenas empresas até as complexidades da transformação digital na prática contábil. Cada trabalho reflete o rigor metodológico e a dedicação de seus autores em contribuir para o avanço das ciências contábeis e econômicas.</p>
+                <p class="mt-4">Acreditamos que a pesquisa de qualidade é um pilar fundamental para a inovação e para a formação de profissionais mais preparados para os desafios do mercado. Agradecemos a todos os autores, pareceristas e membros do conselho editorial que tornaram esta edição possível. Desejamos a todos uma excelente leitura!</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 3</div>
+    </div>
+
+    <!-- Artigo em Destaque -->
+    <div class="page-container page">
+        <div class="page-header">
+             Artigo em Destaque
+        </div>
+        <div class="page-content">
+            <h2>Cenários e Perspectivas da Contabilidade na Região Sul do Brasil</h2>
+            <p class="article-authors">Equipe Editorial</p>
+            
+            <img src="https://placehold.co/800x400/d1e0ec/1a3a64?text=Contabilidade+e+Economia" alt="Imagem de um escritório de contabilidade moderno com gráficos e calculadoras" class="full-width-image">
+
+            <div class="two-columns">
+                <p>A região Sul do Brasil, composta pelos estados do Paraná, Santa Catarina e Rio Grande do Sul, possui um dos cenários econômicos mais dinâmicos e diversificados do país. Com um forte pilar no agronegócio, uma indústria de transformação robusta e um setor de serviços em constante expansão, a região se destaca pela sua competitividade e capacidade de inovação. Neste contexto, a contabilidade assume um papel estratégico, não apenas como uma ferramenta de conformidade fiscal, mas como um elemento crucial para a gestão, o planejamento e a tomada de decisão nas organizações.</p>
+                <h3 class="mt-6">Desafios Atuais</h3>
+                <p>Os profissionais de contabilidade da região Sul enfrentam desafios complexos. A alta carga tributária e a complexidade da legislação fiscal brasileira exigem constante atualização e especialização. A necessidade de adaptação às novas tecnologias, como a inteligência artificial, a automação de processos e a análise de big data, impõe uma mudança no perfil do contador, que passa de um mero executor de tarefas para um consultor estratégico, capaz de interpretar dados e gerar insights valiosos para os negócios.</p>
+                 <p>Adicionalmente, as crescentes demandas por transparência e governança corporativa, impulsionadas por investidores e pela sociedade, colocam a contabilidade no centro das discussões sobre sustentabilidade e responsabilidade social (ESG). A mensuração e o relato de informações não financeiras tornam-se, assim, uma nova e importante fronteira para a profissão.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 4</div>
+    </div>
+    
+    <div class="page-container page">
+         <div class="page-header">
+             Artigo em Destaque
+        </div>
+        <div class="page-content">
+            <div class="two-columns">
+                <h3 class="mt-6">Perspectivas Futuras</h3>
+                <p>As perspectivas para a contabilidade na região Sul são promissoras. A forte vocação para o empreendedorismo e a inovação, características marcantes da região, abrem um vasto campo de atuação para a contabilidade consultiva. O apoio a startups, a avaliação de empresas (valuation) e o planejamento tributário estratégico são serviços com alta demanda e grande potencial de crescimento.</p>
+                <p class="mt-4">A integração da contabilidade com outras áreas do conhecimento, como a tecnologia da informação e a análise de dados, será fundamental para o futuro da profissão. O contador do futuro será um profissional multidisciplinar, com forte capacidade analítica e habilidades de comunicação, capaz de traduzir a complexidade do ambiente de negócios em informações claras e estratégicas para os gestores. A educação continuada e a busca por certificações internacionais serão diferenciais importantes para o sucesso na carreira.</p>
+                 <h3 class="mt-6">Conclusão</h3>
+                <p>Em suma, a contabilidade na região Sul do Brasil vive um momento de profunda transformação. Os desafios são grandes, mas as oportunidades são ainda maiores. Os profissionais e escritórios que souberem se adaptar a este novo cenário, investindo em tecnologia, conhecimento e no desenvolvimento de novas competências, estarão na vanguarda de uma profissão cada vez mais estratégica e valorizada pelo mercado.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 5</div>
+    </div>
+
+    <!-- Artigo 1: Fluxo de Caixa e Capital de Giro -->
+    <div class="page-container page">
+        <div class="page-header">
+           Artigos Acadêmicos
+       </div>
+       <div class="page-content">
+           <h2>Fluxo de Caixa e Capital de Giro: Práticas e Desafios Enfrentados pelos Gestores de Minimercados</h2>
+           <p class="article-authors">Rayza Maria Alves de Sena Brito, Jocykleber Meireles de Souza, Ádria Tayllo Alves Oliveira, Isabella Christina Dantas Valentim</p>
+           
+           <div class="article-abstract">
+               <p><b>Resumo:</b> Este estudo analisou as práticas e os desafios enfrentados pelos gestores de minimercados em Monteiro-PB no uso de ferramentas de gestão financeira, como fluxo de caixa e capital de giro. Com uma abordagem descritiva e mista (qualitativa e quantitativa), a pesquisa utilizou amostragem não probabilística por acessibilidade. Foram aplicados questionários estruturados a 8 gestores, contendo cinco seções: perfil do respondente, perfil da empresa, utilização do fluxo de caixa, utilização do capital de giro e percepções sobre a eficácia dessas ferramentas na gestão financeira. A análise dos dados foi realizada por meio de uma escala Likert de sete pontos, permitindo o cálculo do Ranking Médio (RM), além de medidas de tendência central e dispersão. Os resultados indicam que 62,5% das empresas utilizam fluxo de caixa, sendo 80% delas atualizadas diariamente, e 62,5% realizam planejamento específico para o capital de giro. Contudo, 66,67% das empresas que não utilizam essas ferramentas alegaram não perceber necessidade. Apesar das dificuldades, os gestores consideram essas ferramentas essenciais para prever problemas financeiros, tomar decisões estratégicas e garantir a estabilidade do negócio. Este estudo destaca a importância de capacitar gestores para otimizar o uso das ferramentas de gestão financeira, contribuindo para práticas mais eficientes no setor.</p>
+               <p class="mt-2"><b>Palavras-chave:</b> Fluxo de caixa; capital de giro; minimercados.</p>
+            </div>
+           
+           <div class="two-columns">
+               <h3>1. INTRODUÇÃO</h3>
+               <p>As micro e pequenas empresas (MPEs) desempenham um papel fundamental na economia brasileira, representando 99% das empresas no país. Elas são responsáveis por cerca de 30% do Produto Interno Bruto (PIB) e por mais de 50% dos empregos formais no setor privado. No entanto, a taxa de mortalidade dessas empresas ainda é alarmante, com 60% das MPEs fechando suas portas nos primeiros cinco anos de atividade (Sebrae, 2023).</p>
+               <p>Contudo, os Microempreendedores Individuais (MEIs) apresentam a maior taxa de encerramento de atividades entre os Pequenos Negócios, com 29% fechando após 5 anos. As Microempresas (MEs) possuem uma taxa intermediária de 21,6%, enquanto as Empresas de Pequeno Porte (EPPs) registram a menor taxa, com 17% encerrando no mesmo período (Sebrae, 2023).</p>
+               <p>Ao analisar por setor, o comércio lidera em termos de mortalidade, com 30,2% das empresas fechando as portas em cinco anos. Em seguida, a indústria de transformação apresenta 27,3%, e o setor de serviços, 26,6%. Por outro lado, os setores com menor taxa de mortalidade foram a indústria extrativa, com 14,3%, e a agropecuária, com 18% (Sebrae, 2023).</p>
+               <p>Diversos fatores contribuem para a mortalidade precoce de empresas. Entre esses fatores, destacam-se a falta de experiência do empreendedor, o baixo nível de escolaridade do empreendedor, a falta de habilidade na gestão empresarial e a ausência de planejamento estratégico. Esses pontos são particularmente importantes para a gestão financeira, pois a falta de experiência e habilidades de gestão impacta diretamente na saúde financeira da empresa (Nascimento et al., 2013).</p>
+               <p>A gestão financeira torna-se uma ferramenta crucial para a sobrevivência dessas empresas. É essencial que ela forneça à direção um panorama claro dos resultados financeiros, permitindo um entendimento eficaz sobre o uso dos recursos disponíveis e auxiliando na tomada de decisões futuras (Chiavenato, 2015).</p>
+            </div>
+       </div>
+       <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 6</div>
+    </div>
+
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <div class="two-columns">
+                <p>A demonstração de fluxos de caixa evidencia as principais atividades que influenciam os fluxos de caixa, afetando o saldo de caixa geral. Os gerentes focam no caixa porque a falta de caixa suficiente nos momentos adequados pode levar a empresa a perder excelentes oportunidades de investimento ou até mesmo à falência (Garrison et al, 2013).</p>
+                <p>Esses fluxos de caixa são categorizados em três áreas principais: atividades operacionais, atividades de investimento e atividades de financiamento (Gelbcke et al., 2018). As atividades operacionais envolvem transações de receitas e despesas que afetam a receita líquida. Já as atividades de investimento referem-se à aquisição ou descarte de ativos não circulantes. Por fim, as atividades de financiamento envolvem a contratação de empréstimos e transações com proprietários, como a venda ou recompra de ações e o pagamento de dividendos (Garrison; et al, 2013).</p>
+                <p>Além disso, o capital de giro também é uma peça-chave para a sustentabilidade dos pequenos empreendimentos. Uma estratégia econômica sólida e eficaz permite que a empresa tenha recursos para investir em novos projetos ou em sua própria operação. É importante lembrar que, quando uma empresa começa a operar, o administrador financeiro deve concentrar sua atenção no capital de giro devido à sua importância. A falta de controle sobre as entradas e saídas de caixa é uma das principais razões pelas quais muitas empresas não conseguem sobreviver em um mercado globalizado e competitivo (Ferreira et al., 2011).</p>
+                <p>Diante desse cenário, surge o seguinte problema de pesquisa: Quais são as práticas e os desafios enfrentados pelos gestores de minimercados no uso das ferramentas de fluxo de caixa e capital de giro em sua gestão financeira? Assim, o presente estudo o objetivo de analisar as práticas e os desafios enfrentados pelos gestores de minimercados da cidade de Monteiro-PB no uso de ferramentas de fluxo de caixa e capital de giro como parte de sua gestão financeira.</p>
+                <p>A importância deste estudo se justifica pelo papel fundamental que as micro e pequenas empresas (MPEs) desempenham na economia brasileira. Elas são essenciais para a geração de empregos, promoção da inovação e do empreendedorismo, além de impulsionarem o crescimento econômico. Segundo o Serviço Brasileiro de Apoio às Micro e Pequenas Empresas em Santa Catarina (Sebrae SC, 2023), esses pequenos negócios estão diretamente ligados às famílias brasileiras, proporcionando sustento para muitos lares e ajudando os próprios empresários a sustentarem suas famílias.</p>
+                <p>Além disso, tomar decisões com base em informações e dados corretos, obtidos por meio da implementação adequada de métodos e ferramentas de gestão financeira, é crucial para que as empresas alcancem seus objetivos (Oliveira; Nascimento, 2024). No entanto, ainda há poucas pesquisas que exploram o perfil e as percepções dos gestores de MPEs, especialmente no do setor de comércio varejista de minimercados da cidade de Monteiro-PB.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 7</div>
+    </div>
+
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <div class="two-columns">
+                <p>Este estudo busca preencher essa lacuna, oferecendo uma compreensão mais profunda sobre como esses gestores utilizam ferramentas de gestão financeira. Embora a pesquisa tenha um foco específico na região de Monteiro - PB, os resultados poderão ser úteis para MPEs em todo o Brasil. As descobertas poderão ser compartilhadas em congressos e publicações especializadas, contribuindo para melhorar as práticas de gestão financeira em outras pequenas empresas. Portanto, este estudo não só visa fortalecer o conhecimento acadêmico sobre o tema, mas também tem o potencial de ajudar muitas MPEs a melhorarem sua gestão financeira e, consequentemente, a alcançarem maior sucesso e sustentabilidade.</p>
+                <h3>2. FUNDAMENTAÇÃO TEÓRICA</h3>
+                <h4>2.1 Gestão Financeira</h4>
+                <p>Gestão é o processo de conduzir e administrar uma organização com o objetivo de alcançar suas metas, abrangendo as etapas essenciais de planejamento, execução e controle, derivado do termo do latim "gestione", gestão refere-se ao ato de gerenciar, administrar e conduzir, administrar implica em planejar, organizar, dirigir e controlar recursos para atingir metas específicas, gerir. Por sua vez, envolve fazer as coisas acontecerem e orientar a organização em direção aos seus objetivos, em resumo, gestão é a arte de guiar uma entidade rumo aos resultados desejados (Oliveira; et al, 2002).</p>
+                <p>No âmbito da gestão financeira, sua relevância é crucial para as operações diárias das empresas. Abrange desde o gerenciamento de caixa, crédito, estoques e contas a receber ou pagar até decisões estratégicas como orçamento de capital e estrutura de capital (Masakazu, 2018). Desta maneira, a gestão financeira envolve o planejamento, organização, direção e controle das atividades financeiras de uma entidade, assegurando a consecução dos objetivos empresariais. Inclui também a tomada de decisões estratégicas sobre como adquirir e alocar recursos financeiros para atingir esses objetivos.</p>
+                <p>De acordo com o Serviço Brasileiro de Apoio às Micro e Pequenas Empresas (Sebrae, 2022), a gestão financeira é considerada o fator primordial na administração de qualquer empresa, independentemente de seu mercado ou tamanho, pois possibilita a gestão eficaz de todos os recursos do negócio, facilitando seu fortalecimento e crescimento. Assim, é crucial manter um controle rigoroso das operações financeiras para assegurar a continuidade e relevância da empresa no mercado. O planejamento financeiro, alinhado com as metas e estratégias da empresa, auxilia os gestores nas decisões, facilitando a consecução dos objetivos operacionais, econômicos e financeiros.</p>
+                <p>É destacado também que, especialmente em microempresas, o controle proporcionado pela gestão financeira é essencial para a sobrevivência, principalmente em um cenário econômico caracterizado por mudanças frequentes e significativas (Casali; Treter, 2015).</p>
+                <p>Para uma gestão financeira organizada e eficiente, é fundamental registrar todas as transações financeiras da empresa (custos, despesas e investimentos) em planos de contas e centros de custos adequados. Esta prática permite a elaboração de demonstrações financeiras e indicadores que revelam o desempenho da empresa, como o fluxo de caixa e os requisitos de capital de giro, além de ajudar a identificar e resolver possíveis problemas financeiros (Sebrae, 2017).</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 8</div>
+    </div>
+    
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <div class="two-columns">
+                <p>A Demonstração dos Fluxos de Caixa apresenta as variações no caixa e nos bancos da empresa, as entradas de caixa geralmente vêm de recebimentos de vendas, empréstimos, aumentos de capital e vendas de ativos, as saídas de caixa geralmente são devido a pagamentos de compras, pagamento de dívidas, distribuição de dividendos e aquisição de ativos (Marion, 2015).</p>
+                <p>As informações sobre os fluxos de caixa são essenciais para avaliar a capacidade de uma entidade em gerar caixa e equivalentes de caixa, esses dados permitem aos usuários desenvolverem modelos para analisar e comparar o valor presente dos fluxos de caixa futuros de diferentes entidades (CPC, 2010). Além disso, os dados históricos dos fluxos de caixa frequentemente funcionam como indicadores do montante, da época de ocorrência e do grau de certeza dos fluxos futuros, também são úteis para verificar a precisão das estimativas passadas, examinar a relação entre a lucratividade e os fluxos de caixa líquidos e avaliar o impacto das variações de preços (CPC, 2010).</p>
+                <p>O fluxo de caixa também desempenha um papel estratégico no controle gerencial. Ele permite não apenas a projeção de receitas financeiras, mas também serve como suporte para decisões de investimento futuro (Araújo; Teixeira; Licório, 2015). Essa funcionalidade amplia sua relevância na administração dos recursos empresariais, pois oferece insights sobre a capacidade de cumprir obrigações financeiras, especialmente em cenários de alta competitividade e incerteza, contribuindo para uma gestão mais eficaz e para decisões gerenciais mais assertivas (Bernardes et al., 2019).</p>
+                <p>Para micro e pequenas empresas, o fluxo de caixa se apresenta como uma ferramenta prática e indispensável. Ele auxilia os gestores a planejarem e controlar melhor as finanças, promovendo um alinhamento estratégico entre os recursos disponíveis e os objetivos organizacionais (Araújo; et al, 2015).</p>
+                <p>Portanto, os fluxos de caixa desempenham um papel fundamental na sustentação das operações empresariais. Para os gestores financeiros, esses fluxos constituem um foco primordial na gestão diária das finanças e na formulação de estratégias voltadas para maximizar o retorno aos acionistas (Gitman, 2010).</p>
+                <p>O capital de giro, por sua vez, é essencial para a manutenção das atividades operacionais de uma empresa, funcionando como um recurso financeiro em constante movimento. Ele abrange a transição de valores desde a aquisição de estoques, passando pelas contas a receber, até o retorno ao caixa. Além disso, os títulos negociáveis, devido à sua característica de equivalentes de caixa, também compõem o capital de giro. Já o passivo circulante representa o financiamento de curto prazo necessário para as operações empresariais, incluindo obrigações como pagamentos a fornecedores, salários, impostos e dívidas com instituições financeiras (Gitman, 2010).</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 9</div>
+    </div>
+    
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <div class="two-columns">
+                <p>Essa dinâmica financeira também é descrita como a porção do investimento que circula continuamente, sendo fundamental na condução das operações normais da empresa. Esse ciclo inclui o uso de caixa para estoques, a conversão destes em recebíveis e, posteriormente, o retorno ao caixa. Assim, o capital de giro constitui o valor necessário para financiar o ciclo operacional, que vai desde a compra de matérias-primas até a venda e recebimento pelos produtos ou serviços comercializados (Silva, 2016).</p>
+                <p>Em micro e pequenas empresas, o capital de giro é uma ferramenta estratégica para viabilizar o crescimento sustentável. Ele permite que essas empresas implementem estratégias econômicas sólidas, como investir em novos empreendimentos ou reinvestir em sua estrutura. Contudo, a ausência de controle sobre as entradas e saídas de caixa é um dos fatores que mais contribuem para a falência de muitas empresas, especialmente em mercados globalizados e competitivos (Ferreira et al., 2011).</p>
+                <p>A globalização e os avanços tecnológicos têm trazido desafios significativos para a gestão financeira, aumentando os riscos e incertezas enfrentados pelas empresas. Nesse contexto, torna-se indispensável a adoção de uma gestão planejada do capital de giro, que permita aos gestores lidarem com esses desafios e garantir a sustentabilidade financeira das operações (Ottobonie; Pamplona, 2001).</p>
+                <p>Dessa forma, o capital de giro desempenha um papel central na estrutura financeira das empresas, sendo um elemento prioritário para administradores financeiros, especialmente após o início das operações. Uma gestão eficiente desse recurso pode evitar problemas de liquidez e contribuir para o sucesso das empresas, mesmo em mercados altamente competitivos (Ferreira et al., 2011).</p>
+                
+                <h3>3. METODOLOGIA</h3>
+                <p>Este estudo adota uma abordagem descritiva e mista (qualitativa e quantitativa) para analisar as práticas e os desafios enfrentados pelos gestores de minimercados da cidade de Monteiro-PB. A coleta de dados foi realizada através de questionários estruturados, aplicados a 8 gestores. O questionário foi dividido em cinco seções: perfil do respondente, perfil da empresa, utilização do fluxo de caixa, utilização do capital de giro e percepções sobre a eficácia desses instrumentos.</p>
+                
+                <h3>4. APRESENTAÇÃO E ANÁLISE DOS DADOS</h3>
+                <h4>4.1 Perfil dos Respondentes e das Empresas</h4>
+                <p>A pesquisa envolveu gestores de minimercados de Monteiro-PB. Observa-se uma paridade entre os gêneros (50% homens e 50% mulheres). A maioria dos gestores (62,5%) tem entre 41 e 50 anos. Metade dos respondentes não concluiu o ensino fundamental e 75% nunca participaram de cursos de capacitação em gestão. A amostra foi composta por oito empresas, das quais 50% estão em operação há mais de 10 anos. Todas as empresas utilizam o regime do Simples Nacional.</p>
+                
+                <h4>4.2 Utilização do Fluxo de Caixa e Capital de Giro</h4>
+                <p>A análise dos dados, realizada por meio de uma escala Likert de sete pontos, indica que 62,5% das empresas utilizam fluxo de caixa, com 80% delas atualizando-o diariamente, e 62,5% realizam planejamento específico para o capital de giro. Contudo, 66,67% das empresas que não utilizam essas ferramentas alegaram não perceber necessidade. A falta de tempo foi mencionada como a maior dificuldade (80%).</p>
+    
+                <h3>5. CONSIDERAÇÕES FINAIS</h3>
+                <p>O presente estudo teve como objetivo analisar as práticas e os desafios enfrentados pelos gestores de minimercados da cidade de Monteiro-PB no uso das ferramentas de fluxo de caixa e capital de giro. Os resultados revelaram que 62,5% das empresas utilizam o fluxo de caixa, mas muitos gestores subestimam sua importância. A falta de conhecimento e a complexidade percebida são barreiras. Em relação ao capital de giro, 62,5% das empresas realizam planejamento, mas a falta de conhecimento sobre sua aplicação efetiva ainda é um desafio. O estudo reforça a necessidade de programas de educação financeira voltados para micro e pequenos empresários, a fim de contribuir para práticas mais eficientes e para a sustentabilidade dos negócios no setor varejista.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 10</div>
+    </div>
+    
+    <!-- Artigo 2: Impactos da Alteração de Regime Tributário -->
+    <div class="page-container page">
+        <div class="page-header">
+           Artigos Acadêmicos
+       </div>
+       <div class="page-content">
+           <h2>Impactos da Alteração de Regime Tributário na Incorporação de Imóveis: Estudo de Caso</h2>
+           <p class="article-authors">Tainara Elizandra Petry Matana, Leticia Gomes Locatelli, Sergio Antonio Nikolay</p>
+           
+           <div class="article-abstract">
+               <p><b>Resumo:</b> O presente artigo tem como tema de pesquisa os impactos da alteração de regime tributário na incorporação de imóveis. O objetivo principal foi identificar os impactos financeiros provocados a partir da alteração do regime do lucro presumido para o Regime Especial de Tributação (RET) de uma empresa incorporadora de imóveis. Para tanto, foram coletados dados de obras concluídas e tributadas pelo regime do Lucro Presumido de uma empresa da região do Vale do Paranhana/RS. O estudo classifica-se, portanto, como um estudo de caso de método misto. A partir da simulação de dados para o Regime Especial de Tributação – RET, considerando o patrimônio de afetação, identificou-se que o RET se mostrou mais vantajoso. Os resultados apontam uma economia de 32% nos períodos analisados, caso a empresa tivesse optado pelo RET, e indicam que a análise dos regimes tributários pode gerar vantagens tributárias para o setor de incorporação imobiliária.</p>
+                <p class="mt-2"><b>Palavras-chave:</b> Regime Especial de Tributação. Patrimônio de Afetação. Incorporação Imobiliária.</p>
+           </div>
+           
+           <div class="two-columns">
+                <h3>1. INTRODUÇÃO</h3>
+                <p>O Brasil é um dos países com maior carga tributária do mundo, além de ter uma das leis tributárias mais complexas e que sofre alterações frequentes. Um dos setores impactados é o da construção civil, que possui grande relevância no cenário nacional. Neste sentido, pensar em estratégias que possam fomentar a atividade mostra-se relevante.</p>
+                <p>Dentre os regimes de tributação, as empresas de incorporação imobiliária podem optar pelo Regime Especial de Tributação (RET), que oferece uma redução da carga tributária em contrapartida à constituição do Patrimônio de Afetação. Todavia, a depender da empresa, a opção pelo RET pode não se mostrar vantajosa. O presente artigo tem como problema de pesquisa: Quais os impactos financeiros provocados a partir da alteração da carga tributária de uma empresa de incorporação imobiliária?</p>
+                <p>O objetivo deste artigo é identificar os impactos financeiros da alteração do regime do lucro presumido para o RET. Especificamente, este estudo se propõe a avaliar a carga tributária em relação ao custo da obra e ao resultado obtido pela empresa, descrevendo os dados, simulando-os pelo RET e identificando o regime mais vantajoso.</p>
+            </div>
+       </div>
+       <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 11</div>
+    </div>
+
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <div class="two-columns">
+                <h3>2. FUNDAMENTAÇÃO TEÓRICA</h3>
+                <h4>2.1 A Incorporação Imobiliária</h4>
+                <p>A incorporação imobiliária possui grande relevância para impulsionar o crescimento da economia. O setor da construção civil é um dos reguladores do PIB, movimentando uma grande cadeia produtiva e de geração de empregos (ABRAINC, 2021). A incorporação imobiliária é a atividade executada pelo incorporador, pessoa física ou jurídica responsável pelo empreendimento desde a concepção até a venda (SOUSA, 2015). No Brasil, a atividade é disciplinada pela Lei nº 4.591/1964.</p>
+                
+                <h4>2.2 Patrimônio de Afetação</h4>
+                <p>O patrimônio de afetação, instituído pela Lei nº 10.931/2004, surgiu para dar mais segurança aos adquirentes de imóveis. Ele consiste na segregação do patrimônio da obra daquele da entidade, significando que cada empreendimento passa a ter sua própria contabilidade. A opção é facultativa, mas exige maior controle das formalidades (BRASIL, 2004). Além da proteção, a formalização do patrimônio de afetação oferece vantagens econômicas, permitindo a opção pelo Regime Especial de Tributação (RET).</p>
+                
+                <h4>2.3 Regime Especial de Tributação - RET</h4>
+                <p>O RET é um tratamento tributário diferenciado para reduzir custos e unificar tributos. Para a incorporação imobiliária, a Lei nº 10.931/2004 instituiu o RET em caráter opcional e irretratável. A Lei nº 12.844/2013 reduziu a tributação para 4% da receita mensal auferida (IRPJ: 1,26%; CSLL: 0,66%; COFINS: 1,71%; PIS/PASEP: 0,37%). Para projetos de interesse social (Programa "Minha Casa, Minha Vida"), a alíquota é de 1%.</p>
+
+                <h4>2.4 Lucro Presumido</h4>
+                <p>O Lucro Presumido é um regime de tributação simplificado que aplica percentuais preestabelecidos sobre as receitas para fins de IRPJ e CSLL. Para as incorporadoras, a alíquota de presunção para o IRPJ é de 8% sobre a receita bruta, com o imposto de 15% (e adicional de 10% sobre o excedente). A CSLL tem base de presunção de 12% e alíquota de 9%. As contribuições de PIS e COFINS são de 0,65% e 3%, respectivamente.</p>
+                
+                <table class="w-full text-sm mt-4">
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="text-center">Alíquotas - Lucro Presumido</th>
+                            <th colspan="2" class="text-center">Alíquotas - RET</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>IRPJ</td>
+                            <td>15%</td>
+                            <td>IRPJ</td>
+                            <td>1,26%</td>
+                        </tr>
+                        <tr>
+                            <td>Base de Cálculo IR</td>
+                            <td>8%</td>
+                            <td>CSLL</td>
+                            <td>0,66%</td>
+                        </tr>
+                        <tr>
+                            <td>Adicional de IR</td>
+                            <td>10%</td>
+                            <td>PIS</td>
+                            <td>0,37%</td>
+                        </tr>
+                         <tr>
+                            <td>CSLL</td>
+                            <td>9%</td>
+                            <td rowspan="2">COFINS</td>
+                            <td rowspan="2">1,71%</td>
+                        </tr>
+                        <tr>
+                            <td>Base de Cálculo CSLL</td>
+                            <td>12%</td>
+                        </tr>
+                        <tr>
+                            <td>PIS</td>
+                            <td>0,65%</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>COFINS</td>
+                            <td>3%</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 12</div>
+    </div>
+    
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <div class="two-columns">
+                <h3>3. METODOLOGIA</h3>
+                <p>Esta pesquisa é classificada como de natureza aplicada, descritiva e de método qualiquanti. Trata-se de um estudo de caso documental, utilizando-se de documentos contábeis e de gestão de obras da empresa "Carrinho de Mão" (nome fictício), localizada na região do Vale do Paranhana-RS.</p>
+                <p>A coleta de dados ocorreu mediante acesso aos documentos contábeis da empresa, bem como relatórios de gestão das obras. A amostra foi composta por cinco obras, as quatro primeiras realizadas após a adoção do regime do Lucro Presumido, a partir de agosto de 2023. Os dados foram tabulados em planilhas do Microsoft Excel®, estruturados com as receitas auferidas mensalmente, por obra, custos orçados e realizados, apuração do Lucro Presumido trimestral e anual e apuração do RET mensal, anual e por obra.</p>
+
+                <h3>4. ANÁLISE DOS DADOS</h3>
+                <h4>4.1 Receitas auferidas por obra</h4>
+                <p>Foram analisadas cinco obras iniciadas em 2023 e concluídas em 2024. As receitas totais por obra foram: Obra A: R$ 78.150; Obra B: R$ 132.717; Obra C: R$ 194.000; Obra D: R$ 349.800; Obra E: R$ 164.579.</p>
+
+                <h4>4.2 Apuração do Regime Especial de Tributação - RET</h4>
+                <p>A apuração do RET, com alíquota de 4%, resultaria em um total de impostos de R$ 9.669 em 2023 e R$ 27.101 em 2024.</p>
+                
+                <h4>4.3 Apuração do Lucro Presumido</h4>
+                <p>Na modalidade do Lucro Presumido, os tributos calculados sobre as receitas da empresa totalizaram R$ 14.335 em 2023 e R$ 40.177 em 2024.</p>
+                
+                <h4>4.4 Análise comparativa</h4>
+                <p>Observa-se que o regime de tributação mais vantajoso é o RET, com uma economia de 32% em comparação com o Lucro Presumido no período analisado. A maior economia foi com PIS e COFINS (75%). No geral, a alíquota efetiva do Lucro Presumido foi de 5,93%, contra 4% do RET.</p>
+                <p>Analisando o custo total das obras (R$ 702.485), o imposto pelo RET equivale a 5,23% do custo, enquanto pelo Lucro Presumido equivale a 7,76%. Isso indica que, no Lucro Presumido, a empresa teria que aumentar a margem sobre a venda para obter lucratividade semelhante, prejudicando a competitividade.</p>
+
+                <h3>5. CONSIDERAÇÕES FINAIS</h3>
+                <p>O estudo buscou analisar e comparar a carga tributária em relação ao custo da obra e o resultado obtido pela empresa nos regimes do Lucro Presumido e do RET. Concluiu-se que o RET se mostrou mais vantajoso, com uma economia de 32% para a empresa analisada.</p>
+                <p>Apesar da vantagem tributária, a adoção do RET implica na necessidade de um planejamento aprofundado, pois a empresa em questão não possui um fluxo de caixa adequado para afetar o patrimônio de todas as obras. A análise deve ser individualizada para cada obra. Para pesquisas futuras, sugere-se analisar o fluxo de caixa da empresa de forma mais aprofundada e elaborar um plano de obra detalhado.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 13</div>
+    </div>
+    
+    <!-- Análise de Custo e Tributação (Páginas Adicionais para Detalhes) -->
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos | Análise Detalhada
+        </div>
+        <div class="page-content">
+            <h3>Análise Detalhada: Custos e Tributos</h3>
+            <h4 class="mt-4">Apuração do RET por Obra (Simulação)</h4>
+            
+            <table class="w-full text-sm mt-2">
+                <thead>
+                    <tr>
+                        <th>Obra</th>
+                        <th>Faturamento Total</th>
+                        <th>Imposto RET (4%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Obra A</td>
+                        <td>R$ 78.150</td>
+                        <td>R$ 3.126</td>
+                    </tr>
+                    <tr>
+                        <td>Obra B</td>
+                        <td>R$ 132.717</td>
+                        <td>R$ 5.309</td>
+                    </tr>
+                    <tr>
+                        <td>Obra C</td>
+                        <td>R$ 194.000</td>
+                        <td>R$ 7.760</td>
+                    </tr>
+                    <tr>
+                        <td>Obra D</td>
+                        <td>R$ 349.800</td>
+                        <td>R$ 13.992</td>
+                    </tr>
+                    <tr>
+                        <td>Obra E</td>
+                        <td>R$ 164.579</td>
+                        <td>R$ 6.583</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 class="mt-6">Comparativo da Carga Tributária vs. Custo da Obra</h4>
+             <table class="w-full text-sm mt-2">
+                <thead>
+                    <tr>
+                        <th>Obra</th>
+                        <th>Custo Total</th>
+                        <th>Apuração RET</th>
+                        <th>% s/ Custo</th>
+                        <th>Apuração Lucro Presumido</th>
+                        <th>% s/ Custo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A</td>
+                        <td>R$ 42.453</td>
+                        <td>R$ 3.126</td>
+                        <td>7,36%</td>
+                        <td>R$ 4.634</td>
+                        <td>10,92%</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>R$ 117.133</td>
+                        <td>R$ 5.309</td>
+                        <td>4,53%</td>
+                        <td>R$ 7.870</td>
+                        <td>6,72%</td>
+                    </tr>
+                     <tr>
+                        <td>C</td>
+                        <td>R$ 156.343</td>
+                        <td>R$ 7.760</td>
+                        <td>4,96%</td>
+                        <td>R$ 11.504</td>
+                        <td>7,36%</td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td>R$ 246.560</td>
+                        <td>R$ 13.992</td>
+                        <td>5,67%</td>
+                        <td>R$ 20.743</td>
+                        <td>8,41%</td>
+                    </tr>
+                     <tr>
+                        <td>E</td>
+                        <td>R$ 139.996</td>
+                        <td>R$ 6.583</td>
+                        <td>4,70%</td>
+                        <td>R$ 9.760</td>
+                        <td>6,97%</td>
+                    </tr>
+                    <tr class="font-bold bg-gray-100">
+                        <td>TOTAIS</td>
+                        <td>R$ 702.485</td>
+                        <td>R$ 36.770</td>
+                        <td>5,23%</td>
+                        <td>R$ 54.511</td>
+                        <td>7,76%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 14</div>
+    </div>
+    
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos | Análise Detalhada
+        </div>
+        <div class="page-content">
+            <h4 class="mt-4">Apuração do Lucro Presumido Trimestral 2023</h4>
+            <table class="w-full text-sm mt-2">
+                <thead>
+                    <tr>
+                        <th>Período</th>
+                        <th>Faturamento</th>
+                        <th>IRPJ (15%)</th>
+                        <th>CSLL (9%)</th>
+                        <th>PIS (0,65%)</th>
+                        <th>COFINS (3%)</th>
+                        <th>TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>3ºT 2023</td>
+                        <td>R$ 18.414</td>
+                        <td>R$ 221</td>
+                        <td>R$ 199</td>
+                        <td>R$ 120</td>
+                        <td>R$ 552</td>
+                        <td>R$ 1.092</td>
+                    </tr>
+                    <tr>
+                        <td>4ºT 2023</td>
+                        <td>R$ 223.315</td>
+                        <td>R$ 2.680</td>
+                        <td>R$ 2.412</td>
+                        <td>R$ 1.452</td>
+                        <td>R$ 6.699</td>
+                        <td>R$ 13.243</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 class="mt-6">Apuração do Lucro Presumido Trimestral 2024</h4>
+            <table class="w-full text-sm mt-2">
+                 <thead>
+                    <tr>
+                        <th>Período</th>
+                        <th>Faturamento</th>
+                        <th>IRPJ (15%)</th>
+                        <th>CSLL (9%)</th>
+                        <th>PIS (0,65%)</th>
+                        <th>COFINS (3%)</th>
+                        <th>TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1ºT 2024</td>
+                        <td>R$ 390.045</td>
+                        <td>R$ 4.681</td>
+                        <td>R$ 4.212</td>
+                        <td>R$ 2.535</td>
+                        <td>R$ 11.701</td>
+                        <td>R$ 23.130</td>
+                    </tr>
+                    <tr>
+                        <td>2ºT 2024</td>
+                        <td>R$ 207.358</td>
+                        <td>R$ 2.488</td>
+                        <td>R$ 2.239</td>
+                        <td>R$ 1.348</td>
+                        <td>R$ 6.221</td>
+                        <td>R$ 12.296</td>
+                    </tr>
+                     <tr>
+                        <td>3ºT 2024</td>
+                        <td>R$ 80.114</td>
+                        <td>R$ 961</td>
+                        <td>R$ 865</td>
+                        <td>R$ 521</td>
+                        <td>R$ 2.403</td>
+                        <td>R$ 4.751</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 15</div>
+    </div>
+
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos | Análise Detalhada
+        </div>
+        <div class="page-content">
+            <h4 class="mt-4">Consolidação Anual - Comparativo RET vs. Lucro Presumido</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h5 class="text-center">Apuração RET - ANUAL</h5>
+                    <table class="w-full text-sm mt-2">
+                        <thead>
+                            <tr>
+                                <th>ITEM</th>
+                                <th>2023</th>
+                                <th>2024</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>RECEITA BRUTA</td>
+                                <td>R$ 241.729</td>
+                                <td>R$ 677.517</td>
+                            </tr>
+                            <tr class="font-bold bg-blue-100">
+                                <td>TOTAL A PAGAR</td>
+                                <td>R$ 9.669</td>
+                                <td>R$ 27.101</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h5 class="text-center">Apuração Lucro Presumido - ANUAL</h5>
+                     <table class="w-full text-sm mt-2">
+                        <thead>
+                            <tr>
+                                <th>ITEM</th>
+                                <th>2023</th>
+                                <th>2024</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             <tr>
+                                <td>RECEITA BRUTA</td>
+                                <td>R$ 241.729</td>
+                                <td>R$ 677.517</td>
+                            </tr>
+                            <tr class="font-bold bg-red-100">
+                                <td>TOTAL A PAGAR</td>
+                                <td>R$ 14.335</td>
+                                <td>R$ 40.177</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="mt-8 text-center bg-green-100 p-4 rounded-lg">
+                <h4 class="text-green-800">Economia com o RET</h4>
+                <p class="text-2xl font-bold text-green-700">32%</p>
+                <p class="text-gray-600">Considerando os dois anos analisados.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 16</div>
+    </div>
+    
+    <!-- Artigo 3: Análise das Demonstrações Financeiras da Celesc S.A. -->
+    <div class="page-container page">
+         <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <h2>Análise das Demonstrações Financeiras da Celesc S.A.: Desempenho Econômico-Financeiro no Exercício de 2024</h2>
+            <p class="article-authors">Lucas Guesser</p>
+            
+            <div class="article-abstract">
+                <p><b>Resumo:</b> Este artigo apresenta uma análise das demonstrações financeiras da Centrais Elétricas de Santa Catarina S.A. (Celesc) no exercício de 2024. Com base nos dados extraídos do relatório DFP, são avaliados os principais indicadores econômicos, patrimoniais e de desempenho operacional da companhia. A análise contempla comparações com o ano anterior, destacando evolução do lucro, eficiência operacional, estrutura de capital e geração de caixa.</p>
+                <p class="mt-2"><b>Palavras-chave:</b> Celesc, Demonstrações Financeiras, Análise Econômico-Financeira, Setor Elétrico, Indicadores Contábeis.</p>
+            </div>
+            
+            <div class="two-columns">
+                <h3>1. INTRODUÇÃO</h3>
+                <p>A Celesc é uma das principais empresas do setor elétrico brasileiro, atuando na geração, distribuição e comercialização de energia elétrica no estado de Santa Catarina. Este estudo objetiva avaliar o desempenho econômico-financeiro da companhia em 2024, utilizando os dados das demonstrações contábeis padronizadas divulgadas à Comissão de Valores Mobiliários (CVM). A metodologia adotada baseia-se na análise horizontal e vertical, além do cálculo de índices financeiros de liquidez, rentabilidade e estrutura de capital.</p>
+
+                <h3>2. REFERENCIAL TEÓRICO</h3>
+                <p>A análise de demonstrações financeiras visa oferecer subsídios para a tomada de decisões por investidores, gestores e demais stakeholders. De acordo com Assaf Neto (2022), os principais instrumentos utilizados incluem o Balanço Patrimonial, a Demonstração do Resultado do Exercício (DRE) e o Fluxo de Caixa. A estrutura financeira, rentabilidade e geração de valor ao acionista são parâmetros centrais na análise.</p>
+                
+                <h3>3. METODOLOGIA</h3>
+                <p>Este trabalho caracteriza-se como uma pesquisa quantitativa e documental. Os dados foram extraídos das Demonstrações Financeiras Padronizadas (DFP) da Celesc relativas ao exercício findo em 31 de dezembro de 2024, sendo utilizados os valores consolidados. A análise compara os resultados com o exercício de 2023, aplicando as técnicas de análise horizontal e vertical, além da apuração de indicadores financeiros.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 17</div>
+    </div>
+
+    <div class="page-container page">
+        <div class="page-header">
+           Artigos Acadêmicos
+       </div>
+       <div class="page-content">
+            <h3>4. ANÁLISE DAS DEMONSTRAÇÕES FINANCEIRAS</h3>
+            <p>A empresa apresentou crescimento de 6% no ativo total, que passou de R$ 12,3 bilhões em 2023 para R$ 13,0 bilhões em 2024. O lucro líquido aumentou 28,5%, atingindo R$ 715,8 milhões. A receita operacional líquida foi de R$ 10,6 bilhões (+2,46% em relação a 2023). O EBITDA atingiu R$ 1,57 bilhão. O caixa final subiu para R$ 1,02 bilhão.</p>
+            <h4 class="mt-4">Indicadores Financeiros:</h4>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li><b>Liquidez Corrente:</b> 1,28 (2024) vs 0,91 (2023)</li>
+                <li><b>ROE (Return on Equity):</b> 19,5% (2024) vs 19,0% (2023)</li>
+                <li><b>Margem Líquida:</b> 6,73% (2024) vs 5,35% (2023)</li>
+                <li><b>Endividamento Geral:</b> 64,5% (2024) vs 63,8% (2023)</li>
+            </ul>
+
+            <h3>5. DISCUSSÃO DOS RESULTADOS</h3>
+            <p>A Celesc demonstrou resiliência financeira e capacidade de crescimento sustentável. A melhora em indicadores como margem líquida e ROE evidencia uma gestão eficiente dos recursos. O aumento expressivo nos investimentos, especialmente em fontes renováveis e modernização da rede, sinaliza preparo para os desafios do setor.</p>
+            
+            <h3>6. CONSIDERAÇÕES FINAIS</h3>
+            <p>A análise evidencia um ano positivo para a Celesc, com aumento do lucro, fortalecimento patrimonial e sólida performance operacional. Os investimentos realizados contribuem para a expansão sustentável da companhia e reforçam sua posição de destaque no setor elétrico nacional.</p>
+
+            <div class="mt-6 pt-4 border-t">
+                <h5 class="text-sm font-bold">Conflito de interesses</h5>
+                <p class="text-sm">O autor declara não haver conflito de interesses na realização desta pesquisa.</p>
+            </div>
+       </div>
+       <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 18</div>
+    </div>
+    
+    <!-- Artigo 4: Transformação Digital na Contabilidade -->
+    <div class="page-container page">
+        <div class="page-header">
+           Artigos Acadêmicos
+       </div>
+       <div class="page-content">
+           <h2>Transformação Digital na Contabilidade: Um Estudo da Percepção de Profissionais Contábeis</h2>
+           <p class="article-authors">Mariana da Silva Almeida, Gustavo Henrique Dias Souza, Samuel de Oliveira Durso</p>
+           
+           <div class="article-abstract">
+                <p><b>Resumo:</b> A nova era digital vivenciada por várias áreas do conhecimento e do mercado trouxeram também novas mudanças para a área contábil, inclusive no cenário brasileiro. Nesse contexto, a presente pesquisa teve como objetivo analisar a percepção dos profissionais de contabilidade sobre a contabilidade digital. Assim, foram avaliadas as percepções dos profissionais quanto à atualidade da profissão, as dificuldades e facilidades do trabalho, as visões sobre o Sistema Público de Escrituração Digital (SPED), as mudanças na prática contábil e as perspectivas futuras da profissão. Em geral, os resultados apontaram que os respondentes percebem a contabilidade digital e as tecnologias de trabalho como o futuro da profissão, tendo o profissional contábil um papel cada vez mais analista. Além disso, foram ressaltadas vantagens da utilização de tecnologias digitais e do SPED, como a agilidade e confiabilidade na prestação dos serviços e das informações para o fisco. Por outro lado, existem algumas dificuldades na adoção dessas tecnologias, como a falta de conhecimento e a resistência à mudança.</p>
+                <p class="mt-2"><b>Palavras-chave:</b> Contabilidade Digital, Transformação Digital, SPED, Profissional Contábil.</p>
+            </div>
+           
+           <div class="two-columns">
+                <h3>1. INTRODUÇÃO</h3>
+                <p>As tecnologias digitais estão transformando a sociedade, trazendo rupturas e desafios. A Contabilidade acompanha essas tendências, evoluindo do "guarda-livros" para um profissional mais valorizado. A Contabilidade Digital, uma inovação disruptiva, utiliza sistemas integrados para oferecer serviços consultivos, aumentando a produtividade e a qualidade (Andrade; Mehlecke, 2020).</p>
+                <p>No Brasil, o Sistema Público de Escrituração Digital (SPED) modernizou a relação fisco-contribuinte, aumentando a transparência. A transformação digital impulsiona o contador a deixar tarefas repetitivas e assumir um papel mais crítico e inovador (Scott, 2009). Diante disso, este trabalho busca responder: Qual a percepção dos profissionais contábeis sobre a contabilidade digital?</p>
+                <p>A relevância do estudo está no fato de a contabilidade ser uma das profissões com maior risco de automação, o que exige reinvenção e adaptação. Compreender a percepção dos contabilistas pode auxiliar na identificação de novas competências necessárias e no futuro da profissão.</p>
+            </div>
+       </div>
+       <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 19</div>
+    </div>
+    
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <div class="two-columns">
+                <h3>2. REFERENCIAL TEÓRICO</h3>
+                <h4>2.1. Teoria Unificada de Aceitação e o Uso de Tecnologias (UTAUT)</h4>
+                <p>Para harmonizar a literatura sobre aceitação de tecnologias, Venkatesh et al. (2003) criaram a UTAUT. A teoria estabelece quatro construtos como determinantes da intenção de uso: expectativa de desempenho, expectativa de esforço, influência social e condições facilitadoras. A UTAUT tem sido amplamente utilizada para examinar a adoção de tecnologias em diversos contextos, incluindo o contábil, e serve de base para este estudo ao permitir observar a percepção dos profissionais sobre a contabilidade digital.</p>
+                
+                <h4>2.2. Contabilidade Digital</h4>
+                <p>A prática contábil evoluiu com a revolução tecnológica, que exigiu mais precisão e transparência. A Contabilidade Digital utiliza a tecnologia para desburocratizar a rotina, aumentar a produtividade e melhorar as soluções para os clientes (Staats; Macedo, 2021). No Brasil, o SPED foi uma das transformações mais marcantes, modernizando o envio de obrigações acessórias (Receita Federal, 2021).</p>
+                
+                <h4>2.3. Estudos Correlatos</h4>
+                <p>Estudos anteriores (e.g., Ruschel, Frezza e Utzig, 2011; Campos, 2012; Santos e Konzen, 2020) analisaram a percepção de profissionais sobre a contabilidade digital no Brasil. Em geral, apontam benefícios como fidedignidade e agilidade, mas também desafios como a limitação de profissionais capacitados, a complexidade do sistema tributário e a resistência à mudança. Este estudo se diferencia pela amostra, complementando a literatura existente.</p>
+                
+                <h3>3. METODOLOGIA</h3>
+                <p>A pesquisa é qualitativa e descritiva, realizada através de um levantamento com profissionais contábeis que atuam em Divinópolis-MG. A amostra foi intencional, por acessibilidade e conveniência, totalizando 8 participantes. A coleta de dados foi feita por meio de um questionário online (Google Forms), com perguntas abertas e fechadas, dividido em: Termo de Consentimento, Perfil Socioprofissional e Percepção sobre a Contabilidade Digital. A análise de conteúdo foi aplicada a partir da análise categorial temática.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 20</div>
+    </div>
+    
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <h3>4. APRESENTAÇÃO E ANÁLISE DOS RESULTADOS</h3>
+            <h4>4.1 Descrição dos Sujeitos da Pesquisa</h4>
+            <p>A amostra final foi de 8 profissionais, com idade média de 40 anos, sendo 75% formados em Ciências Contábeis. Os respondentes possuem diferentes cargos (gestor, proprietário, contador, etc.) e atuam em escritórios com, em média, 35 anos de mercado.</p>
+            
+            <h4>4.2 Cenário de Transformação Digital na Contabilidade</h4>
+            <p>As ferramentas tecnológicas mais utilizadas são softwares contábeis, aplicativos de comunicação e programas de automatização. A análise foi dividida em 4 categorias:</p>
+            <p><b>i) Cenário atual da profissão:</b> Os respondentes veem a profissão como "desafiadora" e "em evolução", essencial para a tomada de decisões. Destacam a necessidade de habilidades como pensamento analítico, capacidade de resolução de problemas e constante atualização.</p>
+            <p><b>ii) Facilidades e desafios:</b> As facilidades apontadas incluem aumento da produtividade e agilidade. Os desafios são a resistência à mudança por parte de colaboradores e clientes, a necessidade de "educar o empresário" e a burocracia dos órgãos públicos.</p>
+            <p><b>iii) Transformações ocorridas:</b> Os respondentes destacam as mudanças tecnológicas, com o contador deixando o trabalho manual, e o novo papel consultivo e de análise de dados. O SPED é visto como positivo, trazendo padronização, confiabilidade e agilidade, apesar dos desafios iniciais de implantação e complexidade.</p>
+            <p><b>iv) Perspectivas futuras:</b> A visão para o futuro reforça a necessidade de "profissionais analistas e não processadores de dados", com ampliação dos serviços ofertados e mudanças na dinâmica do mercado.</p>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 21</div>
+    </div>
+
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <h3>Análise Detalhada: Percepções dos Profissionais</h3>
+            <h4 class="mt-4">Quadro-Síntese: Dificuldades e Facilidades das Tecnologias</h4>
+            <table class="w-full text-sm mt-2">
+                <thead>
+                    <tr>
+                        <th class="w-1/2">Dificuldades ou Entraves</th>
+                        <th class="w-1/2">Facilidades ou Pontos Positivos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Resistência e desconforto com a mudança (equipe e clientes).</td>
+                        <td>Profissionais se tornam mais analistas.</td>
+                    </tr>
+                    <tr>
+                        <td>Dificuldade de interação do cliente com as ferramentas.</td>
+                        <td>Acesso em tempo real às informações do cliente.</td>
+                    </tr>
+                    <tr>
+                        <td>Falta de treinamento prático para os sistemas.</td>
+                        <td>Maior produtividade e agilidade.</td>
+                    </tr>
+                    <tr>
+                        <td>Burocracia dos órgãos públicos.</td>
+                        <td>Contabilidade mais consultiva e acessível.</td>
+                    </tr>
+                     <tr>
+                        <td>Questões culturais de empregados e empresários.</td>
+                        <td>Possibilidade de atender clientes em vários estados.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 class="mt-6">Quadro-Síntese: Desafios e Benefícios do SPED</h4>
+             <table class="w-full text-sm mt-2">
+                <thead>
+                    <tr>
+                        <th class="w-1/2">Desafios e Dificuldades</th>
+                        <th class="w-1/2">Benefícios</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Parametrização do sistema e estudo da legislação.</td>
+                        <td>Agilidade, rapidez e padronização das informações.</td>
+                    </tr>
+                    <tr>
+                        <td>Complexidade das informações e constantes mudanças.</td>
+                        <td>Maior responsabilidade e confiabilidade nas informações.</td>
+                    </tr>
+                    <tr>
+                        <td>Software mal desenvolvido e falta de treinamento prático.</td>
+                        <td>Transparência e corte de custos com documentação física.</td>
+                    </tr>
+                    <tr>
+                        <td>Fazer o cliente entender a importância e o risco.</td>
+                        <td>Facilidade na escrituração com importação de dados.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 22</div>
+    </div>
+
+     <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+             <div class="two-columns">
+                <h3>5. CONSIDERAÇÕES FINAIS</h3>
+                <p>Este estudo buscou analisar a percepção dos profissionais de contabilidade em Divinópolis-MG sobre a contabilidade digital. De forma geral, os respondentes revelaram que percebem a mudança no papel do contador, de executor para analista. Consideram a contabilidade digital o futuro da profissão, mas apontam desafios como a resistência à mudança e a necessidade de treinamento.</p>
+                <p>Os resultados são convergentes com a literatura e a Teoria Unificada de Aceitação e Uso da Tecnologia (UTAUT). A investigação pode servir de alerta para profissionais que enfrentam entraves semelhantes, sugerindo que um levantamento junto a colaboradores e clientes pode ajudar a entender os fatores de resistência e atuar para demonstrar os benefícios das novas ferramentas.</p>
+                <p>Apesar dos resultados, o estudo possui limitações, como o baixo número de respondentes e o contexto geográfico específico. Para pesquisas futuras, sugere-se avaliar de forma mais abrangente as percepções dos profissionais contábeis sobre o contexto da contabilidade digital no Brasil.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 23</div>
+    </div>
+
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <h3>Quadro-Síntese de Estudos Anteriores sobre Contabilidade Digital</h3>
+            <table class="w-full text-sm mt-2">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th>Estudo</th>
+                        <th>Objetivo</th>
+                        <th>Síntese dos Resultados</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ruschel, Frezza e Utzig (2011)</td>
+                        <td>Avaliar o impacto do SPED na contabilidade.</td>
+                        <td>O maior impacto do SPED é positivo, relacionado à fidedignidade e qualidade dos dados.</td>
+                    </tr>
+                    <tr>
+                        <td>Campos (2012)</td>
+                        <td>Investigar a compatibilidade entre conhecimento exigido pelo SPED e competências dos operadores.</td>
+                        <td>Foram encontradas deficiências no domínio conceitual do SPED e desalinhamento entre conhecimento exigido e competências.</td>
+                    </tr>
+                    <tr>
+                        <td>Gonçalves et al. (2016)</td>
+                        <td>Identificar fatores que influenciam a adoção do SPED.</td>
+                        <td>A exigência governamental é o principal fator que influencia a adoção do SPED.</td>
+                    </tr>
+                    <tr>
+                        <td>Origuela (2017)</td>
+                        <td>Identificar os impactos do SPED na profissão contábil.</td>
+                        <td>Apesar dos desafios, houve benefícios para a escrituração, confiabilidade e ampliação de oportunidades.</td>
+                    </tr>
+                    <tr>
+                        <td>Santos e Konzen (2020)</td>
+                        <td>Analisar a percepção dos escritórios sobre a contabilidade digital.</td>
+                        <td>Há benefícios, mas com entraves como a complexidade do sistema tributário e falta de conhecimento.</td>
+                    </tr>
+                    <tr>
+                        <td>Tomazi e Schneider (2020)</td>
+                        <td>Identificar desafios e perspectivas da profissão.</td>
+                        <td>Os desafios estão ligados à atualização e os desafios à contabilidade digital e escrituração eletrônica.</td>
+                    </tr>
+                    <tr>
+                        <td>Santos, Paes e Lima (2021)</td>
+                        <td>Analisar a percepção sobre a adoção da contabilidade digital.</td>
+                        <td>Empresas implementaram a contabilidade digital, mas ainda usam o modelo tradicional, considerando inviável um modelo apenas digital.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 24</div>
+    </div>
+    
+    <!-- Artigo 5: Teoria e Prática -->
+    <div class="page-container page">
+         <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <h2>Teoria e Prática: A Importância do Trabalho na Área Contábil Durante a Graduação de Ciências Contábeis</h2>
+            <p class="article-authors">Mateus Rodrigues Monteiro, Tatiane Pietrobelli Pereira</p>
+            
+            <div class="article-abstract">
+                <p><b>Resumo:</b> Este artigo possui como tema a importância do trabalho na área contábil durante a graduação de Ciências Contábeis. O objetivo principal do estudo é identificar as dificuldades apontadas por formandos e egressos do Curso de Ciências Contábeis em relação à atuação no mercado de trabalho durante a graduação. Foi realizada uma pesquisa quali-quantitativa com 41 respondentes. Os resultados apontam que existem dificuldades ao aliar a teoria e a prática e que os respondentes gostariam que houvesse mais contato com a realidade do cotidiano contábil desde a graduação. Concluiu-se que, apesar do desejo por mais práticas, as diretrizes curriculares do curso estudado são voltadas a questões científicas e competências profissionais.</p>
+                <p class="mt-2"><b>Palavras-chave:</b> Ciências Contábeis; Graduação; Mercado de Trabalho.</p>
+            </div>
+            
+            <div class="two-columns">
+                <h3>1. INTRODUÇÃO</h3>
+                <p>A união entre teoria e prática contábil é importante para o desenvolvimento do profissional. O mercado de trabalho, cada vez mais exigente, demanda experiência prática, o que se torna um dificultador para o graduando que não atua na área. Conforme Ferreira e Angonese (2015), cerca de 45% das vagas contábeis demonstram interesse em contratar graduandos, porém, 86% exigem experiência.</p>
+                <p>Este artigo investiga a percepção de formandos e egressos de Ciências Contábeis de uma instituição na Região Metropolitana de Porto Alegre sobre sua presença no mercado de trabalho durante a graduação. A pesquisa justifica-se pela dificuldade em aliar teoria e prática, principalmente no ingresso no mercado de trabalho.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 25</div>
+    </div>
+
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <div class="two-columns">
+                <h3>2. FUNDAMENTAÇÃO TEÓRICA</h3>
+                <h4>2.1 Mercado de trabalho destinado ao profissional contábil</h4>
+                <p>O mercado de trabalho contábil é um dos melhores no Brasil, dada a necessidade das empresas em aperfeiçoar seus controles. O perfil do profissional mudou; não basta mais ser um técnico, é preciso entender o negócio como um todo (Martins, 2020). O campo de atuação é vasto, abrangendo empresas privadas, trabalho autônomo, ensino e órgãos públicos (Marion, 2022).</p>
+                <p>Muitos discentes já atuam na área durante a graduação, adquirindo competências que não são ensinadas na academia (Dutra, 2016). O profissional deve ter habilidades pessoais, conhecimento teórico, ética e responsabilidade (Reis et al., 2014).</p>
+                
+                <h4>2.2 Graduação em Ciências Contábeis</h4>
+                <p>O curso de Ciências Contábeis deve capacitar o futuro contador a compreender questões científicas, técnicas e sociais, com pleno domínio das responsabilidades funcionais e uso de tecnologias (Resolução CNE/CES n.º 10/2004). A escolha pelo curso ocorre, principalmente, pelo amplo mercado de trabalho e boa remuneração (Degenhart, Turra e Tanirabiavatti, 2016).</p>
+                <p>A matriz curricular dos cursos geralmente está de acordo com as exigências do mercado, mas não com a ênfase desejada em práticas do cotidiano, pois a graduação também visa o desenvolvimento intelectual e pessoal do aluno (Santos et al., 2011; Ribeiro, Silva e Lima, 2020).</p>
+                
+                <h3>3. METODOLOGIA</h3>
+                <p>A pesquisa é descritiva com abordagem quali-quantitativa, realizada por meio de um questionário estruturado no Google Forms®. A população foi de 68 formandos (2023) e egressos (2021 e 2022) de uma IES na Região Metropolitana de Porto Alegre, com uma amostra de 41 respondentes. O contato foi feito por e-mail, garantindo o anonimato. O questionário, composto por 12 perguntas, foi aplicado em julho de 2023, após aprovação do Comitê de Ética.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 26</div>
+    </div>
+    
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <div class="two-columns">
+                <h3>4. APRESENTAÇÃO E ANÁLISE DOS DADOS</h3>
+                <h4>4.1 Apresentação do perfil dos participantes</h4>
+                <p>A amostra é composta por 63,4% de egressos e 36,6% de formandos. A maioria dos formandos (46,7%) tem entre 21 e 25 anos, enquanto a maioria dos egressos (53,8%) tem entre 26 e 30 anos. Grande parte dos formandos (53,4%) já atua na área, assim como 42,3% dos egressos. Contudo, 34,6% dos egressos nunca atuaram na área.</p>
+
+                <h4>4.2 Escolha pelo curso de Ciências Contábeis</h4>
+                <p>A principal razão para a escolha do curso, tanto para formandos (60%) quanto para egressos (53,9%), foi a existência de um amplo mercado de trabalho.</p>
+                
+                <h4>4.3 Importância de aliar a teoria e a prática contábil</h4>
+                <p>A grande maioria (73,3% dos formandos e 80,8% dos egressos) considera "muito importante" atuar na área durante a graduação. Além disso, 66,7% dos formandos e 93,3% dos egressos acreditam que essa união "contribui plenamente" para assimilar a teoria e a prática.</p>
+                
+                <h4>4.4 Dificuldades em relação ao mercado de trabalho</h4>
+                <p>A principal dificuldade para ingressar no mercado, segundo 60% dos formandos e 57,7% dos egressos, é a <b>falta de experiência prática</b>. Para quem atua em outra área, o principal fator que dificulta a migração é a <b>redução salarial</b> (60% dos formandos e 61,5% dos egressos). As vivências práticas que poderiam ser mais aprofundadas durante o curso incluem a utilização de sistemas contábeis reais (40% dos formandos) e a simulação de cenários práticos (38,4% dos egressos).</p>
+                <h4>4.5 Nível de satisfação em relação ao curso de Ciências Contábeis</h4>
+                <p>A maioria dos respondentes (86,7% dos formandos e 53,8% dos egressos) acredita que o curso atende "parcialmente" às suas expectativas. Mesmo assim, a maioria dos formandos (73,3%) e egressos (57,7%) se declara "satisfeita" com a graduação.</p>
+                
+                <h4>4.6 Ações para melhor assimilação entre teoria e prática</h4>
+                <p>Os formandos sugerem mais matérias práticas, utilização de sistemas contábeis desde o início, mais estágios e simulações de rotinas empresariais. Os egressos concordam e acrescentam a sugestão de estágios em parceria com empresas, práticas de declarações (ECD, ECF), e maior aprofundamento nas áreas fiscal e de departamento pessoal.</p>
+
+                <h3>5. CONSIDERAÇÕES FINAIS</h3>
+                <p>O estudo identificou que a principal dificuldade para os estudantes de contabilidade é a falta de experiência prática exigida pelo mercado. A redução salarial é um grande impeditivo para a migração de área. Os alunos anseiam por mais experiências operacionais durante a graduação, como o uso de softwares contábeis e simulação de rotinas.</p>
+                <p>No entanto, percebe-se que o curso analisado está alinhado com as diretrizes curriculares do MEC, que priorizam a formação científica e o desenvolvimento de competências profissionais, e não apenas o treinamento para rotinas operacionais. Por mais que os alunos desejem mais práticas, a graduação visa fornecer uma base intelectual e crítica.</p>
+                <p>Conclui-se que há um descompasso entre as expectativas dos estudantes por treinamento prático e a proposta acadêmica de formação científica. Para futuras pesquisas, sugere-se um estudo comparativo com outra instituição de ensino.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 27</div>
+    </div>
+    
+    <!-- Artigo 6: Relatório do Auditor Independente -->
+    <div class="page-container page">
+         <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <h2>Relatório do Auditor Independente: Uma Análise das Opiniões Emitidas às Empresas do Setor de Tecnologia da Informação Listadas na B3</h2>
+            <p class="article-authors">Pâmela Baum, Sergio Antonio Nikolay</p>
+            
+            <div class="article-abstract">
+                <p><b>Resumo:</b> O presente estudo teve como tema de pesquisa os relatórios dos auditores independentes e o conteúdo narrado a partir da matéria apresentada por esses profissionais. O objetivo foi analisar os principais apontamentos contidos nos relatórios do auditor independente emitidos às empresas do setor de tecnologia da informação listadas na B3. Como resultado, verificou-se que os 13 relatórios emitidos no período de 2022 e 2023 apresentaram opinião não modificada (100%), sem ressalva, demonstrando que não há existência de distorções em relação às demonstrações contábeis apresentadas.</p>
+                <p class="mt-2"><b>Palavras-chave:</b> Relatórios, Auditor Independente, Principais Assuntos, Tecnologia da Informação.</p>
+            </div>
+            
+            <div class="two-columns">
+                <h3>1. INTRODUÇÃO</h3>
+                <p>As demonstrações contábeis necessitam de confiabilidade e transparência. A auditoria independente surgiu da necessidade de garantir a veracidade dessas informações. O relatório do auditor independente, portanto, desempenha um papel crucial. Este estudo foca nos relatórios de auditoria emitidos para as empresas do setor de Tecnologia da Informação (TI) listadas na B3, um setor de crescente relevância econômica no Brasil.</p>
+                <p>O problema de pesquisa é: Quais os principais apontamentos contidos nos relatórios do auditor independente emitidos às empresas do setor de TI, sob a ótica das opiniões, principais assuntos e parágrafos de ênfase? O objetivo é analisar esses apontamentos nos exercícios de 2022 e 2023, verificando a representatividade de relatórios modificados, identificando os principais assuntos de auditoria (PAAs) e evidenciando os parágrafos de ênfase.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 28</div>
+    </div>
+
+    <div class="page-container page">
+        <div class="page-header">
+           Artigos Acadêmicos
+       </div>
+       <div class="page-content">
+           <div class="two-columns">
+               <h3>2. FUNDAMENTAÇÃO TEÓRICA</h3>
+               <h4>2.1 As Demonstrações Contábeis e sua apresentação</h4>
+               <p>As Normas Brasileiras de Contabilidade (NBC), alinhadas às IFRS, padronizam a elaboração e apresentação das demonstrações contábeis. A NBC TG 26, em particular, define a estrutura e o conteúdo mínimo, assegurando que os usuários recebam informações relevantes e confiáveis para a tomada de decisões. O relatório do auditor independente complementa essas demonstrações, atribuindo-lhes maior credibilidade.</p>
+
+               <h4>2.2 O relatório do auditor Independente</h4>
+               <p>O relatório do auditor garante a integridade e transparência das informações financeiras, protegendo os interesses dos stakeholders. O auditor, seguindo a NBC TA 200, deve atuar com ceticismo profissional e julgamento, obedecendo a preceitos éticos. A NBC TA 700 estrutura o relatório, enquanto a NBC TA 705 define os tipos de opinião: não modificada (sem ressalvas) e modificada (com ressalva, adversa ou abstenção de opinião).</p>
+               
+               <h4>2.3 A Tecnologia da Informação e sua relevância</h4>
+               <p>A TI desempenha um papel essencial no cenário econômico atual, sendo uma ferramenta indispensável para a eficiência e competitividade. A tecnologia permite que as organizações melhorem seus modelos de negócio e alterem suas estruturas, oferecendo uma gama de opções para inovação (Lucas, 2006).</p>
+               
+               <h3>3. METODOLOGIA</h3>
+               <p>A pesquisa é aplicada, descritiva e de método misto. A população compreende as empresas listadas na B3, e a amostra foi composta por 14 empresas do setor de TI (subsetor de Programas e Serviços). Os dados (demonstrações contábeis e relatórios de auditoria de 2022 e 2023) foram coletados no site da B3. Foi realizada uma análise de conteúdo dos relatórios e calculados indicadores de liquidez para verificar a relação entre a opinião do auditor e a situação financeira da empresa.</p>
+           </div>
+       </div>
+       <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 29</div>
+    </div>
+
+    <div class="page-container page">
+        <div class="page-header">
+           Artigos Acadêmicos
+       </div>
+       <div class="page-content">
+            <h3>4. APRESENTAÇÃO E ANÁLISE DOS DADOS</h3>
+            <h4>4.1 Apresentação da amostra e suas características</h4>
+            <p>A amostra é composta por 14 empresas do subsetor de Programas e Serviços. A maioria (79%) pertence ao segmento Novo Mercado (NM), com regras mais rígidas de Governança Corporativa. A análise estatística descritiva (2021-2023) mostrou um Ativo Total médio de R$ 16,7 bilhões e um resultado líquido médio positivo de R$ 1,15 bilhão, apesar de grande oscilação entre as empresas.</p>
+            <p>Foram examinados 13 relatórios de auditoria (a empresa TIVIT não apresentou dados). Todos os 13 relatórios, tanto em 2022 quanto em 2023, apresentaram <b>opinião não modificada (100%)</b>, indicando conformidade com as normas contábeis.</p>
+
+            <h4>4.2 Opinião não modificada de auditoria e possíveis determinantes</h4>
+            <p>Para correlacionar a saúde financeira com a opinião do auditor, foram calculados os indicadores de liquidez. A média dos indicadores para a amostra (2021-2023) foi: ILC médio de 4,18; ILG médio de 4,86; e CCL médio de R$ 2,45 bilhões. Esses valores sugerem uma boa posição financeira e capacidade de cumprir obrigações, o que pode ter contribuído para a emissão de opiniões não modificadas.</p>
+            
+            <h4>4.3 Principais assuntos de auditoria e parágrafos de ênfase</h4>
+            <p>Os Principais Assuntos de Auditoria (PAAs) mais recorrentes nos relatórios foram: Aquisição de Controladas, Ágios de Combinação de Negócios, Reconhecimento de Receitas e Avaliação de Impairment de Ativos. Apenas a empresa Méliuz S.A. teve um parágrafo de ênfase, relacionado à reapresentação de valores devido à alienação do controle do Bankly, classificado como operação descontinuada.</p>
+
+       </div>
+       <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 30</div>
+    </div>
+
+    <div class="page-container page">
+        <div class="page-header">
+           Artigos Acadêmicos
+       </div>
+       <div class="page-content">
+           <h3>Análise Detalhada dos Indicadores de Liquidez (Média 2021-2023)</h3>
+           <table class="w-full text-sm mt-2">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th>Empresa</th>
+                        <th>ILC Médio</th>
+                        <th>ILG Médio</th>
+                        <th>CCL Médio (R$ mil)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Bemobi Mobile Tech S.A.</td><td>2,98</td><td>4,05</td><td>596.144</td></tr>
+                    <tr><td>Brq Soluções em Informática S.A.</td><td>2,02</td><td>1,83</td><td>135.983</td></tr>
+                    <tr><td>Enjoei S.A.</td><td>7,93</td><td>8,06</td><td>309.637</td></tr>
+                    <tr><td>GetNinjas S.A.</td><td>15,28</td><td>16,01</td><td>255.672</td></tr>
+                    <tr><td>Infracommerce CXAAS S.A.</td><td>1,01</td><td>1,86</td><td>15.100</td></tr>
+                    <tr><td>Livetech da Bahia Indústria e Comércio S.A.</td><td>2,15</td><td>1,75</td><td>383.676</td></tr>
+                    <tr><td>Lwsa S/A</td><td>1,66</td><td>2,69</td><td>793.323</td></tr>
+                    <tr><td>Méliuz S.A.</td><td>4,80</td><td>3,92</td><td>543.326</td></tr>
+                    <tr><td>Neogrid Participações S.A.</td><td>2,99</td><td>2,87</td><td>209.785</td></tr>
+                    <tr><td>Padtec Holding S.A.</td><td>2,02</td><td>1,41</td><td>176.309</td></tr>
+                    <tr><td>Quality Software S.A.</td><td>1,46</td><td>1,66</td><td>25.214.140</td></tr>
+                    <tr><td>TC S.A.</td><td>7,02</td><td>14,32</td><td>189.215</td></tr>
+                    <tr><td>Totvs S.A.</td><td>2,14</td><td>1,96</td><td>2.539.349</td></tr>
+                </tbody>
+                <tfoot>
+                    <tr class="font-bold bg-blue-100">
+                        <td>MÉDIA GERAL</td>
+                        <td>4,18</td>
+                        <td>4,86</td>
+                        <td>2.455.070</td>
+                    </tr>
+                </tfoot>
+           </table>
+           <p class="text-sm italic mt-2">*ILC: Índice de Liquidez Corrente; ILG: Índice de Liquidez Geral; CCL: Capital Circulante Líquido.</p>
+
+           <h3 class="mt-8">5. CONSIDERAÇÕES FINAIS</h3>
+           <div class="two-columns">
+               <p>Este estudo analisou os relatórios de auditoria das empresas de TI listadas na B3 e atingiu seus objetivos. Os principais resultados indicaram que 100% dos relatórios analisados apresentaram opinião não modificada, o que sugere um alto nível de conformidade contábil e saúde financeira no setor.</p>
+               <p>A análise dos indicadores de liquidez corrobora essa constatação, com índices médios robustos que indicam boa capacidade de pagamento das obrigações. Os PAAs recorrentes, como combinação de negócios e reconhecimento de receita, são inerentes à dinâmica de crescimento e operação do setor de tecnologia.</p>
+               <p>O trabalho do auditor independente mostra-se crucial para dar segurança aos investidores, e no caso do setor de TI na B3, os relatórios transmitem uma mensagem de alta credibilidade. O assunto, no entanto, não se esgota, e estudos futuros podem aprofundar a análise em outros indicadores ou períodos.</p>
+           </div>
+       </div>
+       <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 31</div>
+    </div>
+
+</body>
+</html>
