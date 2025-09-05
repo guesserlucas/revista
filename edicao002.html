@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revista Sul-Brasileira de Contabilidade e Economia - Edição 002</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .page-container {
+                page-break-after: always;
+            }
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f0f0;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+            color: #1a3a64;
+            break-after: avoid;
+        }
+        
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.6em; border-bottom: 2px solid #d1e0ec; padding-bottom: 0.3em; margin-top: 1.5em;}
+        h3 { font-size: 1.3em; margin-top: 1em; }
+        h4 { font-size: 1.1em; font-weight: bold; margin-top: 1.2em; }
+        h5 { font-size: 1em; font-weight: bold; margin-top: 1em; }
+        p, li { text-align: justify; }
+
+        .page-container {
+            width: 21cm;
+            min-height: 29.7cm;
+            margin: 1cm auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 1.5cm;
+            box-sizing: border-box;
+        }
+
+        .cover-container {
+            width: 21cm;
+            height: 29.7cm;
+            margin: 1cm auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            padding: 0;
+        }
+
+        .cover {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .page-content {
+            flex-grow: 1;
+            overflow: hidden;
+        }
+
+        .two-columns {
+            column-count: 2;
+            column-gap: 1cm;
+        }
+        .two-columns p, .two-columns h3, .two-columns h4, .two-columns h5, .two-columns ul, .two-columns table {
+            break-inside: avoid;
+        }
+
+        .page-footer {
+            flex-shrink: 0;
+            text-align: center;
+            font-size: 0.8em;
+            color: #555;
+            padding-top: 0.5cm;
+            border-top: 1px solid #ccc;
+            margin-top: 1cm;
+        }
+        
+        .page-header {
+            width: 100%;
+            text-align: right;
+            font-size: 0.8em;
+            color: #555;
+            padding-bottom: 0.5cm;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 1cm;
+            flex-shrink: 0;
+        }
+        
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted #ccc;
+            padding: 0.5em 0;
+        }
+        .toc-title {
+            max-width: 85%;
+        }
+
+        .article-abstract {
+            background-color: #f0f5f9;
+            border-left: 4px solid #1a3a64;
+            padding: 1em;
+            margin: 1em 0;
+            font-style: italic;
+            break-inside: avoid;
+        }
+        
+        .article-authors {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 1em;
+        }
+        
+        .full-width-image {
+            width: 100%;
+            margin: 1.5em 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            break-inside: avoid;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+            font-size: 0.9em;
+            break-inside: avoid;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #1a3a64;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+    
+    <!-- Capa -->
+    <div class="cover-container page">
+        <div class="cover">
+            <img src="https://www.revistasulbrasileira.net.br/capa.png" alt="Capa da Revista Sul-Brasileira de Contabilidade e Economia">
+             <div class="absolute bottom-16 left-0 right-0 text-center text-white text-2xl font-bold" style="background-color: rgba(26, 58, 100, 0.7); padding: 0.75rem;">
+                EDIÇÃO 002 | SETEMBRO 2025
+            </div>
+            <div class="absolute bottom-5 left-0 right-0 text-center text-white text-lg" style="background-color: rgba(26, 58, 100, 0.7); padding: 0.5rem;">
+                REVISTASULBRASILEIRA.NET.BR
+            </div>
+        </div>
+    </div>
+
+    <!-- Sumário -->
+    <div class="page-container page">
+        <div class="page-header">
+            Revista Sul-Brasileira de Contabilidade e Economia | Nº 2 | SETEMBRO 2025
+        </div>
+        <div class="page-content">
+            <h1>Sumário</h1>
+            <div class="mt-8">
+                <div class="toc-item"><span class="toc-title">Palavra do Editor</span><span>3</span></div>
+                <div class="toc-item"><span class="toc-title"><b>Artigo em Destaque:</b> Bioeconomia e Energia Renovável: Vetores de Crescimento para a Região Sul</span><span>4</span></div>
+                <div class="toc-item"><span class="toc-title">Implicação do Comportamento Financeiro dos Empreendedores do Brasil</span><span>6</span></div>
+                <div class="toc-item"><span class="toc-title">Influência das Diferenças Inter-Regionais na Relação entre Dívida Pública e Crescimento Econômico nos Estados Brasileiros</span><span>9</span></div>
+                <div class="toc-item"><span class="toc-title">Análise Comparativa de Desempenho da Celesc Distribuição S.A. Frente a Empresas Privadas do Setor Elétrico</span><span>12</span></div>
+                <div class="toc-item"><span class="toc-title">Pandemia e Emprego: Impactos da Covid-19 sobre o Mercado Formal de Trabalho em Santa Catarina</span><span>15</span></div>
+                <div class="toc-item"><span class="toc-title">Geração de Empregos e Redução de Emissões com Biogás em Substituição Parcial a Combustíveis Fósseis no Sul do Brasil</span><span>18</span></div>
+                <div class="toc-item"><span class="toc-title">Potencial Econômico de Produtos Florestais Não Madeireiros Sub-representados no Brasil</span><span>20</span></div>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 2</div>
+    </div>
+
+    <!-- Palavra do Editor -->
+    <div class="page-container page">
+        <div class="page-header">
+            Revista Sul-Brasileira de Contabilidade e Economia | Nº 2 | SETEMBRO 2025
+        </div>
+        <div class="page-content">
+            <h2>Palavra do Editor</h2>
+            <div class="two-columns">
+                <div class="flex items-center mb-6" style="break-inside: avoid;">
+                    <img src="https://placehold.co/100x100/e2e8f0/333333?text=LG" alt="Foto do Editor" class="rounded-full mr-4">
+                    <div>
+                        <p class="font-bold text-lg">Lucas Guesser</p>
+                        <p class="text-sm text-gray-600">Editor-Chefe</p>
+                    </div>
+                </div>
+                <p>É com renovado entusiasmo que trazemos a público a segunda edição da Revista Sul-Brasileira de Contabilidade e Economia. Consolidando o nosso compromisso com a pesquisa de vanguarda, esta edição mergulha em temas de alta relevância para o atual cenário econômico e social, refletindo as transformações e os desafios que moldam nossa região.</p>
+                <p class="mt-4">Neste volume, exploramos desde as complexas dinâmicas do comportamento financeiro do empreendedor brasileiro até as implicações macroeconômicas da dívida pública nos estados. Abordamos também a análise de desempenho de empresas estratégicas, como a Celesc, e os impactos profundos da pandemia no mercado de trabalho catarinense. Além disso, voltamos nosso olhar para o futuro, com artigos que investigam o potencial da bioeconomia e das energias renováveis como motores para um desenvolvimento sustentável.</p>
+                <p class="mt-4">A diversidade e a profundidade dos temas aqui apresentados reafirmam a importância do diálogo entre a academia e a sociedade. Agradecemos imensamente a colaboração de nossos autores e pareceristas, cujo trabalho rigoroso enriquece o debate. Esperamos que esta edição inspire novas reflexões e contribua para a construção de um futuro mais próspero e equitativo.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 3</div>
+    </div>
+
+    <!-- Artigo em Destaque -->
+    <div class="page-container page">
+        <div class="page-header">
+             Artigo em Destaque
+        </div>
+        <div class="page-content">
+            <h2>Bioeconomia e Energia Renovável: Vetores de Crescimento para a Região Sul</h2>
+            <p class="article-authors">Equipe Editorial</p>
+            
+            <img src="https://placehold.co/800x400/d1e0ec/1a3a64?text=Bioeconomia+Sustentável" alt="Imagem representando a bioeconomia, com elementos de agricultura, tecnologia e natureza" class="full-width-image">
+
+            <div class="two-columns">
+                <p>A Região Sul do Brasil, com sua matriz econômica diversificada e forte base agroindustrial, encontra-se em uma posição privilegiada para liderar a transição do país rumo a um modelo de desenvolvimento mais sustentável. A bioeconomia e a geração de energia a partir de fontes renováveis emergem não apenas como respostas às urgências climáticas, mas como poderosos vetores de crescimento econômico, inovação tecnológica e inclusão social.</p>
+                <h3 class="mt-6">O Potencial da Bioeconomia</h3>
+                <p>A bioeconomia, que utiliza recursos biológicos renováveis para produzir alimentos, materiais e energia, encontra no Sul um terreno fértil. A vasta produção de biomassa agrícola e florestal pode ser convertida em bioprodutos de alto valor agregado, como bioplásticos, bioquímicos e biocombustíveis avançados. A integração de tecnologias como a biotecnologia e a nanotecnologia na cadeia do agronegócio pode otimizar o uso de recursos, reduzir o desperdício e criar novos mercados. Como destacado em um dos artigos desta edição, o potencial de produtos florestais não madeireiros, por exemplo, ainda é largamente subexplorado, representando uma oportunidade para a geração de renda em comunidades rurais e a conservação da biodiversidade.</p>
+                 
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 4</div>
+    </div>
+    
+    <div class="page-container page">
+         <div class="page-header">
+             Artigo em Destaque
+        </div>
+        <div class="page-content">
+            <div class="two-columns">
+                <h3 class="mt-6">A Revolução do Biogás</h3>
+                <p>Paralelamente, a região desponta como líder na produção de biogás. A abundância de substratos provenientes da suinocultura, avicultura, agroindústria e saneamento urbano confere ao Sul uma vantagem competitiva única. A transformação desses resíduos em biogás e biometano não só soluciona um passivo ambiental, mas também gera energia elétrica e térmica, além de biofertilizantes de alta qualidade. Conforme explorado nesta edição, a substituição parcial de combustíveis fósseis por biogás pode gerar um saldo líquido positivo de empregos e uma significativa redução na emissão de gases de efeito estufa. Este movimento fortalece a segurança energética, descentraliza a matriz e cria uma economia circular no campo.</p>
+                <h3 class="mt-6">Desafios e Oportunidades</h3>
+                <p>Para que esse potencial se concretize, é crucial superar alguns desafios. São necessários investimentos robustos em pesquisa, desenvolvimento e inovação (P,D&I), além da criação de políticas públicas de incentivo que ofereçam segurança jurídica e viabilidade econômica aos projetos. A capacitação de mão de obra e a articulação entre produtores rurais, cooperativas, indústrias, universidades e governo são fundamentais para construir cadeias de valor sólidas e competitivas.</p>
+                 <h3 class="mt-6">Conclusão</h3>
+                <p>A bioeconomia e as energias renováveis não são mais uma promessa distante; são uma realidade presente e um caminho incontornável para o futuro da Região Sul. Ao abraçar essa agenda, a região pode não apenas impulsionar seu próprio crescimento de forma sustentável, mas também oferecer ao Brasil e ao mundo um modelo de desenvolvimento que concilia prosperidade econômica, justiça social e respeito ao meio ambiente.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 5</div>
+    </div>
+    
+    <!-- Implicação do Comportamento Financeiro dos Empreendedores do Brasil -->
+    <div class="page-container page">
+        <div class="page-header">
+           Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <h2>Implicação do Comportamento Financeiro dos Empreendedores do Brasil</h2>
+            <p class="article-authors">Jobson Cabral, Nelson Hein</p>
+            
+            <div class="article-abstract">
+                <p><b>Resumo:</b> Este estudo analisou o efeito do comportamento financeiro na compra compulsiva, endividamento e materialismo entre empreendedores no Brasil. A pesquisa, de caráter descritivo, utilizou um levantamento de dados com 149 empreendedores brasileiros, aplicando técnicas de análise fatorial confirmatória, correlação e regressão linear. A nomenclatura "empreendedor" foi utilizada de forma ampla para abranger uma gama maior de indivíduos que se identificam como tais. Os resultados indicaram que o comportamento financeiro dos empreendedores não impacta significativamente o endividamento ou materialismo, mas há uma relação entre comportamento financeiro e compra compulsiva. Empreendedores com maior alfabetização financeira tendem a ser menos propensos a esse comportamento. A compra compulsiva, por sua vez, mostrou estar relacionada ao endividamento e materialismo. O estudo sugere que programas de alfabetização financeira para empreendedores devem adotar uma abordagem holística, que integre aspectos técnicos, comportamentais e psicológicos, com foco na redução da compra compulsiva.</p>
+                <p class="mt-2"><b>Palavras-chave:</b> Comportamento financeiro, Materialismo, Endividamento, Compra compulsiva.</p>
+            </div>
+            
+            <div class="two-columns">
+                <h3>1. INTRODUÇÃO</h3>
+                <p>A falta de informações adequadas sobre questões financeiras pode favorecer cenários indesejados, como o endividamento acima da capacidade de comprometimento da renda. Neste contexto, o conhecimento financeiro é vital para o sucesso na gestão de recursos. Para os empreendedores, os desafios são diários, o que justifica a importância do conhecimento financeiro para a gestão dos recursos das entidades.</p>
+                <p>A presente pesquisa objetiva analisar o efeito do comportamento financeiro na compra compulsiva, endividamento e materialismo dos empreendedores do Brasil. O estudo justifica-se pela necessidade de observar se os empresários possuem um nível adequado de alfabetização financeira para tomar decisões conscientes e administrar seus recursos de forma a maximizar resultados, considerando que suas organizações são importantes geradoras de emprego e impulsionadoras da economia.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 6</div>
+    </div>
+
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <div class="two-columns">
+                <h3>2. FUNDAMENTAÇÃO TEÓRICA E HIPÓTESES</h3>
+                <p>A Organização para a Cooperação e Desenvolvimento Econômico (OCDE) define a alfabetização financeira como uma combinação de consciência, conhecimento, habilidades, atitudes e comportamentos que capacitam os indivíduos a tomarem decisões financeiras acertadas. Estudos demonstram que indivíduos com baixa alfabetização financeira enfrentam maiores desafios na administração de suas finanças, enquanto aqueles com elevado conhecimento demonstram maior habilidade para elaborar orçamentos, economizar e planejar o futuro.</p>
+                <p>O comportamento financeiro é influenciado por fatores como materialismo, compra compulsiva e propensão ao endividamento. Pessoas com valores materialistas mais elevados tendem a ter maiores preocupações financeiras e mais dívidas. A compra compulsiva, por sua vez, é uma das principais causas do endividamento. Com base nisso, foram formuladas as seguintes hipóteses:</p>
+                <ul class="list-disc list-inside space-y-1 mt-2">
+                    <li><b>H1:</b> O comportamento financeiro impacta negativamente na propensão ao endividamento dos empreendedores.</li>
+                    <li><b>H2:</b> O materialismo impacta positivamente na propensão ao endividamento dos empreendedores.</li>
+                    <li><b>H3:</b> A compra compulsiva impacta positivamente na propensão ao endividamento dos empreendedores.</li>
+                    <li><b>H4:</b> O materialismo impacta positivamente no comportamento de compra compulsiva.</li>
+                    <li><b>H5:</b> O comportamento financeiro impacta negativamente no materialismo dos empreendedores.</li>
+                    <li><b>H6:</b> O comportamento financeiro impacta negativamente na compra compulsiva dos empreendedores.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 7</div>
+    </div>
+    
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <div class="two-columns">
+                <h3>3. METODOLOGIA</h3>
+                <p>A pesquisa, de natureza descritiva, envolveu um levantamento com 149 empreendedores brasileiros, contatados via LinkedIn. O termo "empreendedor" foi usado de forma ampla, baseado na autoidentificação dos participantes. O instrumento de pesquisa, um questionário online, foi dividido em blocos sobre Atitude Financeira, Comportamento Financeiro e Conhecimento Financeiro (Propensão ao endividamento, Materialismo e Compra compulsiva), utilizando uma escala Likert de sete pontos.</p>
+                <p>Para a análise dos dados, foram aplicadas Análise Fatorial Exploratória (AFE) para validação das escalas, Correlação de Spearman para dados não paramétricos e modelos de regressão linear simples para testar as hipóteses, utilizando o software SPSS.</p>
+                
+                <h3>4. DISCUSSÃO DOS RESULTADOS</h3>
+                <p>A amostra é composta por 58% de homens, com 47% na faixa etária de 31 a 40 anos e 81% com ensino superior completo. A análise de correlação revelou uma relação negativa significativa entre Comportamento Financeiro (CF) e Compra Compulsiva (CC), e uma correlação positiva entre CC e Propensão ao Endividamento (PE). Não houve correlação significativa entre CF e Materialismo (MT).</p>
+                <p>Os testes de hipóteses, via regressão, mostraram que:</p>
+                <ul class="list-disc list-inside space-y-1 mt-2">
+                    <li><b>H1 e H5 (Não suportadas):</b> O comportamento financeiro não demonstrou impacto significativo na propensão ao endividamento ou no materialismo.</li>
+                    <li><b>H6 (Suportada):</b> O comportamento financeiro impacta negativamente a compra compulsiva. Empreendedores com melhor gestão financeira são menos propensos a compras por impulso.</li>
+                    <li><b>H2, H3 e H4 (Suportadas):</b> O materialismo e a compra compulsiva impactam positivamente a propensão ao endividamento. Além disso, o materialismo está positivamente relacionado à compra compulsiva.</li>
+                </ul>
+
+                <h3>5. CONSIDERAÇÕES FINAIS</h3>
+                <p>O estudo conclui que, embora o comportamento financeiro dos empreendedores não impacte diretamente o endividamento ou o materialismo, ele influencia negativamente a compra compulsiva. Esta, por sua vez, é um fator chave que eleva tanto o endividamento quanto o materialismo.</p>
+                <p>As implicações são claras: programas de educação financeira para empreendedores devem ir além dos aspectos técnicos, abordando as dimensões comportamentais e psicológicas ligadas ao consumo. Focar na mitigação da compra compulsiva pode ser uma estratégia eficaz para promover uma gestão financeira mais equilibrada e sustentável, reduzindo os riscos de endividamento excessivo e os efeitos negativos do materialismo. Estes achados também podem subsidiar políticas públicas que visem o bem-estar financeiro dos empreendedores no Brasil.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 8</div>
+    </div>
+    
+    <!-- Influência das Diferenças Inter-Regionais na Relação entre Dívida Pública e Crescimento Econômico nos Estados Brasileiros -->
+    <div class="page-container page">
+        <div class="page-header">
+           Artigos Acadêmicos
+       </div>
+       <div class="page-content">
+           <h2>Influência das Diferenças Inter-Regionais na Relação entre Dívida Pública e Crescimento Econômico nos Estados Brasileiros</h2>
+           <p class="article-authors">Mariana Barros Teixeira, Fernanda Maria de Almeida, Nálbia de Araújo Santos</p>
+           
+           <div class="article-abstract">
+               <p><b>Resumo:</b> Este estudo investiga se as diferenças inter-regionais influenciaram na relação entre dívida pública e crescimento econômico dos estados brasileiros entre 2015 e 2021. Embora a literatura tenha avançado na análise dos efeitos da dívida sobre o crescimento, ainda é limitada a compreensão de como essa relação varia entre regiões com diferentes níveis de desenvolvimento. Este trabalho preenche essa lacuna ao adotar uma abordagem inter-regional, utilizando um modelo de regressão em painel dinâmico (System GMM). Os resultados indicam que a influência da dívida pública no crescimento econômico varia conforme a região, refletindo desigualdades estruturais. Enquanto investimentos públicos e nível educacional favorecem o crescimento, altos índices de endividamento o prejudicam, especialmente em regiões com menor desenvolvimento. A análise reforça a importância de políticas fiscais responsáveis e estratégias de desenvolvimento regional que considerem as particularidades socioeconômicas dos estados.</p>
+                <p class="mt-2"><b>Palavras-chave:</b> Endividamento público, PIB, Painel dinâmico, Estados brasileiros, Diferenças regionais.</p>
+           </div>
+           
+           <div class="two-columns">
+                <h3>1. INTRODUÇÃO</h3>
+                <p>A relação entre dívida pública e crescimento econômico é complexa e tem implicações profundas. Embora a literatura sobre o tema seja vasta, poucas investigações consideram a perspectiva inter-regional, especialmente no contexto brasileiro, marcado por profundas disparidades.</p>
+                <p>O objetivo deste estudo é analisar se as diferenças inter-regionais influenciam a relação entre dívida pública e crescimento econômico nos estados brasileiros, no período de 2015 a 2021. Regiões mais desenvolvidas, com maior capacidade de arrecadação, tendem a utilizar a dívida de forma mais eficiente, enquanto estados com menor desenvolvimento enfrentam desafios maiores para converter endividamento em crescimento sustentável.</p>
+            </div>
+       </div>
+       <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 9</div>
+    </div>
+
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <div class="two-columns">
+                <h3>2. REFERENCIAL TEÓRICO</h3>
+                <p>A teoria econômica aponta que a dívida pública pode tanto estimular quanto prejudicar o crescimento, a depender de seu tamanho, estrutura e da alocação dos recursos. A relação não é linear; estudos como os de Reinhart e Rogoff (2010) sugerem a existência de um limiar a partir do qual a dívida se torna prejudicial. No Brasil, as disparidades regionais são um fator crucial. Estados mais desenvolvidos, como os do Sul e Sudeste, podem ter maior capacidade de transformar dívida em investimentos produtivos, enquanto estados do Norte e Nordeste, mais dependentes de transferências federais, enfrentam maiores dificuldades.</p>
+                
+                <h3>3. METODOLOGIA</h3>
+                <p>Utilizou-se um modelo de regressão com dados em painel dinâmico (System GMM) para os 26 estados brasileiros e o Distrito Federal, de 2015 a 2021. A variável dependente foi o crescimento do PIB real per capita. A variável explicativa de interesse foi a dívida pública (medida pela relação Dívida Consolidada/Receita Corrente Líquida). Foram incluídas variáveis de controle como investimentos públicos, escolaridade e abertura comercial. Para capturar as diferenças regionais, foram criadas dummies de interação entre a região e a dívida.</p>
+                
+                <h3>4. RESULTADOS E DISCUSSÕES</h3>
+                <p>A análise descritiva confirmou a considerável desigualdade regional entre os estados em termos de PIB per capita, endividamento e investimentos. No período, todas as regiões apresentaram redução na relação Dívida/PIB, possivelmente devido à Lei de Responsabilidade Fiscal. A região Centro-Oeste foi a que mais reduziu sua dívida, enquanto o Sudeste, apesar do maior PIB, teve o menor desempenho na redução do endividamento.</p>
+                <p>Os resultados do modelo econométrico indicam que o PIB do ano anterior influencia positivamente o PIB corrente. Mais importante, o impacto da dívida no crescimento econômico variou significativamente entre as regiões. Com exceção do Sudeste, em todas as outras regiões (Sul, Centro-Oeste, Norte e Nordeste) a dívida apresentou um efeito negativo e significativo sobre o crescimento do PIB per capita. Este efeito foi mais pronunciado nas regiões Norte e Nordeste, historicamente menos desenvolvidas.</p>
+                <p>Os gastos com investimentos e o nível de escolaridade mostraram uma influência positiva e significativa no crescimento. Já a abertura comercial não se mostrou estatisticamente significativa no período analisado para o conjunto dos estados.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 10</div>
+    </div>
+    
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <div class="two-columns">
+                <h3>5. CONSIDERAÇÕES FINAIS</h3>
+                <p>O estudo confirma que as diferenças inter-regionais influenciam a relação entre dívida pública e crescimento econômico no Brasil. O endividamento tende a ser um fator limitante para o crescimento, especialmente em regiões com menor capacidade fiscal e de gestão. O impacto negativo é agravado quando os recursos da dívida são utilizados para cobrir déficits correntes em vez de investimentos produtivos em infraestrutura e capital humano.</p>
+                <p>A principal contribuição do estudo é demonstrar que a gestão da dívida pública subnacional requer políticas ajustadas às especificidades de cada região. Políticas uniformes podem ser ineficazes ou até prejudiciais. Os achados reforçam a necessidade de um controle rigoroso do endividamento, aliado a investimentos estratégicos em educação e infraestrutura, para promover um crescimento sustentável e reduzir as persistentes disparidades regionais no país.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 11</div>
+    </div>
+
+    <!-- Análise Comparativa de Desempenho da Celesc Distribuição S.A. -->
+    <div class="page-container page">
+         <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <h2>Análise Comparativa de Desempenho da Celesc Distribuição S.A. Frente a Empresas Privadas do Setor Elétrico</h2>
+            <p class="article-authors">Lucas Guesser</p>
+            
+            <div class="article-abstract">
+                <p><b>Resumo:</b> Este trabalho realiza uma análise comparativa de desempenho da Celesc Distribuição S.A., empresa de economia mista controlada pelo Estado de Santa Catarina, em relação a um grupo de distribuidoras de energia elétrica de controle privado de porte semelhante no Brasil. O estudo abrange o período de 2020 a 2024 e se debruça sobre três dimensões centrais: desempenho operacional, a partir dos indicadores de continuidade regulados pela ANEEL; desempenho econômico-financeiro, com base em indicadores-chave; e a satisfação do consumidor, aferida pelo Índice ANEEL de Satisfação do Consumidor (IASC). Os resultados indicam que, embora a Celesc apresente desempenho operacional intermediário, sua estabilidade financeira e o elevado reinvestimento na rede, alinhados aos objetivos de desenvolvimento regional, configuram um modelo de gestão com externalidades positivas. A análise dos pares privados revela heterogeneidade de resultados, desmistificando a premissa de superioridade intrínseca do modelo privado. Conclui-se que a manutenção do controle público da Celesc representa um ativo estratégico para Santa Catarina.</p>
+                <p class="mt-2"><b>Palavras-chave:</b> Celesc, Setor Elétrico, Privatização, Desempenho Operacional, Análise Comparativa, Função Social, ANEEL.</p>
+            </div>
+            
+            <div class="two-columns">
+                <h3>1. INTRODUÇÃO</h3>
+                <p>O setor de distribuição de energia elétrica no Brasil tem sido palco de um recorrente debate sobre a eficiência dos modelos de gestão público versus privado. Este trabalho analisa o caso da Celesc Distribuição S.A., uma sociedade de economia mista controlada pelo Estado de Santa Catarina, que responde tanto às pressões do mercado quanto às diretrizes de políticas públicas.</p>
+                <p>O objetivo é conduzir uma análise comparativa do desempenho da Celesc frente a empresas congêneres de controle privado (RGE Sul, Light S.A. e a recém-privatizada Copel Distribuição), com base em três pilares: qualidade técnica do serviço (indicadores de continuidade da ANEEL), saúde econômico-financeira e satisfação do cliente. O propósito é avaliar se os dados, contextualizados pela função social da estatal, justificam a manutenção de seu controle público como um ativo estratégico para Santa Catarina.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 12</div>
+    </div>
+
+    <div class="page-container page">
+        <div class="page-header">
+           Artigos Acadêmicos
+       </div>
+       <div class="page-content">
+            <div class="two-columns">
+               <h3>2. ANÁLISE COMPARATIVA DE DESEMPENHO OPERACIONAL (2020-2024)</h3>
+               <p>A qualidade do serviço de distribuição é monitorada pela ANEEL por meio de indicadores como o DEC (duração das interrupções) e o FEC (frequência das interrupções), consolidados no Indicador de Desempenho Global de Continuidade (DGC). Quanto menor o DGC, melhor o desempenho.</p>
+               <p>A Celesc tem se posicionado consistentemente na metade inferior do ranking da ANEEL, com um desempenho que, embora dentro da conformidade regulatória, a distancia das líderes. Em 2024, ocupou a 26ª posição entre 31 concessionárias, um resultado inferior ao de pares como RGE (15ª), mas notavelmente superior ao da recém-privatizada Copel (29ª).</p>
+               <p>O caso da Copel é elucidativo: sua queda abrupta no ranking após a privatização contraria a narrativa de ganhos imediatos de eficiência e serve como um alerta sobre os riscos do processo. Outras distribuidoras privatizadas, como CEEE Equatorial (31ª) e Equatorial Goiás (30ª), também figuram nas piores posições, reforçando a tese de que a privatização, por si só, não garante a qualidade do serviço.</p>
+
+               <h3>3. ANÁLISE DE DESEMPENHO ECONÔMICO-FINANCEIRO (2022-2023)</h3>
+               <p>A Celesc demonstra uma performance financeira robusta e estável, com lucro líquido consolidado de aproximadamente R$ 557 milhões em 2022 e 2023. O destaque é a sua política de investimentos (CAPEX): em 2023, a empresa investiu R$ 1,4 bilhão, valor que representa cerca de 2,5 vezes o seu lucro líquido.</p>
+               <p>Essa elevada taxa de reinvestimento é um indicativo da estratégia de uma empresa de controle público. Enquanto uma empresa privada é pressionada a maximizar dividendos, uma estatal como a Celesc pode priorizar o reinvestimento dos lucros na modernização da rede, servindo como instrumento de política pública e fomento ao desenvolvimento econômico de Santa Catarina. A privatização poderia alterar drasticamente essa equação.</p>
+
+               <h3>4. ANÁLISE DA SATISFAÇÃO DO CONSUMIDOR</h3>
+               <p>A satisfação do consumidor é medida pelo Índice ANEEL de Satisfação do Consumidor (IASC). Em 2024, a RGE foi eleita a melhor distribuidora da região Sul, mas a Celesc frequentemente figura entre as finalistas, indicando um nível de satisfação competitivo. Uma estatal, por seu mandato público, pode ter uma propensão maior a investir em aspectos de "valor percebido" (qualidade do atendimento, comunicação, engajamento social) que não são capturados pelos indicadores técnicos, mas que fortalecem a confiança do consumidor.</p>
+            </div>
+       </div>
+       <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 13</div>
+    </div>
+    
+    <div class="page-container page">
+        <div class="page-header">
+           Artigos Acadêmicos
+       </div>
+       <div class="page-content">
+            <div class="two-columns">
+                <h3>5. A FUNÇÃO SOCIAL DA EMPRESA PÚBLICA E OS RISCOS DA PRIVATIZAÇÃO</h3>
+                <p>Relatórios do Tribunal de Contas da União (TCU) apontam que os pressupostos do modelo liberal adotado nos anos 1990 — como a garantia de modicidade tarifária via privatização — não se concretizaram plenamente. Pelo contrário, o TCU alerta para riscos como as perdas não técnicas (fraudes e furtos), que geram prejuízos bilionários repassados às tarifas, e o fenômeno da "espiral da morte", onde o aumento contínuo das tarifas incentiva grandes consumidores a migrarem para o mercado livre, onerando desproporcionalmente os consumidores residenciais cativos.</p>
+                <p>A manutenção da Celesc sob controle público justifica-se por benefícios que transcendem a análise de balanço:</p>
+                <ul class="list-disc list-inside space-y-1 mt-2">
+                    <li><b>Alinhamento ao Desenvolvimento Regional:</b> Investimentos estratégicos para o estado, não apenas os de maior retorno financeiro.</li>
+                    <li><b>Priorização da Modicidade Tarifária:</b> Equilíbrio entre sustentabilidade financeira e interesse público.</li>
+                    <li><b>Soberania e Segurança Energética:</b> Capacidade de resposta a crises e implementação de políticas energéticas autônomas.</li>
+                    <li><b>Retenção de Riqueza:</b> Lucros revertidos para o Estado e fomento à economia local.</li>
+                    <li><b>Flexibilidade para Políticas Públicas:</b> Agilidade na implementação de programas de sustentabilidade e inovação.</li>
+                </ul>
+
+                <h3>6. CONCLUSÃO</h3>
+                <p>A análise demonstra que a Celesc, embora com desempenho operacional intermediário, mantém sólida saúde financeira e se destaca por uma robusta política de reinvestimento alinhada ao desenvolvimento de Santa Catarina. A avaliação do setor privado desmistifica a premissa de superioridade do modelo privado, evidenciando heterogeneidade, volatilidade e riscos de deterioração do serviço pós-privatização.</p>
+                <p>Conclui-se que a manutenção da Celesc sob controle público não é um obstáculo à eficiência, mas a preservação de um modelo de gestão que gera valor social duradouro. Seus benefícios — alinhamento estratégico, fomento a políticas públicas e retenção de riqueza — superam os potenciais e incertos ganhos de uma privatização. A Celesc, em sua configuração atual, é um ativo público estratégico, fundamental para o futuro da sociedade catarinense.</p>
+            </div>
+       </div>
+       <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 14</div>
+    </div>
+
+    <!-- Pandemia e Emprego -->
+    <div class="page-container page">
+        <div class="page-header">
+           Artigos Acadêmicos
+       </div>
+       <div class="page-content">
+           <h2>Pandemia e Emprego: Impactos da Covid-19 sobre o Mercado Formal de Trabalho em Santa Catarina</h2>
+           <p class="article-authors">Lauro Francisco Mattei, Vicente Loeblein Heinen, Andrey de Paula Silva, Pedro Henrique Batista Otero</p>
+           
+           <div class="article-abstract">
+                <p><b>Resumo:</b> O estudo analisa os impactos da pandemia da Covid-19 no mercado de trabalho formal de Santa Catarina entre 2020 e 2021. Utilizando dados da PNADC e da RAIS, a análise compara o cenário catarinense com o nacional, focando nas mudanças na composição, perfil e remuneração do emprego formal. Os resultados revelam que, embora a pandemia tenha causado flutuações semelhantes em ambos os âmbitos, os impactos foram menos intensos em Santa Catarina devido ao seu maior nível de formalização pré-pandemia. Atividades com maior necessidade de contato pessoal foram as mais prejudicadas, enquanto indústria, serviços empresariais e comércio de bens essenciais tiveram melhor desempenho. Contudo, houve uma queda de quase 10% nos salários reais médios no período, indicando uma perda de qualidade dos empregos gerados.</p>
+                <p class="mt-2"><b>Palavras-chave:</b> Emprego formal, RAIS, Perfil ocupacional, Salário.</p>
+            </div>
+           
+           <div class="two-columns">
+                <h3>1. INTRODUÇÃO</h3>
+                <p>A pandemia da Covid-19 impactou profundamente o mercado de trabalho global. No Brasil, esse choque ocorreu em um cenário já deteriorado, com aumento da informalidade desde 2015. Este artigo analisa os efeitos da pandemia no mercado de trabalho formal de Santa Catarina entre 2019 e 2021, comparando-o com o contexto nacional, a partir de dados da PNADC Trimestral e da RAIS.</p>
+                
+                <h3>2. TRABALHO E PANDEMIA NO BRASIL E EM SANTA CATARINA</h3>
+                <p>Em 2020, o Brasil registrou uma queda histórica na população ocupada (-7,3 milhões) e uma redução de 4,3 pontos percentuais (p.p.) na taxa de participação na força de trabalho. Diferente de crises anteriores, muitos que perderam o emprego tornaram-se "inativos", não sendo contados como desempregados, devido às dificuldades de procurar trabalho. Em Santa Catarina, os impactos foram menos severos: a taxa de participação caiu 3,4 p.p. e a população ocupada recuou 3,0%, reflexo da maior taxa de formalização do estado.</p>
+                <p>Em 2021, com o avanço da vacinação, houve uma retomada parcial da força de trabalho em ambos os âmbitos. No entanto, o ritmo de recuperação do emprego formal foi insuficiente para absorver a demanda, levando a um aumento da informalidade. Em Santa Catarina, o trabalho por conta própria (com e sem CNPJ) teve o maior crescimento, enquanto o emprego com carteira no setor privado ainda não havia recuperado totalmente as perdas de 2020.</p>
+            </div>
+       </div>
+       <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 15</div>
+    </div>
+    
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <div class="two-columns">
+                <h3>3. O MERCADO FORMAL DE TRABALHO CATARINENSE</h3>
+                <h4>3.1 Análise Setorial</h4>
+                <p>Em contraste com a média nacional, que registrou queda de 1% no emprego formal em 2020, Santa Catarina teve um saldo positivo de 41,4 mil vagas (+1,8%). Isso se deve à composição setorial de sua economia, menos dependente de serviços presenciais e com forte participação de setores menos afetados.</p>
+                <p>Em 2020, os segmentos mais prejudicados foram o comércio varejista de rua, alojamento e alimentação, e as indústrias têxtil e calçadista. Por outro lado, registraram crescimento o agronegócio, a construção civil (após recuperação no segundo semestre), serviços de saúde e administração pública, e as indústrias de alimentos, produtos químicos (higiene) e plástico (embalagens).</p>
+                <p>Em 2021, a retomada foi generalizada. O setor de serviços liderou a geração de vagas (+5,2%), impulsionado pela reabertura e pelo avanço do trabalho remoto em atividades profissionais e de tecnologia. A indústria também teve forte desempenho (+7,1%), com destaque para a recuperação do setor têxtil e o dinamismo de segmentos ligados à construção civil.</p>
+                
+                <h4>3.2 Análise Salarial</h4>
+                <p>Apesar do crescimento no volume de empregos, a pandemia provocou uma deterioração significativa na qualidade das vagas. O salário médio real dos trabalhadores formais em Santa Catarina sofreu uma queda acumulada de 9,4% entre 2019 e 2021, retrocedendo a níveis de uma década atrás. Em 2021, o valor médio foi de R$ 2.873,40.</p>
+                <p>Essa queda reflete tanto um arrocho salarial generalizado, potencializado pela inflação e pela perda de poder de barganha dos trabalhadores, quanto um "efeito-composição". As novas vagas concentraram-se em segmentos de menor produtividade e em faixas salariais mais baixas. O número de empregados formais recebendo até 1 salário mínimo atingiu um recorde histórico, impulsionado pela disseminação de contratos atípicos (temporários e de tempo parcial).</p>
+
+                <h3>4. CONSIDERAÇÕES FINAIS</h3>
+                <p>O mercado de trabalho formal catarinense demonstrou resiliência durante a pandemia, com um desempenho superior à média nacional em termos de volume de empregos, graças à sua estrutura produtiva diversificada e maior grau de formalização.</p>
+                <p>No entanto, a recuperação do emprego veio acompanhada de uma precarização, evidenciada pela queda histórica dos salários reais e pela concentração de novas vagas em ocupações de baixa remuneração e em modalidades de contratação mais flexíveis. O estudo revela que, embora o volume de emprego formal tenha se recuperado em 2021, a qualidade dessas vagas foi significativamente comprometida, um dos principais legados da crise da Covid-19 no estado.</p>
+            </div>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 16</div>
+    </div>
+    
+    <div class="page-container page">
+        <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <h3>Tabela 1: Estoque e Saldo de Empregos Formais por Setor - Santa Catarina (2019-2021)</h3>
+            <table class="w-full text-sm mt-2">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th>Setor</th>
+                        <th>Estoque 2019</th>
+                        <th>Saldo 2020</th>
+                        <th>Var. 2020</th>
+                        <th>Saldo 2021</th>
+                        <th>Var. 2021</th>
+                        <th>Saldo 2019-21</th>
+                        <th>Var. 2019-21</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>AGROPECUÁRIA</td>
+                        <td>40.609</td>
+                        <td>1.132</td>
+                        <td>2,8%</td>
+                        <td>1.819</td>
+                        <td>4,4%</td>
+                        <td>2.951</td>
+                        <td>7,3%</td>
+                    </tr>
+                    <tr>
+                        <td>INDÚSTRIA</td>
+                        <td>687.469</td>
+                        <td>21.031</td>
+                        <td>3,1%</td>
+                        <td>50.239</td>
+                        <td>7,1%</td>
+                        <td>71.270</td>
+                        <td>10,4%</td>
+                    </tr>
+                     <tr>
+                        <td>CONSTRUÇÃO</td>
+                        <td>94.577</td>
+                        <td>1.282</td>
+                        <td>1,4%</td>
+                        <td>10.101</td>
+                        <td>10,5%</td>
+                        <td>11.383</td>
+                        <td>12,0%</td>
+                    </tr>
+                    <tr>
+                        <td>COMÉRCIO</td>
+                        <td>458.009</td>
+                        <td>2.459</td>
+                        <td>0,5%</td>
+                        <td>26.679</td>
+                        <td>5,8%</td>
+                        <td>29.138</td>
+                        <td>6,4%</td>
+                    </tr>
+                     <tr>
+                        <td>SERVIÇOS</td>
+                        <td>1.038.546</td>
+                        <td>15.565</td>
+                        <td>1,5%</td>
+                        <td>54.713</td>
+                        <td>5,2%</td>
+                        <td>70.278</td>
+                        <td>6,8%</td>
+                    </tr>
+                    <tr class="font-bold bg-blue-100">
+                        <td>TOTAL</td>
+                        <td>2.319.210</td>
+                        <td>41.472</td>
+                        <td>1,8%</td>
+                        <td>143.549</td>
+                        <td>6,1%</td>
+                        <td>185.021</td>
+                        <td>8,0%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="text-sm italic mt-2">Fonte: Elaborado a partir de dados da RAIS (2023).</p>
+        </div>
+        <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 17</div>
+    </div>
+    
+    <!-- Geração de Empregos e Redução de Emissões com Biogás -->
+    <div class="page-container page">
+         <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <h2>Geração Líquida de Empregos e Redução de Emissões de GEE com Biogás em Substituição Parcial a Combustíveis Fósseis no Sul do Brasil</h2>
+            <p class="article-authors">Maria Priscila Ramos, Gustavo Adolfo Ferro, Carlos Adrian Romero</p>
+            
+            <div class="article-abstract">
+                <p><b>Resumo (traduzido e adaptado):</b> Este estudo explora a geração líquida de empregos e a redução líquida de emissões de gases de efeito estufa (GEE) a partir da substituição parcial de fontes de energia convencionais por biogás na Região Sul do Brasil (Paraná, Santa Catarina e Rio Grande do Sul). O biogás é gerado a partir de substratos derivados da agricultura, pecuária, agroindústria, resíduos sólidos urbanos e tratamento de esgoto. Utilizando a análise de Insumo-Produto com contas satélite para emprego e emissões, o estudo avalia diferentes cenários de substituição. A hipótese é que a geração líquida de empregos será positiva, pois as indústrias de biogás são mais intensivas em mão de obra, e a redução líquida de emissões será significativa, dado que o biogás é uma fonte de energia mais limpa. Os resultados são úteis para o desenvolvimento de políticas públicas que incentivem a mudança na matriz energética, visando o aumento do emprego e a diminuição das emissões de GEE.</p>
+            </div>
+            
+            <div class="two-columns">
+                <h3>1. INTRODUÇÃO</h3>
+                <p>A transição para fontes de energia renováveis pode implicar em complementaridade ou substituição das fontes convencionais. Se a energia renovável substituir parcialmente a convencional, os empregos no novo setor podem substituir parte dos empregos existentes. Da mesma forma, a substituição de uma fonte mais poluente por uma mais limpa pode resultar em uma redução líquida das emissões de gases de efeito estufa (GEE).</p>
+                <p>A Região Sul do Brasil possui grande potencial para a produção de biogás, mas atualmente explora apenas cerca de 3,4% desse potencial. O Brasil, como signatário do Acordo de Paris, visa alcançar uma participação de 45% de energias renováveis em sua matriz energética até 2030. Este estudo busca mensurar os impactos socioeconômicos e ambientais da expansão do biogás na região.</p>
+                
+                <h3>2. METODOLOGIA</h3>
+                <p>Para contabilizar as relações intersetoriais, foi utilizada a análise de Insumo-Produto. Um desafio metodológico foi a ausência de setores de biogás nas estatísticas oficiais e a carência de dados regionais atualizados. Para superar isso, foram empregadas abordagens híbridas para regionalizar matrizes, criar novas entradas nas tabelas de Insumo-Produto e adicionar contas satélite para computar o saldo líquido de empregos e emissões de GEE.</p>
+                <p>Foram considerados diferentes cenários de substituição de combustíveis fósseis por biogás, baseados em premissas moderadas sobre a demanda e a oferta de biogás, o potencial de fornecimento de substratos e os graus de substituição alcançados.</p>
+            </div>
+       </div>
+       <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 18</div>
+    </div>
+
+    <div class="page-container page">
+        <div class="page-header">
+           Artigos Acadêmicos
+       </div>
+       <div class="page-content">
+           <div class="two-columns">
+               <h3>3. RESULTADOS E DISCUSSÕES</h3>
+               <p>A hipótese central do estudo é que a geração líquida de empregos será positiva e a redução líquida de emissões será negativa (ou seja, uma redução efetiva). Isso se baseia na premissa de que as indústrias de biogás são mais intensivas em mão de obra do que a geração de energia a partir de combustíveis fósseis e produzem menores níveis de emissão.</p>
+               <p>Os empregos na indústria de biogás tendem a ser dispersos no território, dado que a produção pode ocorrer tanto de forma centralizada em grandes cidades (a partir de resíduos sólidos) quanto em pequenas e médias propriedades rurais e agroindústrias. Isso sugere que a geração de empregos beneficiará todo o território dos estados envolvidos.</p>
+               <p>A redução das emissões de GEE, por sua vez, contribuirá para que o Brasil alcance seus compromissos internacionais de controle do aquecimento global. Contudo, é preciso cautela nas conclusões. A substituição parcial de combustíveis fósseis demanda ajustes na infraestrutura de geração de eletricidade e políticas públicas para fomentar o desenvolvimento do mercado.</p>
+               
+               <h3>4. CONCLUSÕES</h3>
+               <p>Os resultados deste estudo fornecem evidências para o desenvolvimento de políticas públicas — tanto de comando e controle (regulação) quanto de incentivo (impostos e subsídios) — que estimulem mudanças na matriz energética da Região Sul.</p>
+               <p>A análise, baseada em métodos sólidos e estatísticas atualizadas, busca evitar argumentos parciais e setoriais. Ao demonstrar os potenciais benefícios em termos de geração de emprego e redução de emissões, o estudo reforça a viabilidade e a importância estratégica do investimento em biogás como um caminho para um desenvolvimento mais sustentável e socialmente inclusivo para a região.</p>
+           </div>
+       </div>
+       <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 19</div>
+    </div>
+    
+    <!-- Potencial Econômico de Produtos Florestais Não Madeireiros -->
+    <div class="page-container page">
+         <div class="page-header">
+            Artigos Acadêmicos
+        </div>
+        <div class="page-content">
+            <h2>Potencial Econômico de Produtos Florestais Não Madeireiros Sub-representados no Brasil: Lacunas de Dados e Desafios Políticos</h2>
+            <p class="article-authors">Laura de Sales Orioli, Ludmila Ferreira Duarte, Luiz Carlos de Faria, Fátima Conceição Marques Piña-Rodrigues</p>
+            
+            <div class="article-abstract">
+                <p><b>Resumo (traduzido e adaptado):</b> O objetivo deste estudo foi elucidar o potencial econômico de produtos florestais não madeireiros (PFNMs) sub-representados, demonstrando a importância da biodiversidade florestal para as comunidades rurais. PFNMs são essenciais para as economias regionais, mas suas contribuições são frequentemente subestimadas. Foi realizada uma revisão sistemática da literatura para compilar dados sobre a renda gerada por PFNMs com menor relevância econômica global, mas com importância regional significativa. A análise bibliométrica mostrou que apenas 2,8% dos artigos sobre PFNMs estavam relacionados à renda e ao Brasil. A análise quantitativa, baseada em 6 artigos, documentou 7 tipos de produtos, abrangendo 251 espécies, com um potencial de renda médio ajustado para 2023 de US$ 2.647,34/ano. Os resultados destacam os desafios na padronização das métricas de renda e a necessidade de iniciativas governamentais para criar uma plataforma participativa para a inclusão de dados, apoiando o uso sustentável e a valoração dos recursos florestais do Brasil.</p>
+                <p class="mt-2"><b>Palavras-chave:</b> Produto Florestal Não Madeireiro, Extrativismo, Manejo Florestal, Agrofloresta, Bioeconomia, Análise Econômica.</p>
+            </div>
+            
+            <div class="two-columns">
+                <h3>1. INTRODUÇÃO</h3>
+                <p>Os Produtos Florestais Não Madeireiros (PFNMs) englobam uma diversa gama de bens de origem biológica que excluem a madeira, sendo cruciais para a subsistência de bilhões de pessoas em todo o mundo. No Brasil, país megadiverso, a extração de PFNMs de biomas nativos representa uma parcela significativa da bioeconomia.</p>
+                <p>Apesar da importância econômica de PFNMs consolidados como açaí, castanha-do-pará e erva-mate, muitas outras espécies com potencial de mercado permanecem sub-representadas em estatísticas oficiais e políticas públicas, como o PGPM-Bio, que apoia apenas 17 espécies. Essa exclusão limita a disponibilidade de dados e o acesso a mercados, marginalizando produtos promissores. A hipótese central deste estudo é que a biodiversidade de PFNMs sub-representados permanece subvalorizada e subutilizada, apesar de seu potencial para geração de renda.</p>
+            </div>
+       </div>
+       <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 20</div>
+    </div>
+
+    <div class="page-container page">
+        <div class="page-header">
+           Artigos Acadêmicos
+       </div>
+       <div class="page-content">
+           <div class="two-columns">
+               <h3>2. METODOLOGIA</h3>
+               <p>Foi realizada uma revisão sistemática da literatura, seguindo o protocolo PRISMA, na base de dados Scopus. A busca incluiu os descritores "non-timber forest product", "income" e "Brazil". Foram aplicados critérios de exclusão para remover estudos sobre serviços ambientais e sobre os PFNMs já consolidados economicamente. A análise final se concentrou em artigos que apresentavam dados quantitativos de renda, permitindo o cálculo do valor presente em dólares americanos para o ano de 2023.</p>
+               
+               <h3>3. RESULTADOS E DISCUSSÕES</h3>
+               <p>A análise bibliométrica revelou uma lacuna significativa: dos 2.720 artigos sobre PFNMs, apenas 75 (2,8%) abordavam renda e Brasil. O país, apesar de ser o terceiro em número de publicações, não acompanhou a tendência global de aumento de publicações sobre o tema na última década. Dos 75 artigos, apenas 6 apresentaram dados quantitativos de renda passíveis de análise.</p>
+               <p>Esses estudos, focados na Amazônia e na Mata Atlântica, documentaram 7 tipos de PFNMs, abrangendo 251 espécies. Os produtos incluíram guaraná, cacau, resina de jatobá, sementes para restauração, sementes de mogno, polpa de juçara e artesanato de cipó.</p>
+               <p>O potencial de renda anual variou consideravelmente, de US$ 520 para a polpa de juçara a US$ 9.162 para a resina de jatobá. O potencial de renda médio geral foi de <b>US$ 2.647,34 por ano</b>, equivalente a 10 salários mínimos de 2023. Produtos amazônicos apresentaram uma média de renda superior aos da Mata Atlântica. Em comparação, a renda de produtores rurais no âmbito do Programa de Aquisição de Alimentos (PAA) foi de US$ 1.762/ano, mostrando que a diversificação com PFNMs poderia aumentar a renda rural em pelo menos 40%.</p>
+               
+               <h3>4. CONCLUSÕES E IMPLICAÇÕES</h3>
+               <p>O estudo demonstra o significativo potencial socioeconômico de PFNMs sub-representados, que permanecem subvalorizados devido a lacunas de dados e limitações em políticas públicas. Os principais desafios são a falta de metodologias padronizadas para quantificar renda e a sub-representação desses produtos nos sistemas de informação oficiais.</p>
+               <p>Para superar esses obstáculos, é crucial expandir o escopo de políticas públicas como o PGPM-Bio, para incluir um leque maior de produtos da biodiversidade. Além disso, sugere-se a criação de uma plataforma de dados unificada e participativa, que integre informações de produtores e iniciativas comunitárias. A padronização de métricas de produtividade e renda é fundamental.</p>
+               <p>Ao preencher essas lacunas, os PFNMs sub-representados podem passar de recursos negligenciados a motores de geração de renda sustentável, conservação da biodiversidade e fortalecimento da bioeconomia, beneficiando comunidades locais e os objetivos de desenvolvimento nacional.</p>
+           </div>
+       </div>
+       <div class="page-footer">REVISTASULBRASILEIRA.NET.BR | Página 21</div>
+    </div>
+
+</body>
+</html>
