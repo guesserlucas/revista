@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revista Sul-Brasileira de Contabilidade e Economia - Edição 004</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Regras de Impressão (Print) */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background-color: white !important;
+            }
+            .magazine-section {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 1cm !important;
+                page-break-after: always;
+            }
+            .no-print {
+                display: none !important;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+            .two-columns {
+                column-count: 2;
+            }
+        }
+
+        @page {
+            size: A4;
+            margin: 1.5cm;
+        }
+
+        /* Estilos Globais */
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background-color: #e2e8f0;
+        }
+
+        /* Tipografia de Títulos */
+        h1, h2, h3, h4, h5 {
+            font-family: 'Merriweather', serif;
+            color: #1a3a64;
+            break-after: avoid;
+        }
+        
+        h1 { font-size: 2.5em; font-weight: 900; margin-bottom: 0.5em; text-align: center; }
+        h2 { font-size: 1.8em; font-weight: 700; border-bottom: 2px solid #d1e0ec; padding-bottom: 0.3em; margin-top: 1.5em; margin-bottom: 1em; }
+        h3 { font-size: 1.4em; font-weight: 700; margin-top: 1.5em; margin-bottom: 0.8em; }
+        h4 { font-size: 1.1em; font-weight: 700; margin-top: 1.2em; margin-bottom: 0.5em; color: #2c5282; }
+        
+        p { text-align: justify; margin-bottom: 1.2em; text-indent: 1.5em; }
+        ul, ol { text-align: justify; margin-bottom: 1.2em; padding-left: 2em; }
+        li { margin-bottom: 0.5em; }
+
+        /* Contêineres de Seção - Ajustados para não ter espaço em branco */
+        .magazine-section {
+            width: 100%;
+            max-width: 21cm;
+            height: auto; /* Altura flexível para abraçar o texto */
+            margin: 1.5cm auto;
+            background-color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 2cm;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .cover-container {
+            width: 100%;
+            max-width: 21cm;
+            height: 29.7cm; /* Capa mantida em A4 */
+            margin: 1.5cm auto;
+            background-color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            position: relative;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Diagramação em Colunas */
+        .two-columns {
+            column-count: 2;
+            column-gap: 1.2cm;
+            column-fill: balance;
+        }
+        
+        .two-columns > h3, 
+        .two-columns > h4, 
+        .two-columns > h5, 
+        .two-columns > table,
+        .two-columns > .formula,
+        .two-columns > .references-section {
+            column-span: all; /* Permite que títulos e tabelas quebrem as colunas para melhor fluxo */
+            margin-top: 1.5em;
+        }
+
+        /* Elementos Acadêmicos */
+        .article-abstract {
+            background-color: #f8fafc;
+            border-left: 5px solid #1a3a64;
+            padding: 1.5em;
+            margin: 2em 0;
+            font-style: italic;
+            font-size: 0.95em;
+        }
+        
+        .article-authors {
+            font-weight: 700;
+            color: #4a5568;
+            margin-bottom: 1.5em;
+            text-align: center;
+            font-size: 1.1em;
+            text-indent: 0;
+        }
+        
+        .article-title {
+            text-align: center;
+            border-bottom: none;
+            font-size: 2em;
+            line-height: 1.3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+            font-size: 0.85em;
+            font-family: 'Lato', sans-serif;
+            page-break-inside: avoid;
+        }
+        th, td {
+            border: 1px solid #cbd5e0;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #edf2f7;
+            color: #1a3a64;
+            font-weight: 700;
+        }
+        
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            font-size: 1.1em;
+            background-color: #f7fafc;
+            padding: 10px;
+            text-align: center;
+            margin: 15px 0;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .references-section p {
+            font-size: 0.8em;
+            line-height: 1.5;
+            text-align: left;
+            text-indent: 0;
+            padding-left: 2em;
+            text-indent: -2em; /* Hanging indent para referências */
+            margin-bottom: 0.8em;
+        }
+
+        /* Cabeçalhos e Rodapés das Seções */
+        .section-header {
+            width: 100%;
+            text-align: left;
+            font-size: 0.75em;
+            color: #718096;
+            padding-bottom: 0.5cm;
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 1.5cm;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        /* Sumário */
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted #a0aec0;
+            padding: 0.8em 0;
+            font-size: 1.1em;
+        }
+        .toc-title {
+            max-width: 85%;
+            font-family: 'Merriweather', serif;
+        }
+        .toc-page {
+            font-weight: 700;
+            color: #1a3a64;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Capa -->
+    <div class="cover-container">
+        <div class="cover">
+            <img src="https://www.revistasulbrasileira.net.br/capa.png" alt="Capa da Revista Sul-Brasileira de Contabilidade e Economia" onerror="this.src='https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+             <div class="absolute bottom-16 left-0 right-0 text-center text-white text-3xl font-bold" style="background-color: rgba(26, 58, 100, 0.85); padding: 1rem; font-family: 'Merriweather', serif;">
+                EDIÇÃO 004 | MARÇO 2026
+            </div>
+            <div class="absolute bottom-6 left-0 right-0 text-center text-gray-200 text-lg tracking-widest" style="background-color: rgba(26, 58, 100, 0.85); padding: 0.5rem;">
+                REVISTASULBRASILEIRA.NET.BR
+            </div>
+        </div>
+    </div>
+
+    <!-- Sumário -->
+    <div class="magazine-section">
+        <div class="section-header">
+            <span>Revista Sul-Brasileira de Contabilidade e Economia</span>
+            <span>Edição 004 | Pág. 2</span>
+        </div>
+        <h1>Sumário</h1>
+        <div class="mt-12 mb-12">
+            <div class="toc-item"><span class="toc-title">Palavra do Editor</span><span class="toc-page">3</span></div>
+            <div class="toc-item"><span class="toc-title">A influência das iniciativas ESG nas decisões de investidores qualificados</span><span class="toc-page">4</span></div>
+            <div class="toc-item"><span class="toc-title">A Pirâmide de Minsky: Uma apresentação alternativa da hipótese da instabilidade financeira</span><span class="toc-page">6</span></div>
+            <div class="toc-item"><span class="toc-title">Associação entre a Implantação do Sistema de Informação de Custos nos Estados Brasileiros e Variáveis Socioeconômicas</span><span class="toc-page">8</span></div>
+            <div class="toc-item"><span class="toc-title">Um estudo sobre a diversificação espacial de riscos climáticos em seguros agrícolas no Brasil</span><span class="toc-page">10</span></div>
+            <div class="toc-item"><span class="toc-title">A Dinâmica da Precificação de Ativos no Setor de Utilidade Pública: Celesc</span><span class="toc-page">12</span></div>
+        </div>
+    </div>
+
+    <!-- Palavra do Editor -->
+    <div class="magazine-section">
+        <div class="section-header">
+            <span>Revista Sul-Brasileira de Contabilidade e Economia</span>
+            <span>Edição 004 | Pág. 3</span>
+        </div>
+        <h2>Palavra do Editor</h2>
+        
+        <div class="flex items-center mb-8 bg-gray-50 p-6 rounded-lg border border-gray-200">
+            <img src="https://placehold.co/120x120/e2e8f0/333333?text=LG" alt="Foto do Editor" class="rounded-full mr-6 shadow-md">
+            <div>
+                <p class="font-bold text-xl text-blue-900" style="text-indent: 0; margin-bottom: 0;">Lucas Guesser</p>
+                <p class="text-md text-gray-600 uppercase tracking-wide" style="text-indent: 0;">Editor-Chefe</p>
+            </div>
+        </div>
+
+        <div class="two-columns">
+            <p>É com grande satisfação que apresentamos a quarta edição da Revista Sul-Brasileira de Contabilidade e Economia. Nesta edição, consolidamos o debate interdisciplinar entre as teorias financeiras contemporâneas, a governança pública aplicada e a gestão econométrica de riscos, unindo o rigor acadêmico estrito com a praticidade instrumental necessária para a tomada de decisão no mercado.</p>
+            <p>Iniciamos nossa jornada de leitura com um estudo aprofundado sobre <b>A influência das iniciativas ESG nas decisões de investidores qualificados</b>, que elucida, por meio de modelagem de equações estruturais, como as dimensões ambientais e sociais (notavelmente mais do que a dimensão de governança de forma isolada) vêm pautando de maneira incisiva a alocação de capitais de indivíduos com alto patrimônio. Em seguida, visitamos a economia teórica pura com o ensaio <b>A Pirâmide de Minsky</b>, trazendo uma analogia gráfica fundamental para compreender o acúmulo histórico de fragilidades financeiras que culminam inevitavelmente em crises sistêmicas ao final de um ciclo capitalista de euforia.</p>
+            <p>Aprofundando-se na seara da contabilidade e gestão do Estado, trazemos uma excelente <b>Associação entre a Implantação do Sistema de Informação de Custos (SIC) nos Estados Brasileiros e Variáveis Socioeconômicas</b>. O texto evidencia empiricamente como o nível de desenvolvimento humano (IDH) e a capacidade robusta de arrecadação orçamentária ditam o ritmo e influenciam a adoção de sistemas gerenciais complexos e custosos na máquina pública nacional.</p>
+            <p>No vital setor do agronegócio, o artigo sobre a <b>diversificação espacial de riscos climáticos em seguros agrícolas no Brasil</b> utiliza o estado da arte em econometria espacial para alertar sobre as perigosas concentrações de portfólio no Sul e Sudeste do país, demonstrando matematicamente como as intempéries sistêmicas (como as secas prolongadas e geadas severas) podem arruinar a viabilidade do <i>pooling</i> das resseguradoras.</p>
+            <p>Por fim, encerramos esta rica edição com um denso ensaio financeiro sobre a <b>Dinâmica da Precificação de Ativos no Setor de Utilidade Pública</b>, focando com lupa no estudo de caso da Celesc. A análise desmistifica a correlação entre o volumoso CAPEX estadual, a conversão para Lucro Líquido contábil e a agressiva política de proventos (dividendos e JCP) que sustentou a robusta reprecificação da estatal catarinense na bolsa de valores nos últimos anos.</p>
+            <p>Desejo a todos uma excelente e enriquecedora leitura.</p>
+        </div>
+    </div>
+
+    <!-- Artigo 1: ESG -->
+    <div class="magazine-section">
+        <div class="section-header">
+            <span>Artigos Acadêmicos - Finanças e Sustentabilidade</span>
+            <span>Págs. 4 - 5</span>
+        </div>
+        
+        <h2 class="article-title">A influência das iniciativas ESG nas decisões de investidores qualificados</h2>
+        <p class="article-authors">Rogério Rego da Silva, Sérgio Augusto Pereira Bastos, Rodrigo Oliveira da Silva, Nelson Oliveira Stefanelli</p>
+        
+        <div class="article-abstract">
+            <p style="text-indent: 0; margin-bottom: 0;"><b>Resumo:</b> O objetivo deste artigo é examinar a relação entre a percepção dos investidores sobre as iniciativas ambientais, sociais e de governança das empresas e a intenção de investimento em ações. Adicionalmente, testa-se a reputação e o desempenho financeiro como antecedentes das percepções dos investidores sobre as referidas iniciativas, bem como a moderação da aversão ao risco na relação entre estas e a intenção de investimento em ações de empresas consideradas ambientais, sociais e de governança (Environmental, Social, and Governance - ESG). A abordagem é quantitativa e descritiva com modelagem de equações estruturais por mínimos quadrados parciais (PLS-SEM). Os dados primários provêm de um questionário estruturado respondido por 155 investidores qualificados. As evidências revelam que a reputação tem um impacto positivo nas iniciativas ambientais, sociais e de governança. Já o desempenho financeiro tem uma relação positiva apenas com a governança. As iniciativas social e ambiental são positivamente relacionadas à intenção de investimento em ações ESG, mas o mesmo não ocorre com a dimensão de governança.</p>
+        </div>
+
+        <div class="two-columns">
+            <h3>1. Introdução</h3>
+            <p>Na atualidade, observa-se um interesse massivo e crescente pela abordagem ESG (Environmental, Social, and Governance) no ecossistema corporativo, o que abrange diretamente as decisões de investimento de capitalização das empresas (Pedersen et al., 2021) e a participação ativa de investidores institucionais e de varejo por meio do mercado de ações (Raut et al., 2021). Este movimento global sugere uma mudança paradigmática: a motivação vinculada a externalidades sociais ou ambientais pode, em determinados nichos, se revelar tão ou mais influente do que a mera expectativa de retorno financeiro tradicional, relativizando as métricas ortodoxas de risco percebido.</p>
+            <p>O compromisso pragmático e as ações institucionais das organizações em relação às iniciativas ESG estão no centro nervoso do debate sobre a governança e gestão das corporações contemporâneas (Raut et al., 2023). Este fato afeta diretamente a divulgação compulsória ou voluntária de relatórios de sustentabilidade que buscam ancoragem nos Princípios de Investimento Responsável (PRI). Desse modo, as companhias de capital aberto respondem à pressão crescente de seus *stakeholders* e à conscientização pública sobre a sustentabilidade a longo prazo.</p>
+            <p>A reputação institucional de uma empresa é um ativo intangível que decorre das percepções e juízos de valor de seus diversos públicos de interesse. Por sua vez, esta mesma reputação retroalimenta a confiança do mercado. Sendo assim, a reputação prévia pode impactar *ex-ante* as percepções dos agentes financeiros sobre a veracidade e eficácia das iniciativas ESG divulgadas pelas empresas.</p>
+            <p>Em consonância com a urgência do tema, a Comissão de Valores Mobiliários (CVM) brasileira editou a Resolução nº 193/2023, estabelecendo a obrigatoriedade de elaboração e divulgação de relatórios de sustentabilidade padronizados para companhias abertas a partir de janeiro de 2026. Tal regulação reflete o reconhecimento formal do Estado sobre o peso do ESG na precificação de negócios, promovendo o *accountability* e mitigando riscos de assimetria informacional.</p>
+            <p>Paralelamente, o mercado lida com o fenômeno do *greenwashing*, onde corporações projetam uma imagem artificial de responsabilidade socioambiental desprovida de lastro fático. Embora não seja o escopo direto desta pesquisa avaliar o *greenwashing*, a sua existência torna o processo de tomada de decisão do investidor mais complexo e cauteloso.</p>
+            <p>Surpreendentemente, ainda há escassez na literatura científica sobre como esse impacto sustentável é absorvido cognitivamente por investidores qualificados (Arco-Castro et al., 2023). No Brasil, o investidor qualificado é legalmente definido como aquele que detém investimentos financeiros atestados superiores a R$ 1.000.000,00 e firma termo atestando tal condição. Diante dessa lacuna, a questão central desta pesquisa é: <i>As dimensões ambientais, sociais e de governança influenciam significativamente a intenção dos investidores qualificados ao alocarem capital em participações acionárias?</i></p>
+
+            <h3>2. Referencial Teórico e Hipóteses</h3>
+            <h4>2.1. O Tripé ESG</h4>
+            <p>O investimento balizado por critérios ESG pressupõe a integração de métricas não contábeis à avaliação financeira de uma companhia (Maiti, 2021). A literatura indica que empresas maduras em ESG tendem a apresentar um menor custo de capital de terceiros, menor volatilidade em suas ações no mercado secundário e uma resiliência operacional superior em momentos de choques sistêmicos (como ocorrido na crise da COVID-19).</p>
+
+            <h4>2.2. A Força da Reputação</h4>
+            <p>A reputação empresarial atua como um heurístico de confiança para o mercado financeiro. Quando investidores de alto patrimônio avaliam um ativo, a reputação pré-existente serve como um "filtro de credibilidade" para os relatórios de sustentabilidade apresentados. Postula-se que corporações amplamente respeitadas ganham o benefício da dúvida em suas declarações sustentáveis.</p>
+            <p><b>H1a/b/c:</b> A reputação corporativa impacta positivamente e de forma direta a percepção dos investidores sobre as dimensões de governança, social e ambiental, respectivamente.</p>
+
+            <h4>2.3. Desempenho Financeiro Prévio</h4>
+            <p>A "Teoria dos Recursos Disponíveis" argumenta que firmas com excelente saúde financeira e geração de caixa (<i>Free Cash Flow</i>) possuem a folga orçamentária (<i>slack</i>) necessária para investir pesadamente em projetos ESG, que muitas vezes possuem longo período de maturação.</p>
+            <p><b>H2a/b/c:</b> O desempenho financeiro passado impacta positivamente a percepção dos investidores de que a empresa investe corretamente nas dimensões de governança, social e ambiental.</p>
+
+            <h4>2.4. Intenção de Investimento</h4>
+            <p>A teoria da escolha racional em finanças comportamentais sugere que o investidor maximiza utilidade. Se o ESG reduz o risco de cauda (litígios ambientais, greves, escândalos de corrupção), a intenção de alocar recursos deve aumentar proporcionalmente à percepção de qualidade dessas práticas.</p>
+            <p><b>H3, H4, H5:</b> As percepções sobre as dimensões de Governança, Social e Ambiental impactam, nesta ordem, positivamente a intenção de investimento em ações da companhia.</p>
+
+            <h3>3. Metodologia</h3>
+            <p>O desenho de pesquisa adotado é quantitativo, transversal e descritivo. O instrumento de coleta de dados (<i>survey</i>) foi um questionário estruturado em escala Likert de 5 pontos, distribuído via redes profissionais (LinkedIn) e plataformas de investimento. A filtragem rigorosa resultou em uma amostra não-probabilística de 155 investidores enquadrados como "qualificados" segundo a regulação da CVM.</p>
+            <p>Para a análise multivariada, utilizou-se a técnica de Modelagem de Equações Estruturais por Mínimos Quadrados Parciais (PLS-SEM) rodada no software <i>SmartPLS 4</i>. A validade convergente (AVE > 0,5) e a confiabilidade composta (CR > 0,7) dos construtos foram atestadas satisfatoriamente no modelo de mensuração.</p>
+
+            <h3>4. Resultados e Discussão</h3>
+            <p>Os resultados do modelo estrutural revelaram dados contraintuitivos à luz da teoria clássica de finanças.</p>
+            <p>Primeiramente, as hipóteses <b>H1a, H1b e H1c foram confirmadas</b> com alta significância (p < 0,01). O peso da Reputação explicou expressiva variância dos construtos ambientais e sociais. No entanto, em relação ao Desempenho Financeiro (H2), <b>apenas a Governança (H2c) apresentou correlação positiva e significante</b>. Os investidores não associam necessariamente lucros passados altos a boas práticas ecológicas ou sociais, mas exigem que empresas lucrativas tenham governança blindada (auditoria rígida, conselho independente).</p>
+            
+            <p>No teste do cerne da pesquisa (intenção de investimento), os coeficientes de caminho mostraram que as <b>iniciativas Ambientais (H3) e Sociais (H4) possuem impacto direto, positivo e significativo</b> na disposição do investidor qualificado alocar seu patrimônio. Paradoxalmente, a <b>Governança (H5) não apresentou significância estatística</b> como influenciadora direta da intenção de compra da ação.</p>
+            <p>Uma possível explicação para a rejeição de H5 reside na "teoria do fator higiênico": no atual estágio de sofisticação do Novo Mercado da B3, o investidor qualificado já pressupõe que a boa governança é uma obrigação basal, não um diferencial estratégico que motive um prêmio (<i>premium</i>) na decisão de compra. O que atrai o capital excedente hoje é o diferencial "E" e "S".</p>
+
+            <h3>5. Considerações Finais</h3>
+            <p>Conclui-se que o investidor de alto nível financeiro, gerindo grandes volumes de capital, não é mais estritamente pautado por análise fundamentalista de lucros imediatos. As dimensões ambientais e sociais tornaram-se vetores ativos de atração de <i>equity</i>. As empresas precisam internalizar que possuir um forte balanço patrimonial não garante a percepção pública de sustentabilidade.</p>
+            <p>Este estudo provê uma bússola inestimável para os departamentos de Relações com Investidores (RI) estruturarem seus relatórios e suas narrativas corporativas focadas em emissões de baixo carbono e responsabilidade com a comunidade para destravar valor nas rodadas de captação.</p>
+
+            <div class="references-section">
+                <h4>Referências</h4>
+                <p>ARCO-CASTRO, M. L., López-Pérez, M. V., Pérez-López, M. C., & Rodríguez-Ariza, L. (2023). Do ESG controversies matter to investors? <i>Business Strategy and the Environment</i>, 32(6).</p>
+                <p>MAITI, M. (2021). Is ESG the succeeding risk factor? <i>Journal of Sustainable Finance & Investment</i>, 11(3), 199-213.</p>
+                <p>PEDERSEN, L. H., Fitzgibbons, S., & Pomorski, L. (2021). Responsible investing: The ESG-efficient frontier. <i>Journal of Financial Economics</i>, 142(2), 572-597.</p>
+                <p>RAUT, R. K., Kumar, R., & Das, N. (2021). ESG performance and firm value: The moderating role of disclosure. <i>Managerial Finance</i>, 47(11), 1625-1644.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Artigo 2: Pirâmide de Minsky -->
+    <div class="magazine-section">
+        <div class="section-header">
+            <span>Artigos Acadêmicos - Teoria Econômica</span>
+            <span>Págs. 6 - 7</span>
+        </div>
+        
+        <h2 class="article-title">A Pirâmide de Minsky: Uma apresentação alternativa da hipótese da instabilidade financeira</h2>
+        <p class="article-authors">Pedro Henrique Nascimento, Rogério Pereira de Andrade</p>
+        
+        <div class="article-abstract">
+            <p style="text-indent: 0; margin-bottom: 0;"><b>Resumo:</b> Este artigo propõe uma interpretação didática e alternativa da Hipótese de Instabilidade Financeira (HIF) de Hyman Minsky, valendo-se da modelagem figurativa de uma pirâmide. A partir deste construto visual e teórico, examinam-se a estática e a dinâmica do capitalismo financeirizado. O componente estático consolida as conexões essenciais envolvendo a incerteza keynesiana, a preferência estrutural pela liquidez e o binômio do investimento corporativo. O componente dinâmico explora a mutação cíclica dos balanços patrimoniais corporativos — transitando da postura <i>Hedge</i> para a especulativa e, finalmente, <i>Ponzi</i> — ditada pela ilusão de sucesso das escolhas pregressas. A deformação geométrica dessa pirâmide ao longo do ciclo de expansão ilustra de forma visceral o acúmulo endógeno de fragilidades, culminando no seu inevitável colapso (o "Momento Minsky"), revelando por que a estabilidade gera a instabilidade nas economias capitalistas.</p>
+        </div>
+
+        <div class="two-columns">
+            <h3>1. Introdução</h3>
+            <p>Hyman P. Minsky (1919–1996) desponta na historiografia do pensamento econômico como a figura central da tradição Pós-Keynesiana no que tange à compreensão orgânica do dinheiro, dos ciclos de crédito e das crises bancárias. Minsky ficou consagrado mundialmente após o colapso do <i>subprime</i> (2008) por ter concebido a Hipótese da Instabilidade Financeira (HIF), um <i>framework</i> lógico que contesta a premissa neoclássica de que o mercado tende ao equilíbrio geral estacionário.</p>
+            <p>O propósito seminal deste artigo é recontextualizar e sistematizar a HIF a partir de uma inovadora taxonomia visual: a construção, a reconstrução alavancada e o colapso catastrófico de uma "pirâmide de balanços". Esta alegoria não é mero artifício didático, mas uma ferramenta analítica que permite decompor o modelo de Minsky em um vetor estático (a mecânica de precificação dos ativos de capital no presente imediato) e um vetor dinâmico intertemporal (o encadeamento histórico das decisões de endividamento).</p>
+
+            <h3>2. A Estática: A Fundação da Pirâmide</h3>
+            <p>Na concepção inicial, toda unidade econômica capitalista opera sobre uma estrutura de balanço. O formato piramidal inicial, largo em sua base e estreito em seu vértice, reflete o comportamento conservador herdado logo após uma recessão econômica aguda.</p>
+            
+            <h4>2.1. O Alicerce: Incerteza e Liquidez</h4>
+            <p>O chão da economia não é o risco probabilístico calculável, mas a "Incerteza Verdadeira" (ou incerteza knightiana/keynesiana) em relação a um futuro não-ergódico. Minsky argumenta que, em cenários de pessimismo pós-crise, a preferência pela liquidez é extremada. Bancos e corporações exigem altas margens de segurança. Na base da pirâmide estão os ativos monetários líquidos e os títulos da dívida pública federal (<i>outside money</i>), que servem como diques de proteção contra o colapso dos fluxos de caixa operacionais.</p>
+
+            <h4>2.2. O Centro Gravitacional: O Sistema de Dois Preços</h4>
+            <p>A HIF estrutura a decisão de investir baseada no descolamento de duas curvas de precificação distintas:</p>
+            <ul>
+                <li><b>Preço de Demanda de Ativos de Capital (Pk):</b> É o valor presente líquido (VPL) subjetivo atribuído pelos empresários aos bens de capital, precificado pelo somatório das quase-rendas futuras esperadas e descontado pela taxa de juros e pelo prêmio de risco.</li>
+                <li><b>Preço de Oferta de Bens de Investimento (Pi):</b> É o custo objetivo de reposição ditado pela indústria fabricante de maquinários, incluindo mão de obra, matéria-prima e o <i>mark-up</i> industrial.</li>
+            </ul>
+            <p>O investimento produtivo — a alavanca do PIB — apenas se materializa, formando o topo estrutural da pirâmide, quando <i>Pk</i> excede <i>Pi</i>. Na fase depressiva, o pessimismo deprime o <i>Pk</i> abaixo do <i>Pi</i>, paralisando a expansão da capacidade instalada.</p>
+
+            <h3>3. A Dinâmica: O Capitalismo como Processo</h3>
+            <p>Se a estabilidade prevalece, o sucesso operacional do presente contamina as expectativas futuras. O tempo histórico atua corroendo a memória do trauma recessivo. Ocorre, então, a fase de <b>Reconstrução da Pirâmide</b>, impulsionada pelo que Minsky chama de "Destruição da Margem de Segurança".</p>
+
+            <h4>3.1. A Transmutação dos Perfis Financeiros</h4>
+            <p>Para financiar a aquisição dos ativos de capital (investimento), as corporações buscam os bancos comerciais (criadores endógenos de moeda fiduciária). Minsky classifica o arcabouço da dívida na economia em três posturas evolutivas que corroem a sustentabilidade do sistema:</p>
+            <ul>
+                <li><b>Unidades Hedge (Protegidas):</b> O fluxo de caixa operacional bruto é, em qualquer período, significativamente maior do que o somatório de amortizações e juros da dívida contraída. Trata-se do estrato mais seguro.</li>
+                <li><b>Unidades Especulativas:</b> Impulsionadas pelo sucesso pretérito, as firmas se alavancam utilizando endividamento de curto prazo para financiar ativos ilíquidos de longo prazo. O fluxo de caixa cobre apenas os juros. A corporação necessita refinanciar (rolar) perpetuamente o principal da dívida.</li>
+                <li><b>Unidades Ponzi:</b> O ápice da euforia especulativa. O fluxo de caixa operacional não é suficiente sequer para cobrir a despesa financeira com os juros (serviço da dívida). A firma emite nova dívida (ou liquida capital) apenas para pagar juros velhos, operando na expectativa cega de valorização perpétua do ativo subjacente (como no mercado imobiliário).</li>
+            </ul>
+
+            <h3>4. O "Momento Minsky": O Colapso e a Deflação de Dívidas</h3>
+            <p>No auge do ciclo de <i>boom</i>, a arquitetura da pirâmide está geometricamente distorcida: possui uma base monetária estreita (reservas líquidas desprezíveis) suportando um topo gigantesco e pesado, composto maciçamente por financiamentos Especulativos e <i>Ponzi</i> interligados.</p>
+            <p>O evento de ruptura — batizado posteriormente por economistas do mercado como <i>"O Momento Minsky"</i> — é geralmente precipitado por um choque exógeno ou endógeno: a autoridade monetária (Banco Central) eleva subitamente a taxa básica de juros para conter gargalos inflacionários. De imediato, o custo de refinanciamento explode e o Valor Presente (Pk) dos ativos desaba.</p>
+            <p>Unidades Ponzi e Especulativas perdem subitamente o acesso ao mercado de crédito (crise de liquidez). Na tentativa desesperada de gerar caixa, corporações e bancos liquidam seus ativos de capital simultaneamente no mercado (<i>fire sales</i>). O despejo massivo derruba verticalmente o preço de mercado dos ativos, corroendo as garantias bancárias e gerando um processo cumulativo de falências cruzadas: o famigerado efeito Fisher de "Deflação de Dívidas" (<i>Debt Deflation</i>).</p>
+
+            <h3>5. Conclusões Teóricas</h3>
+            <p>A pirâmide minskyana desaba em escombros, não por culpa de "choques externos aleatórios" em um sistema harmonioso, mas porque a instabilidade é a lei de gravidade imanente da arquitetura financeira de livre mercado. Como o próprio Minsky eternizou no axioma central de sua obra: <i>"A Estabilidade é Destabilizadora"</i>.</p>
+            <p>O longo período de prosperidade gera uma confiança cega que engendra inevitavelmente as inovações financeiras perniciosas e o sobre-endividamento (<i>over-indebtedness</i>). Para o paradigma pós-keynesiano, a regulação estatal macroprudencial anticíclica e a atuação do Banco Central como Emprestador de Última Instância (<i>Big Bank</i>) aliado ao déficit público coordenado (<i>Big Government</i>) são os únicos pilares capazes de evitar que a queda da pirâmide degenere em uma profunda e duradoura Depressão dos anos 1930.</p>
+
+            <div class="references-section">
+                <h4>Referências</h4>
+                <p>MINSKY, H. P. (1957). Central Banking and Money Market Changes. <i>The Quarterly Journal of Economics</i>, 71(2), 171-187.</p>
+                <p>MINSKY, H. P. (1986). <i>Stabilizing an Unstable Economy</i>. Yale University Press.</p>
+                <p>WRAY, L. R. (2016). <i>Why Minsky Matters: An Introduction to the Work of a Maverick Economist</i>. Princeton University Press.</p>
+                <p>PALLEY, T. (2010). The limits of Minsky's financial instability hypothesis as an explanation of the crisis. <i>Monthly Review</i>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Artigo 3: Custos Setor Público -->
+    <div class="magazine-section">
+        <div class="section-header">
+            <span>Artigos Acadêmicos - Contabilidade Pública</span>
+            <span>Págs. 8 - 9</span>
+        </div>
+        
+        <h2 class="article-title">Associação entre a Implantação do Sistema de Informação de Custos nos Estados Brasileiros e Variáveis Socioeconômicas</h2>
+        <p class="article-authors">Angeliana Ferreira da Silva, Alessandra Carvalho de Vasconcelos</p>
+        
+        <div class="article-abstract">
+            <p style="text-indent: 0; margin-bottom: 0;"><b>Resumo:</b> O imperativo legal do uso de informações de custos no setor público brasileiro data de 1964, ancorado na Lei nº 4.320. Contudo, estudos empíricos revelam um fosso abismal entre a retórica da legislação e a efetiva execução, evidenciando que a gestão de custos (SIC) nos entes governamentais estaduais permanece no estágio de "engatinhamento". O presente artigo analisa de forma inédita a associação estatística entre as fases de maturidade na implantação do SIC nos estados federados do Brasil e os indicadores socioeconômicos macrorregionais. A metodologia aplicou questionários (com base na Lei de Acesso à Informação) nos 27 estados. Os dados apontaram que assombrosos 66,7% das secretarias da fazenda estudadas apenas debatem a questão teoricamente (fase de estudos). Apenas 25% executam algum piloto tecnológico. Demonstrou-se pelo teste Qui-Quadrado de Pearson que existe uma correlação significativa (p < 0,05) onde o alto IDH e a magnitude da receita orçamentária arrecadada funcionam como os grandes propulsores da modernização informacional das contabilidades públicas estaduais.</p>
+        </div>
+
+        <div class="two-columns">
+            <h3>1. Fundamentação Legal e Teórica</h3>
+            <p>O princípio da Eficiência, esculpido no bojo da Constituição Federal de 1988 por meio da reforma gerencial, demanda do administrador público a maximização dos serviços sociais empregando o mínimo dispêndio de recursos derivados da tributação da sociedade. Tal otimização da máquina do Estado é impraticável sem a mensuração acurada, registro detalhado e evidenciação analítica dos custos inerentes ao oferecimento de bens e serviços, desde a construção de uma ponte até o custo diário de um leito hospitalar materno-infantil.</p>
+            <p>O arcabouço normativo para isso está desenhado. A Lei 4.320/64, o Decreto-Lei 200/67, a Lei de Responsabilidade Fiscal (LRF/2000) e, de forma categórica, a atual Norma Brasileira de Contabilidade Aplicada ao Setor Público (NBC TSP 34 - Custos) ditam a compulsoriedade da implantação. A Secretaria do Tesouro Nacional (STN) provê os manuais de instrução. Contudo, implementar um banco de dados integrado de custos que extraia <i>inputs</i> do SIAFEM, SIAPE e sistemas de controle patrimonial para rodar lógicas de custeio (ABC ou Direto) demanda <i>know-how</i> tecnológico massivo e força de vontade política que escasseiam nas administrações periféricas (Costa et al., 2017).</p>
+
+            <h3>2. Metodologia de Pesquisa</h3>
+            <p>Optou-se por um modelo metodológico de campo, de essência quantitativa e viés descritivo. Para perfurar a opacidade natural do ente público, a técnica de coleta baseou-se no Sistema Eletrônico de Informações ao Cidadão (e-SIC) federal associado ao disparo do <i>Google Forms</i> diretamente às Secretarias de Fazenda/Economia (ou Contadorias-Gerais) das 27 Unidades da Federação. Obtivemos respostas validadas de 24 estados, mais dois cruzamentos passivos, abrangendo 96% do território em 2024.</p>
+            <p>Como variáveis dependentes (V.D.), foram categorizados os 4 estágios do SIC: (I) Nenhum estudo, (II) Fase de Estudos Teóricos, (III) Implantação Parcial / Piloto (IV) Plena Operação Gerencial. As Variáveis Independentes (V.I.) socioeconômicas foram colhidas do IBGE: IDEB, IDH (2021), PIB nominal regional, Rendimento médio per capita e o montante anual de Receitas Orçamentárias Realizadas. A prova de hipóteses ancorou-se no Teste de Independência Qui-Quadrado de Pearson (χ²) via software IBM SPSS.</p>
+
+            <h3>3. Resultados e Mapeamento Nacional</h3>
+            <p>O mapeamento cartográfico desenhou um cenário de profunda estagnação concentrada no eixo Norte-Nordeste. Somente 2 estados extremados (Roraima e Paraíba) assumiram não possuir planejamento qualquer. Todavia, a vasta massa da amostra (16 estados, perfazendo mais de 60%) confessou estar restrita ao limbo da "Fase de Estudos", sem sistema parametrizado ou rodando em servidores físicos.</p>
+            <p>O eixo de liderança concentra-se em polos abastados: São Paulo, Santa Catarina, Rio Grande do Sul e Distrito Federal operam em fases avançadas. O RS apresentou a maturidade máxima informada, com relatórios gerenciais subsidiando cortes de gastos do governador.</p>
+            
+            <h4>Aplicações Estatísticas (SPSS)</h4>
+            <p>Na rodagem das matrizes de contingência, procuramos refutar a Hipótese Nula (H0) de independência entre as matrizes socioculturais do estado e a vanguarda tecnológica de sua contabilidade.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Construto (Variável)</th>
+                        <th>Estatística (χ²)</th>
+                        <th>P-Value</th>
+                        <th>Conclusão do Teste</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Educação Média (IDEB)</td>
+                        <td>39,86</td>
+                        <td>0,0680</td>
+                        <td>Sem Associação Direta</td>
+                    </tr>
+                    <tr>
+                        <td>Desenvolvimento (IDH)</td>
+                        <td>41,53</td>
+                        <td><b>0,0005</b></td>
+                        <td><b>Alta Associação</b></td>
+                    </tr>
+                    <tr>
+                        <td>Produto Interno (PIB)</td>
+                        <td>55,45</td>
+                        <td>0,0529</td>
+                        <td>Sem Associação (Marginal)</td>
+                    </tr>
+                    <tr>
+                        <td>Renda Per Capita</td>
+                        <td>51,75</td>
+                        <td>0,4837</td>
+                        <td>Sem Associação</td>
+                    </tr>
+                    <tr>
+                        <td>Caixa do Estado (Receitas)</td>
+                        <td>52,34</td>
+                        <td><b>0,0007</b></td>
+                        <td><b>Alta Associação</b></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>4. Análise e Considerações Finais</h3>
+            <p>Os coeficientes p < 0,01 do Qui-Quadrado desnudam a dura realidade material: não basta a força de uma lei contábil central para modernizar a federação. Existe um determinismo econômico cristalino. A probabilidade de um estado conseguir investir em arquitetura de <i>Data Warehouse</i>, pagar consultorias especializadas de TI em custeio e treinar exércitos de servidores efetivos para alimentar corretamente os módulos logísticos depende visceralmente de um IDH forte e, mais crucial ainda, de volumosa Receita Orçamentária.</p>
+            <p>Em suma, "custa caro calcular o custo". Estados de baixa renda não possuem a folga financeira e o capital intelectual absorvido para implantar ferramentas gerenciais. A inovação recomendada por este artigo reside na premente necessidade da Secretaria do Tesouro Nacional formatar sistemas-padrão de nuvem "prontos-para-uso", cedendo-os gratuitamente e prestando apadrinhamento tecnológico aos estados periféricos. A contabilidade sem investimento de capital restará eternamente defasada da lei.</p>
+
+            <div class="references-section">
+                <h4>Referências</h4>
+                <p>COSTA, F. et al. (2017). Dificuldades na implementação do Sistema de Custos no Setor Público. <i>Revista de Contabilidade Pública</i>.</p>
+                <p>SILVA, P. et al. (2022). Evolução da NBC TSP 34 e convergência internacional. <i>Journal of Public Administration</i>.</p>
+                <p>BRASIL. Lei n° 4.320, de 17 de março de 1964. Estatui Normas Gerais de Direito Financeiro.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Artigo 4: Seguros Agrícolas -->
+    <div class="magazine-section">
+        <div class="section-header">
+            <span>Artigos Acadêmicos - Atuária e Agronegócio</span>
+            <span>Págs. 10 - 11</span>
+        </div>
+        
+        <h2 class="article-title">Um estudo sobre a diversificação espacial de riscos climáticos em seguros agrícolas no Brasil</h2>
+        <p class="article-authors">João Vinícius de França Carvalho, Nathalia Costa Fonseca, Daniel Fabri Bagatini</p>
+        
+        <div class="article-abstract">
+            <p style="text-indent: 0; margin-bottom: 0;"><b>Resumo:</b> O Brasil repousa estrategicamente como o celeiro agrícola global; o setor agropecuário domina a pauta de exportações e representa fatia essencial do Produto Interno Bruto (PIB). No entanto, toda a cadeia opera sob o céu aberto, maciçamente vulnerável à imprevisibilidade do caos climático sistêmico. Este *paper* examina cirurgicamente a relação de causa e efeito das intempéries sobre o volume financeiro de sinistros indenizados pelas seguradoras. Rompendo com análises lineares obsoletas, a pesquisa insere a fronteira da econometria espacial com dados em painel. O banco de dados combinou as apólices rurais (SUSEP) com telemetria rigorosa (INMET), abrangendo 5.460 pontos de observação temporais nos 26 estados (2006 a 2023). O modelo "Spatial Durbin" desvendou que a precipitação e a umidade são preditores vorazes de catástrofes de safra. Comprovou-se um transbordamento (<i>spillover</i>) do desastre climático que oblitera as barreiras estaduais, provando que a excessiva concentração das apólices do mercado corporativo no eixo Sul/Sudeste quebra os princípios da mutualidade (diversificação) e ameaça o balanço atuarial das resseguradoras do país.</p>
+        </div>
+
+        <div class="two-columns">
+            <h3>1. Contextualização Macroeconômica</h3>
+            <p>O binômio Segurança Alimentar e Mudança Climática forjou-se como o desafio supremo do século XXI. Dados consolidados da Organização das Nações Unidas para a Alimentação e a Agricultura (FAO) alertam que eventos naturais extremos consumiram impressionantes US$ 3,8 trilhões da capacidade produtiva global nas últimas três décadas. No cerrado e nas planícies subtropicais brasileiras, não é a crise financeira que destrói o patrimônio de uma década, e sim um período severo de "La Niña".</p>
+            <p>O seguro rural, fortemente alavancado pelas subvenções do Programa de Seguro Rural (PSR), atua como o escudo financeiro do agronegócio, estabilizando a renda do produtor em caso de quebra de safra. A premissa secular do mercado segurador (a Lei dos Grandes Números de Bernoulli) atesta que a diversificação dilui o risco. No entanto, o fenômeno climático é, por excelência, espacialmente correlacionado. Uma tempestade de granizo massiva não afeta apenas uma fazenda, mas varre polígonos produtivos inteiros, engatilhando indenizações em cascata e forçando as reservas de liquidez das seguradoras à exaustão.</p>
+
+            <h3>2. Modelagem Econométrica Espacial</h3>
+            <p>Metodologias clássicas de Mínimos Quadrados Ordinários (MQO) fracassam retumbantemente no estudo de sinistros, pois não lidam com o fenômeno da correlação dos vizinhos de borda. Para capturar a física das massas de ar, o estudo adotou o estado da arte: a Econometria Espacial com Painéis de Dados em efeito fixo temporais.</p>
+            <p>A formulação do <b>Modelo Espacial de Durbin (SDM)</b> foi delineada matematicamente para absorver as variações do estado endógeno (i) em conjunto com a defasagem espacial (W) de todos os seus estados vizinhos, em tempo (t):</p>
+            
+            <div class="formula">
+                <i>y<sub>it</sub> = ρWy<sub>it</sub> + α + X<sub>it</sub>β + WX<sub>it</sub>θ + τ<sub>t</sub> + υ<sub>it</sub></i>
+            </div>
+            
+            <p>Onde a matriz de pesos geográficos (W) foi estruturada a partir dos centroides de cada UF utilizando a técnica de vizinhos mais próximos (K-NN) em um raio elástico de até 855 quilômetros. A variável dependente <i>y</i> retrata o logaritmo dos sinistros diretos, confrontada pelo vetor <i>X</i> de variáveis climatológicas: Índice pluviométrico, Umidade relativa, Amplitude térmica máxima e mínima, e velocidade de rajadas de ventos superficiais (dados do Instituto Nacional de Meteorologia - INMET).</p>
+
+            <h3>3. Resultados e Transbordamentos</h3>
+            <p>Os testes de robustez confirmaram que o modelo espacial suplantou em eficácia a estatística comum (AIC e BIC demonstraram significância na inserção dos coeficientes espaciais ρ e θ). A assimetria de emissão revelada pelos dados brutos da SUSEP já atestava que mais de 70% dos Prêmios Ganhos nacionais eram emitidos concentradamente nos celeiros do Paraná (PR), Rio Grande do Sul (RS) e São Paulo (SP).</p>
+            <p>A regressão capturou as dinâmicas reais que causam as perdas materiais. De forma instigante, o excesso de chuva (precipitação pluvial) da própria unidade federativa não explicou a disparada da sinistralidade. A explicação agronômica reside no Zoneamento Agrícola de Risco Climático (ZARC), que exige planejamento de plantio fora da janela de tempestades locais previsíveis. Porém, quando se analisou o coeficiente <i>lag espacial</i> da chuva (<i>W*Chuva</i>), observou-se forte causalidade (enchentes avassaladoras que sobem de estados ao sul ou desabam nas cabeceiras pluviais de estados limítrofes, arruinando a hidro-logística).</p>
+            <p>O coeficiente mais dramático repousou sobre a <b>Umidade Relativa (β estimado em -2.391.100, significante a 0,1%)</b>. A queda brutal do índice de umidade mapeou perfeitamente as grandes "Secas Verdes" do Centro-Oeste e do bioma Sul que desencadearam a maior onda de repasses das resseguradoras na safra crítica de 2020/2021. Correlacionada a isso, a Temperatura Mínima capturou a ruína causada pelos episódios de "Geada Negra" (formação de gelo letal aos tecidos vegetais na bacia do Paraná).</p>
+
+            <h3>4. Conclusão Atuarial</h3>
+            <p>A prova econométrica do estudo é indelével: o risco climático e as quebras de safra não respeitam mapas políticos estaduais. Existe uma correlação espacial forte, comprovando que a ocorrência de sinistralidade no estado "A" aumenta exponencialmente o risco matemático de quebra e indenização dos campos de soja do estado "B" contíguo.</p>
+            <p>Se as seguradoras no Brasil insistem em manter a concentração de subscrição de apólices no bloco da Região Sul, abrem mão criminosamente do mecanismo basilar do risco de apólice — a mutualidade compensatória. Recomenda-se enfaticamente que a política pública subvenção federal ao Prêmio do Seguro estimule, com cotas prioritárias, a expansão acelerada do uso da ferramenta securitária na nova fronteira agrícola (MATOPIBA) e na Amazônia Legal, criando um colchão financeiro pulverizado capaz de neutralizar choques micro-climáticos concentrados.</p>
+
+            <div class="references-section">
+                <h4>Referências</h4>
+                <p>FAO. Food and Agriculture Organization of the United Nations (2023). <i>The Impact of Disasters on Agriculture and Food Security</i>. Rome.</p>
+                <p>CARVALHO, J. V. F., Fonseca, N. C., & Bagatini, D. F. (2025). Econometria espacial de painel aplicada a riscos agrícolas. <i>Revista Brasileira de Risco e Seguro</i>.</p>
+                <p>SUSEP (2023). <i>Sistema de Estatísticas da SUSEP</i>. Superintendência de Seguros Privados. Brasil.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Artigo 5: Celesc -->
+    <div class="magazine-section" style="margin-bottom: 3cm;">
+        <div class="section-header">
+            <span>Artigos Acadêmicos - Valuation Corporativo</span>
+            <span>Págs. 12 - 13</span>
+        </div>
+        
+        <h2 class="article-title">A Dinâmica da Precificação de Ativos no Setor de Utilidade Pública: Uma Análise Correlacional da Celesc</h2>
+        <p class="article-authors">Corpo Editorial de Mercado</p>
+        
+        <div class="article-abstract">
+            <p style="text-indent: 0; margin-bottom: 0;"><b>Resumo:</b> O ambiente de negociação de ações de utilidade pública no Brasil (B3) constitui um laboratório analítico formidável para atestar a validade contemporânea dos teoremas basilares de finanças corporativas. Este artigo detém-se em dissecar a excepcional escalada de re-precificação nominal (<i>re-rating</i>) das quotas da estatal catarinense CELESC (CLSC3 / CLSC4) no decênio 2016-2026. Procedendo à decomposição de seu fluxo de balanço contábil, da geração marginal do EBITDA e da sua inclemente política trimestral de blindagem tributária e vazão de dividendos/JCP, demonstramos matematicamente por que investidores premiaram tão intensamente o capital preferencial da companhia, provando na prática a sinergia entre as teorias "Sinalização" (<i>Signaling</i>) e a Teoria clássica do "Pássaro na Mão" (<i>Bird in the Hand</i>).</p>
+        </div>
+
+        <div class="two-columns">
+            <h3>1. Os Pilares Teóricos do Desconto de Caixa e Rendimentos</h3>
+            <p>O axioma central de *Valuation* postula que uma fatia do patrimônio corporativo (ação) vale o valor presente (VP) de todo o fluxo de caixa livre futuro que os investidores minoritários conseguirão extrair do negócio, ajustado implacavelmente por uma taxa de risco compatível. Contudo, em companhias detentoras de monopólios naturais em redes críticas de infraestrutura — notavelmente transmissoras e distribuidoras de energia da ANEEL — o mercado lida com uma topologia óssea diferente. O capital intensivo enterrado no ativo físico é recuperado via Parcela B da revisão tarifária.</p>
+            <p>É sob essa égide que o arcabouço da <b>Teoria Pássaro na Mão</b> (Gordon, 1959; Lintner, 1956) ressurge como matriz analítica. Gordon inferiu que a liquidez presente na conta de corretagem do investidor detém valor comportamental e matemático superior a promessas longínquas de ganhos de capital reinvestido no balanço. Os fundos de proventos buscam um retorno direto imediato ("dividend yield") para neutralizar a ansiedade dos ruídos da macroeconomia e das ingerências políticas que comumente afligem o setor elétrico (Eletrobras, Copel pre-privatização).</p>
+            <p>Simultaneamente, corre em paralelo a <b>Teoria da Sinalização (Signaling)</b> (Bhattacharya, 1979). Quando uma gestão submete o caixa operacional a sangrias trimestrais constantes, com consistência dogmática de distribuição de lucro contábil perene, ela sinaliza tacitamente que o corpo gerencial está convicto de que as métricas de receita não são ilusões contábeis não-realizáveis (fraude em reconhecimento), e o negócio subsistirá sadio aos choques conjunturais.</p>
+
+            <h3>2. O Laboratório Empírico (CLSC4)</h3>
+            <p>A Centrais Elétricas de Santa Catarina S.A. (Celesc), ente de economia mista do sul global, fornece tração a um PIB estadual marcadamente industrial, diversificado e sem o parasitismo do subdesenvolvimento endêmico. Contudo, operar no varejo elétrico (distribuição - Parcela A) expõe os balanços corporativos da companhia a oscilações climáticas rigorosas (risco hídrico da compra centralizada de Itaipu/térmicas via CCEE).</p>
+            <p>Na cronologia de sua reviravolta contábil, o marco temporal de 2016 serve como fundo do vale. A companhia sofria com margens estranguladas pela brutal recessão dilmista de 2015, registrando uma conversão irrisória da receita tarifária; o EBITDA marginal gravitava em esqueléticos 3,5%, drenando capital de giro e arruinando o Lucro Líquido final (base de proventos). O papel, como esperado, afundou para níveis limiares.</p>
+
+            <h3>3. Ponto de Inflexão (<i>Turnaround</i> Operacional)</h3>
+            <p>O ciclo 2017 a 2019 testemunhou cortes homéricos na folha parasitária e negociações implacáveis no custo administrável de dívida. Pela primeira vez na década operatória, a Celesc cruzou o Rubicão de R$ 609 milhões consolidados no EBITDA anual. A resiliência final do arranjo se deu na crise pandêmica (2020) atrelada à pior crise dos reservatórios do século: não obstante a tempestade perfeita que elevou os custos irrenunciáveis (energia comprada não administrável) em estratosféricos 35%, a demanda resiliente das indústrias catarinenses no mercado livre cativo garantiu que o indicador central tocasse o bilhão de reais de modo inédito.</p>
+            <p>Embalada no <i>capex</i> recorde de quatro bilhões ativado no quadriênio subsequente pelas gestões estaduais governamentais de Santa Catarina, a estrutura tarifária da Celesc capturou as revisões periódicas do capital enterrado. Em demonstrações financeiras publicadas recentemente (2024), a empresa anotou o ápice de R$ 715,8 milhões de lucros faturados — cravando expansão anual formidável de quase trinta por cento — e gerando um Retorno sobre o Patrimônio Líquido (ROE) de robustos 17,75%. O caixa tornou-se majestoso.</p>
+
+            <h3>4. Capitalização pelo Sistema de Pagamento e <i>Re-Rating</i></h3>
+            <p>Sem destinar esse caixa a aquisições megalomaníacas destrutivas (frequente <i>empire building</i> de estatais), a estrutura financeira concentrou-se na distribuição máxima exaurindo os artifícios legais. Mediante a forte utilização dos pagamentos sob a forma rubrica de <b>Juros sobre o Capital Próprio (JCP)</b>, o departamento contábil abateu violentamente a base de cálculo do IRPJ corporativo.</p>
+            <p>A média flutuante de remuneração fiduciária da Celesc, em ciclos trimestrais preestabelecidos com <i>datacom</i> previsíveis, gerou uma formidável e tentadora taxa de "Dividend Yield" perene de <b>9,87%</b> ao longo da amostra de 5 anos.</p>
+            <p>A percepção mercadológica da B3 convergiu para uma migração agressiva de portfólio. As ações da espécie Preferenciais da base de negociação (CLSC4) subiram em rampas meteóricas: saindo da depressão letárgica da faixa contida entre os R$ 70 a 80 para romper máximas na casa esmagadora dos R$ 144,76. Essa inflação de preço agregou estratosféricos três bilhões em "market cap" real injetado à companhia em exíguo prazo.</p>
+            <p>Ainda após a espetacularização do capital (100% de <i>upside</i>), constata-se pela lupa fundamentalista que o ativo negocia perto do suporte em módicos P/VPA (Preço sobre Valor Patrimonial) de 1,41x e EV/EBITDA de pechincha avaliado em 5,38. Isto decreta, no rito da análise acadêmica final e inconteste, que toda a inflação vertical do preço não derivou de "espumas" especulativas irracionais, mas foi perfeitamente alicerçada no tijolo fiduciário e nos pagamentos bilionários materializados em conta corrente, confirmando as teorias basilares de avaliação e proventos.</p>
+
+            <div class="references-section">
+                <h4>Referências</h4>
+                <p>BHATTACHARYA, S. (1979). Imperfect Information, Dividend Policy, and "The Bird in the Hand" Fallacy. <i>The Bell Journal of Economics</i>.</p>
+                <p>GORDON, M. J. (1959). Dividends, Earnings, and Stock Prices. <i>Review of Economics and Statistics</i>.</p>
+                <p>INVESTING.COM (2026). <i>CELESC PN (CLSC4) Historical Prices / Dividend Yield</i>. Acesso institucional para análise em março de 2026.</p>
+                <p>CELESC. <i>Demonstrações Financeiras Padronizadas e Relatório da Administração (2016 a 2025)</i>. CVM - Comissão de Valores Mobiliários. Florianópolis/SC.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
