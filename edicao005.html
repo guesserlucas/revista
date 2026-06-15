@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revista Sul-Brasileira de Contabilidade e Economia - Edição 005</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* Regras de Impressão (Print) */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background-color: white !important;
+            }
+            .magazine-section {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 1cm !important;
+                page-break-after: always;
+            }
+            .no-print {
+                display: none !important;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+            .two-columns {
+                column-count: 2;
+            }
+        }
+
+        @page {
+            size: A4;
+            margin: 1.5cm;
+        }
+
+        /* Estilos Globais */
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background-color: #e2e8f0;
+        }
+
+        /* Tipografia de Títulos */
+        h1, h2, h3, h4, h5 {
+            font-family: 'Merriweather', serif;
+            color: #1a3a64;
+            break-after: avoid;
+        }
+        
+        h1 { font-size: 2.5em; font-weight: 900; margin-bottom: 0.5em; text-align: center; }
+        h2 { font-size: 1.8em; font-weight: 700; border-bottom: 2px solid #d1e0ec; padding-bottom: 0.3em; margin-top: 1.5em; margin-bottom: 1em; }
+        h3 { font-size: 1.4em; font-weight: 700; margin-top: 1.5em; margin-bottom: 0.8em; }
+        h4 { font-size: 1.1em; font-weight: 700; margin-top: 1.2em; margin-bottom: 0.5em; color: #2c5282; }
+        
+        p { text-align: justify; margin-bottom: 1.2em; text-indent: 1.5em; }
+        ul, ol { text-align: justify; margin-bottom: 1.2em; padding-left: 2em; }
+        li { margin-bottom: 0.5em; }
+
+        /* Contêineres de Seção - Ajustados para não ter espaço em branco */
+        .magazine-section {
+            width: 100%;
+            max-width: 21cm;
+            height: auto;
+            margin: 1.5cm auto;
+            background-color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 2cm;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .cover-container {
+            width: 100%;
+            max-width: 21cm;
+            height: 29.7cm;
+            margin: 1.5cm auto;
+            background-color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            position: relative;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Diagramação em Colunas */
+        .two-columns {
+            column-count: 2;
+            column-gap: 1.2cm;
+            column-fill: balance;
+        }
+        
+        .two-columns > h3, 
+        .two-columns > h4, 
+        .two-columns > h5, 
+        .two-columns > table,
+        .two-columns > .formula,
+        .two-columns > .references-section {
+            column-span: all;
+            margin-top: 1.5em;
+        }
+
+        /* Elementos Acadêmicos */
+        .article-abstract {
+            background-color: #f8fafc;
+            border-left: 5px solid #1a3a64;
+            padding: 1.5em;
+            margin: 2em 0;
+            font-style: italic;
+            font-size: 0.95em;
+        }
+        
+        .article-authors {
+            font-weight: 700;
+            color: #4a5568;
+            margin-bottom: 1.5em;
+            text-align: center;
+            font-size: 1.1em;
+            text-indent: 0;
+        }
+        
+        .article-title {
+            text-align: center;
+            border-bottom: none;
+            font-size: 2em;
+            line-height: 1.3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+            font-size: 0.85em;
+            font-family: 'Lato', sans-serif;
+            page-break-inside: avoid;
+        }
+        th, td {
+            border: 1px solid #cbd5e0;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #edf2f7;
+            color: #1a3a64;
+            font-weight: 700;
+        }
+        
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            font-size: 1.1em;
+            background-color: #f7fafc;
+            padding: 10px;
+            text-align: center;
+            margin: 15px 0;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .references-section p {
+            font-size: 0.8em;
+            line-height: 1.5;
+            text-align: left;
+            text-indent: 0;
+            padding-left: 2em;
+            text-indent: -2em;
+            margin-bottom: 0.8em;
+        }
+
+        /* Cabeçalhos e Rodapés das Seções */
+        .section-header {
+            width: 100%;
+            text-align: left;
+            font-size: 0.75em;
+            color: #718096;
+            padding-bottom: 0.5cm;
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 1.5cm;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        /* Sumário */
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted #a0aec0;
+            padding: 0.8em 0;
+            font-size: 1.1em;
+        }
+        .toc-title {
+            max-width: 85%;
+            font-family: 'Merriweather', serif;
+        }
+        .toc-page {
+            font-weight: 700;
+            color: #1a3a64;
+        }
+
+        /* Utilitários Tailwind (simplificados) */
+        .absolute { position: absolute; }
+        .bottom-16 { bottom: 4rem; }
+        .bottom-6 { bottom: 1.5rem; }
+        .left-0 { left: 0px; }
+        .right-0 { right: 0px; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mr-6 { margin-right: 1.5rem; }
+        .mt-12 { margin-top: 3rem; }
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .rounded-full { border-radius: 9999px; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .border { border-width: 1px; border-style: solid; }
+        .border-gray-200 { border-color: rgb(229 231 235); }
+        .bg-gray-50 { background-color: rgb(249 250 251); }
+        .p-6 { padding: 1.5rem; }
+        .text-center { text-align: center; }
+        .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+        .font-bold { font-weight: 700; }
+        .uppercase { text-transform: uppercase; }
+        .tracking-wide { letter-spacing: 0.025em; }
+        .tracking-widest { letter-spacing: 0.1em; }
+        .text-blue-900 { color: rgb(30 58 138); }
+        .text-gray-200 { color: rgb(229 231 235); }
+        .text-gray-600 { color: rgb(75 85 99); }
+        .text-white { color: rgb(255 255 255); }
+        .shadow-md { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+    </style>
+</head>
+<body>
+
+    <!-- Capa -->
+    <div class="cover-container">
+        <div class="cover">
+            <img src="https://www.revistasulbrasileira.net.br/capa.png" alt="Capa da Revista Sul-Brasileira de Contabilidade e Economia" onerror="this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+             <div class="absolute bottom-16 left-0 right-0 text-center text-white text-3xl font-bold" style="background-color: rgba(26, 58, 100, 0.85); padding: 1rem; font-family: 'Merriweather', serif;">
+                EDIÇÃO 005 | JUNHO 2026
+            </div>
+            <div class="absolute bottom-6 left-0 right-0 text-center text-gray-200 text-lg tracking-widest" style="background-color: rgba(26, 58, 100, 0.85); padding: 0.5rem;">
+                REVISTASULBRASILEIRA.NET.BR
+            </div>
+        </div>
+    </div>
+
+    <!-- Sumário -->
+    <div class="magazine-section">
+        <div class="section-header">
+            <span>Revista Sul-Brasileira de Contabilidade e Economia</span>
+            <span>Edição 005 | Pág. 2</span>
+        </div>
+        <h1>Sumário</h1>
+        <div class="mt-12 mb-12">
+            <div class="toc-item"><span class="toc-title">Palavra do Editor</span><span class="toc-page">3</span></div>
+            <div class="toc-item"><span class="toc-title">Do Concurso à Prática Profissional: Análise dos Conteúdos Exigidos na Seleção de Contadores Públicos</span><span class="toc-page">4</span></div>
+            <div class="toc-item"><span class="toc-title">Padrões e Diretrizes dos Sistemas de Informação de Custos de Estados Brasileiros à luz da NBC TSP 34</span><span class="toc-page">6</span></div>
+            <div class="toc-item"><span class="toc-title">Modernização da Infraestrutura Energética no Campo: Uma Análise dos Impactos na Celesc</span><span class="toc-page">8</span></div>
+            <div class="toc-item"><span class="toc-title">As aparências enganam? Uma análise sobre as táticas de gerenciamento de impressão dos municípios</span><span class="toc-page">10</span></div>
+            <div class="toc-item"><span class="toc-title">Análise do comportamento das exportações catarinenses de carne suína no período 2003 a 2023</span><span class="toc-page">12</span></div>
+        </div>
+    </div>
+
+    <!-- Palavra do Editor -->
+    <div class="magazine-section">
+        <div class="section-header">
+            <span>Revista Sul-Brasileira de Contabilidade e Economia</span>
+            <span>Edição 005 | Pág. 3</span>
+        </div>
+        <h2>Palavra do Editor</h2>
+        
+        <div class="flex items-center mb-8 bg-gray-50 p-6 rounded-lg border border-gray-200">
+            <div style="width: 80px; height: 80px; background-color: #cbd5e0; display:flex; justify-content:center; align-items:center; color: #4a5568; font-weight:bold; border-radius:50%; margin-right: 1.5rem; font-size: 1.5rem;">LG</div>
+            <div>
+                <p class="font-bold text-xl text-blue-900" style="text-indent: 0; margin-bottom: 0;">Lucas Guesser</p>
+                <p class="text-md text-gray-600 uppercase tracking-wide" style="text-indent: 0;">Editor-Chefe</p>
+            </div>
+        </div>
+
+        <div class="two-columns">
+            <p>É com renovado entusiasmo que entregamos aos nossos leitores a 5ª edição da Revista Sul-Brasileira de Contabilidade e Economia. Neste número, o rigor metodológico cruza-se com as necessidades pragmáticas da gestão pública e do agronegócio, compondo um painel de leituras essenciais para a compreensão do ecossistema contábil e econômico contemporâneo.</p>
+            <p>Iniciamos esta edição com uma instigante investigação em <b>Do Concurso à Prática Profissional</b>, onde os pesquisadores analisam criticamente a aderência dos exames públicos (banca Cebraspe) às reais competências exigidas dos Contadores Públicos. Na mesma esteira da <i>accountability</i> estatal, apresentamos um raio-X abrangente sobre a implantação dos <b>Sistemas de Informação de Custos</b> nas unidades federativas do Brasil à luz da moderna NBC TSP 34, escancarando os abismos entre a teoria contábil e a prática governamental.</p>
+            <p>O foco no desenvolvimento regional avança no artigo sobre a <b>Modernização da Infraestrutura Energética no Campo</b>, no qual mergulhamos nas estratégias do programa de trifasicação rural da Celesc em Santa Catarina e nos seus impactos diretos na arrecadação tributária (VAF e ICMS) e na prosperidade da cadeia agroindustrial. </p>
+            <p>Aprofundando a ótica sobre as condutas na prestação de contas, o estudo empírico <b>As aparências enganam?</b> aplica a técnica de <i>impression management</i> para dissecar os relatórios e as defesas prévias dos municípios pernambucanos perante os órgãos de controle externo. </p>
+            <p>Por fim, encerramos esta rica edição examinando o forte pilar macroeconômico do Sul: a <b>Análise do comportamento das exportações catarinenses de carne suína (2003-2023)</b>. Este estudo de séries temporais não apenas evidencia o impacto da "peste suína" na realocação do comércio asiático, mas atesta as vantagens comparativas de David Ricardo no cenário global atual.</p>
+            <p>Desejamos a todos uma leitura profícua e inspiradora.</p>
+        </div>
+    </div>
+
+    <!-- Artigo 1 -->
+    <div class="magazine-section">
+        <div class="section-header">
+            <span>Artigos Acadêmicos - Contabilidade Pública</span>
+            <span>Págs. 4 - 5</span>
+        </div>
+        
+        <h2 class="article-title">Do Concurso à Prática Profissional: Análise dos Conteúdos Exigidos na Seleção de Contadores Públicos</h2>
+        <p class="article-authors">Pedro Henrique Borges de Oliveira, Eduardo Bona Safe de Matos, Vitor Hideo Nasu</p>
+        
+        <div class="article-abstract">
+            <p style="text-indent: 0; margin-bottom: 0;"><b>Resumo:</b> A pesquisa tem por objetivo analisar os conteúdos programáticos de Contabilidade presentes em concursos públicos destinados a cargos que exigem formação superior em Ciências Contábeis (2020 a 2024), à luz da Abordagem de Avaliação, de Scriven (1966). Foram examinadas 3.001 questões provenientes de 104 provas aplicadas em 65 concursos. Os resultados evidenciam predominância das áreas de Contabilidade Pública e Contabilidade Financeira (somando 59%). Observou-se, contudo, baixa incidência de temas essenciais à prática contemporânea, como ética profissional e sistemas de informação governamental, sugerindo lacunas relevantes frente às demandas da gestão pública digital.</p>
+        </div>
+
+        <div class="two-columns">
+            <h3>1. Introdução</h3>
+            <p>A formação em Ciências Contábeis proporciona diversas possibilidades de atuação profissional, incluindo cargos como contador, auditor, perito e servidor público. No conjunto dessas trajetórias possíveis, observa-se uma crescente preferência pela atuação na esfera pública por parte de estudantes e egressos, destacando a importância do papel do contador público na sociedade.</p>
+            <p>Nesta esfera, destaca-se a Contabilidade Aplicada ao Setor Público (CASP), reconhecida como uma ferramenta fundamental para a gestão pública, ao proporcionar informações consistentes e tempestivas que subsidiam a tomada de decisões. No Brasil, o ingresso na carreira pública ocorre, principalmente, por meio do concurso público (artigo 37, inciso II, da Constituição Federal).</p>
+            <p>Diante do modelo de ingresso por concurso, uma questão relevante diz respeito à compatibilidade entre os conteúdos exigidos nas provas e as atividades efetivamente exercidas pelos profissionais. Diante da escassez de investigações sistemáticas, este estudo objetiva analisar os conteúdos programáticos presentes em concursos (Cebraspe) destinados a cargos privativos de bacharéis em Ciências Contábeis.</p>
+
+            <h3>2. Referencial e Metodologia</h3>
+            <p>Como arcabouço teórico, esta pesquisa propõe avaliar o conteúdo à luz da Abordagem de Avaliação de Scriven (1966), que distingue a avaliação instrumental e a avaliação consequencial. O conteúdo dos concursos pode ser compreendido como "instrumentos avaliativos" passíveis de julgamento quanto ao seu mérito, coerência e alinhamento prático.</p>
+            <p>A amostra considerou editais do Cebraspe entre 2020 e 2024. Foram identificados 65 concursos que ofereceram cargos com exigência em Ciências Contábeis (71% de forma exclusiva). No total, após exclusão de questões anuladas, foram categorizadas rigorosamente 3.001 questões de Contabilidade, utilizando a técnica de análise de conteúdo categorial de Bardin (2011) e a matriz teórica de áreas e subáreas da Contabilidade proposta por Oliveira (2002).</p>
+
+            <h3>3. Resultados e Análises</h3>
+            <p>A análise por área demonstrou uma clara predominância de duas esferas principais:</p>
+            <ul>
+                <li><b>Contabilidade Pública, Orçamento e Finanças (31%)</b></li>
+                <li><b>Contabilidade Financeira (28%)</b></li>
+                <li>Auditoria (12%) e Contabilidade Gerencial (7%)</li>
+            </ul>
+            <p>A representatividade superior da CASP (Contabilidade Aplicada ao Setor Público) é coerente com o contexto dos certames, uma vez que estes profissionais exercerão atividades ligadas diretamente ao controle patrimonial do Estado. A subárea "FIN1" (Mensuração e escrituração) foi a mais expressiva, refletindo a base do conhecimento contábil exigida dos ingressantes.</p>
+            <p>Surpreendentemente, na subárea "PUB4" (Sistemas de Informação do Setor Público), observou-se uma baixíssima exigência de conhecimentos sobre sistemas contábeis (ex: SIAFI), representando apenas 1% do total. Além disso, temas basilares contemporâneos como "Ética Profissional" contabilizaram ínfimos 0,03% da amostra.</p>
+
+            <h3>4. Considerações Finais</h3>
+            <p>De forma geral, observou-se um alinhamento dos conteúdos exigidos pelo Cebraspe com a prática profissional teórica do contador público. Concursos para cargos de auditor apresentaram maior nível de cobrança com questões práticas sobre a execução da auditoria; enquanto certames para empresas estatais de natureza privada focaram amplamente na Contabilidade Financeira tradicional.</p>
+            <p>Entretanto, identificaram-se limitações instrumentais severas sob a ótica de Scriven. A quase ausência de questões versando sobre Sistemas de Informação Contábil (1%) e Ética Profissional (0,03%) indica um desalinhamento frente à realidade da transformação digital do setor público e às demandas crescentes por <i>accountability</i> e lisura moral. Profissionais hoje necessitam de habilidades analíticas sobre dados (Big Data) e profundo compromisso ético-social, algo que o funil dos certames atuais ainda falha em medir adequadamente.</p>
+            
+            <div class="references-section">
+                <h4>Referências</h4>
+                <p>BARDIN, L. (2011). Análise de conteúdo (Edição revista e atualizada). Edições 70.</p>
+                <p>FREIRE, F. D. S., et al. (2012). Exigências programáticas em contabilidade pública em concursos do CESPE. <i>Revista de Educação e Pesquisa em Contabilidade (REPEC)</i>.</p>
+                <p>SCRIVEN, M. (1966). The methodology of evaluation. <i>Social Science Education Consortium</i>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Artigo 2 -->
+    <div class="magazine-section">
+        <div class="section-header">
+            <span>Artigos Acadêmicos - Contabilidade Pública</span>
+            <span>Págs. 6 - 7</span>
+        </div>
+        
+        <h2 class="article-title">Padrões e Diretrizes dos Sistemas de Informação de Custos de Estados Brasileiros à luz da NBC TSP 34</h2>
+        <p class="article-authors">Graziela Luiza Meincheim, Fabiano Maury Raupp, Ana Rita Silva Sacramento</p>
+        
+        <div class="article-abstract">
+            <p style="text-indent: 0; margin-bottom: 0;"><b>Resumo:</b> O objetivo consiste em caracterizar o atendimento aos padrões da NBC TSP 34 pelos sistemas de informação de custos (SIC) dos estados brasileiros. Trata-se de pesquisa descritiva (quali-quanti) com questionário aos responsáveis pelos projetos de SICs nos estados. Dos 25 estados respondentes, destaca-se positivamente o atendimento à norma quanto aos principais usuários dos SICs (gestão e controle) e foco (tomada de decisão). Contudo, merecem atenção a ausência de identificação das variáveis físicas para mensuração do custo dos bens/serviços entregues e, principalmente, a alarmante falta de utilização efetiva das informações de custos pelos gestores governamentais.</p>
+        </div>
+
+        <div class="two-columns">
+            <h3>1. Introdução</h3>
+            <p>As estruturas estatais mantidas para a prestação dos serviços públicos se apresentam, em geral, de forma robusta e burocrática, voltadas mais para o cumprimento de exigências legais do que para a avaliação da qualidade dos serviços. O administrador público carece de instrumentos gerenciais que evidenciem o grau de aproveitamento dos recursos e a eficiência na entrega de valor à sociedade.</p>
+            <p>Do ponto de vista normativo, a obrigação de sistemas de custos encontra amparo recente na Norma Brasileira de Contabilidade Aplicada ao Setor Público (NBC TSP 34), de 18 de novembro de 2021. Enquanto normas anteriores focavam no conceito, a NBC TSP 34 apresenta uma vertente pragmática e gerencial (instrumento de governança). Diante deste cenário de transição, o estudo caracteriza o atual nível de aderência dos sistemas estaduais brasileiros a esta nova diretriz.</p>
+
+            <h3>2. A NBC TSP 34 e o Modelo de Análise</h3>
+            <p>As disposições da NBC TSP 34 destacam o método de projeto-piloto, implantação gradual, e a figura do gestor como o usuário principal do custeio. A pesquisa estruturou-se em dimensões como: Informação de custos (relevância, tempestividade), Sistema de Informação (método de custeio, atribuição) e Gestão (utilização da informação).</p>
+            <p>A coleta de dados ocorreu por formulário eletrônico enviado aos contadores-gerais e responsáveis pela implantação dos SICs em todos os estados. Obtivemos a excelente taxa de retorno de 24 estados e o Distrito Federal (apenas Minas Gerais e Paraíba não responderam).</p>
+
+            <h3>3. Resultados e Discussão</h3>
+            <h4>Informações de Custos</h4>
+            <p>A maior parte dos respondentes (84%) definiu, acertadamente segundo a norma, que os <b>gestores</b> são os principais usuários do SIC. Quando inquiridos sobre o foco do sistema, 68% pontuaram o apoio à "Tomada de Decisão", seguido de monitoramento (60%) e planejamento (52%). Contudo, ao avaliar os objetos de custo, apenas 48% dos estados conseguem (ou pretendem) classificar os custos em níveis intermediários e finais (ex: bens e serviços de educação em 32% dos estados, e saúde em 24%).</p>
+            
+            <h4>Sistema de Informação (O Sistema em Si)</h4>
+            <p>Identificou-se uma deficiência basilar: a esmagadora maioria dos estados (68%) ainda não dispõe da <b>identificação das variáveis físicas</b> no SIC. Sem saber o número exato de "cidadãos atendidos" ou "metros quadrados construídos", o cálculo de custeio unitário inviabiliza análises de eficiência reais. No âmbito de integração, 64% preveem ligação ao Sistema de Contabilidade e 60% à Folha de Pagamento, porém 36% admitem nem ter processo de atribuição/rateio de custos estruturado.</p>
+            
+            <h4>Gestão e Uso Efetivo</h4>
+            <p>Apesar da retórica e do esforço de implantação, o gargalo crucial apareceu no uso gerencial: <b>64% dos estados informaram que os gestores governamentais ainda não utilizam as informações de custos para nada</b>, ou sequer implantaram o SIC fisicamente. O sistema, em muitos casos, permanece figurativo ou restrito à academia contábil do Estado, sem refletir na alocação orçamentária do Secretário de Estado ou Governador.</p>
+
+            <h3>4. Considerações Finais</h3>
+            <p>Constata-se que, embora a maior parte dos entes subnacionais preste reverência retórica às diretrizes da NBC TSP 34 e pretenda atender os dispositivos previstos, o percentual de sistemas plenamente implantados (e consumidos pelos tomadores de decisão) é incipiente.</p>
+            <p>Sugerimos o equacionamento imediato das barreiras físicas observadas na implantação, notadamente a falta de <i>softwares</i> parametrizados e as resistências culturais. Sem solucionar esses entraves práticos, os objetivos pretendidos pela NBC TSP 34 — mudar o Estado brasileiro de um padrão burocrático avaliador de legalidade para um modelo gerencial avaliador de eficiência — não sairão do papel dos diários oficiais.</p>
+
+            <div class="references-section">
+                <h4>Referências</h4>
+                <p>BRASIL. Conselho Federal de Contabilidade. (2021). <i>NBC TSP 34 - Custos no setor público</i>. Diário Oficial da União.</p>
+                <p>COSTA, B. dos S., Raupp, F. M., &amp; Dias, J. da S. (2017). Sistema de custos no setor público: Um estudo nos estados brasileiros face à realidade de implantação.</p>
+                <p>MEINCHEIM, G. L., et al. (2022). Sistema de informação de custos do Poder Executivo de Santa Catarina: Processo de desenvolvimento.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Artigo 3 -->
+    <div class="magazine-section">
+        <div class="section-header">
+            <span>Artigos Acadêmicos - Infraestrutura e Economia</span>
+            <span>Págs. 8 - 9</span>
+        </div>
+        
+        <h2 class="article-title">Modernização da Infraestrutura Energética no Campo: Uma Análise dos Impactos Micro e Macroeconômicos na Celesc</h2>
+        <p class="article-authors">Lucas Guesser</p>
+        
+        <div class="article-abstract">
+            <p style="text-indent: 0; margin-bottom: 0;"><b>Resumo:</b> Este artigo analisa os desdobramentos econômicos decorrentes da conversão de redes elétricas monofásicas nuas para sistemas trifásicos compactos protegidos, conduzida pela Celesc em Santa Catarina. A partir de um plano de investimentos superior a R$ 5 bilhões, a eletrificação atua como um catalisador para o agronegócio catarinense. Sob o método analítico, avaliam-se os impactos na redução de custos de oportunidade, estímulo ao investimento privado de agroindústrias locais e o consequente incremento do Valor Adicionado Fiscal (VAF), gerando reflexos diretos na arrecadação do ICMS pelos municípios beneficiados.</p>
+        </div>
+
+        <div class="two-columns">
+            <h3>1. Introdução</h3>
+            <p>A matriz econômica do Estado de Santa Catarina apresenta uma profunda dependência da cadeia agroindustrial. Regiões como o Oeste e o Planalto Serrano consolidaram-se como polos nacionais na produção de proteína animal e grãos. Contudo, a sustentabilidade técnica desse ecossistema produtivo está atrelada à qualidade da distribuição de energia elétrica nas propriedades rurais.</p>
+            <p>Historicamente, a expansão da malha elétrica rural estruturou-se sob redes monofásicas bi-filares nuas, dimensionadas originalmente para demandas domésticas de meados do século XX. O avanço tecnológico do campo (automatização de aviários, ordenhas mecanizadas com resfriamento rápido, silos de secagem) gerou um severo descompasso entre a carga demandada e a capacidade física de entrega do sistema.</p>
+            <p>Diante desse gargalo, o Governo do Estado e a Celesc implementaram um choque estrutural no quadriênio 2023-2026, aportando mais de R$ 5 bilhões na modernização da rede estadual, incluindo ações massivas de trifasicação no interior. O estudo analisa as externalidades positivas desse investimento.</p>
+
+            <h3>2. Impactos Microeconômicos</h3>
+            <h4>2.1 Redução de Índices de Interrupção</h4>
+            <p>O principal vetor de perda na rede monofásica nua reside na vulnerabilidade a intempéries e contato com vegetação. A substituição por redes trifásicas compactas blindadas resultou em uma redução de até 90% nas interrupções. Na pecuária leiteira, a falta de energia por períodos superiores a duas horas corrompe a estabilidade térmica dos tanques de expansão, forçando o descarte integral. A estabilidade elétrica extirpa esse risco crônico, transformando desperdício físico em ganho de margem líquida.</p>
+
+            <h4>2.2 Viabilidade de Alta Performance</h4>
+            <p>Sob a ótica da engenharia econômica, os motores trifásicos possuem menor custo por cavalo-vapor (cv) e não utilizam escovas/comutadores, barateando a manutenção. Essa rede viabiliza a instalação de secadores automatizados de grãos na própria fazenda, permitindo reter a produção durante o pico da colheita e evitar a "venda forçada" sob pressão de preço logístico desfavorável.</p>
+
+            <h3>3. Dinâmica Setorial e Atração de Capital</h3>
+            <p>A modernização atua como âncora de fixação para a descentralização produtiva. Anteriormente, as cooperativas (FAESC, Sindicarne) restringiam novas plantas frigoríficas às adjacências das subestações urbanas. Com o <i>grid</i> trifásico capilarizado, torna-se viável a construção de fábricas de ração e abatedouros no perímetro genuinamente rural, cortando custos com frete de animais vivos (mitigação do risco de mortalidade animal no transporte).</p>
+
+            <h3>4. Impactos Fiscais Regionais (VAF e ICMS)</h3>
+            <p>A elevação real da capacidade produtiva mediada pela Celesc expande a emissão da Nota Fiscal de Produtor Eletrônica (NFP-e). Nas regras tributárias de SC (Portaria SEF/SC nº 233/2012), a expansão mercantil agropecuária (Saídas menos Entradas) incrementa diretamente o Valor Adicionado Fiscal (VAF) dos municípios do interior.</p>
+            <p>O VAF corresponde a 85% do peso no cálculo do Índice de Participação dos Municípios (IPM). Ao inflar esse índice através de maior robustez rural, as prefeituras asseguram uma fatia percentualmente maior na partilha constitucional dos 25% de todo o ICMS estadual. É um efeito de <i>spillover</i> perfeito: o investimento da concessionária Celesc retorna às tesourarias municipais na forma de caixa livre para escolas e postos de saúde locais.</p>
+
+            <h3>5. Considerações Finais</h3>
+            <p>O programa de eletrificação trifásica liderado pela Celesc revela-se muito superior a uma simples intervenção de postes e cabos; é uma engenharia de redes com transbordamentos macroeconômicos. Ao desatar o gargalo técnico da rede nua, alavanca-se a produtividade privada, que, via sistema tributário (VAF/ICMS), financia a governança pública. Trata-se de um modelo exemplar de desenvolvimento regional planejado.</p>
+
+            <div class="references-section">
+                <h4>Referências</h4>
+                <p>CELESC. (2023). <i>Plano Plurianual de Investimentos Estruturantes (2023-2026): Modernização e Expansão</i>. Florianópolis.</p>
+                <p>FECOERUSC. (2023). <i>Censo e Diagnóstico de Carga da Malha de Distribuição Rural de SC</i>.</p>
+                <p>SANTA CATARINA. (2012). <i>Portaria SEF/SC n° 233/2012 (Apuração do VAF / IPM)</i>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Artigo 4 -->
+    <div class="magazine-section">
+        <div class="section-header">
+            <span>Artigos Acadêmicos - Controle Externo e Governança</span>
+            <span>Págs. 10 - 11</span>
+        </div>
+        
+        <h2 class="article-title">As aparências enganam? Uma análise sobre as táticas de gerenciamento de impressão nas prestações de contas</h2>
+        <p class="article-authors">Dimmitre Morant Vieira G. Pereira, Fátima de Souza Freire</p>
+        
+        <div class="article-abstract">
+            <p style="text-indent: 0; margin-bottom: 0;"><b>Resumo:</b> O objetivo deste trabalho foi analisar a utilização de táticas de Gerenciamento de Impressão (GI) nas respostas das prefeituras pernambucanas aos apontamentos dos órgãos de controle em suas contas anuais. Trata-se de um estudo exploratório-qualitativo, que utilizou o software NVivo® para análise de conteúdo de 184 Relatórios de Auditoria do TCE-PE e 118 Defesas Prévias. Os resultados sugerem que a tática defensiva de GI predominante nas defesas em relação ao auditor não é a admissão ou desculpa, mas a tática da "explicação", utilizando-se de quatro retóricas principais: contestação técnica, acusação de imperícia ao auditor, desqualificação dos argumentos e ironia.</p>
+        </div>
+
+        <div class="two-columns">
+            <h3>1. Introdução e Referencial Teórico</h3>
+            <p>As organizações, na busca por aquisição e manutenção de legitimidade social como fonte de recursos e prestígio, engajam-se frequentemente no uso de táticas de Gerenciamento de Impressão (GI). A literatura demonstra que os governos locais também manipulam a extensão, o tom de seus relatórios e suas narrativas para ofuscar resultados negativos (<i>impression management defensivo</i>), visando preservar o capital político dos incumbentes (prefeitos).</p>
+            <p>O conceito de <i>accountability</i> governamental impõe o dever de prestação de contas (Artigo 70 da CF/88) aos chefes do poder executivo. No Tribunal de Contas do Estado de Pernambuco (TCE-PE), o Relatório de Auditoria documenta as falhas das gestões. Em resposta, as prefeituras submetem suas Defesas Prévias (DPs). Este artigo investiga o comportamento semântico embutido nas narrativas dessas peças jurídicas.</p>
+            <p>Mendonça e Amantino-de-Andrade classificam as táticas defensivas (respostas a ameaças, como um achado de auditoria) em: <b>explicação</b> (negar ou mitigar a gravidade), <b>desculpa</b> (admitir a culpa com remorso), <b>alerta</b>, <b>restituição</b> e <b>ação pró-social</b>.</p>
+
+            <h3>2. Metodologia (O Uso do NVivo)</h3>
+            <p>A pesquisa caracterizou-se pela abordagem qualitativa de Análise de Conteúdo e Lexicográfica apoiada por Inteligência Artificial text-mining (<i>NVivo®</i>). Foram recolhidos 184 Relatórios de Auditoria (RAs) relativos a todos os municípios do estado (exercício 2019, período pré-anomalias da Covid-19) e 118 Defesas Prévias submetidas pelos entes.</p>
+            <p>Executou-se a técnica de <i>Word Tree</i> (Árvore de Palavras) e Nuvem de Palavras para mapear contextos em torno dos radicais de conflito, como "irregularidade", "indevido", "recomenda-se" e "auditor".</p>
+
+            <h3>3. Análise dos Resultados: O Embate Textual</h3>
+            <h4>O Cenário Apontado pelos Auditores</h4>
+            <p>Nos RAs emitidos pelo TCE-PE, as frequências ponderadas demonstraram focos cirúrgicos de irregularidades em repasses de duodécimos, desequilíbrio atuarial de previdência (RPPS) e quebras nos limites de despesas de pessoal da Lei de Responsabilidade Fiscal (LRF). O juízo negativo consubstanciou-se em mais de 29 mil ocorrências (média de 162 por município), com os termos "irregularidades", "deficiências" e "déficit" predominando severamente no léxico punitivo.</p>
+
+            <h4>A Resposta Defensiva das Prefeituras</h4>
+            <p>Ao analisar as 118 Defesas Prévias, notou-se algo surpreendente. Na arena da gestão municipal regular, ao contrário de processos de escândalos penais abertos onde a tática da "desculpa/perdão" costuma surgir, a postura adotada pelas defesas consistiu integralmente na <b>Tática da Explicação (Negação/Neutralização)</b>.</p>
+            <p>Extraindo as sentenças (Árvore de Palavras) vinculadas ao radical "auditor", identificou-se que as prefeituras não assumem o passivo, e investem na <b>desqualificação direta</b> da máquina de controle. Foram rastreadas 4 narrativas majoritárias:</p>
+            <ol>
+                <li><b>Acusação de Imperícia do TCE:</b> <i>"...resta demonstrado o equívoco do auditor"</i>, <i>"...capturados erroneamente pelo nobre auditor"</i>.</li>
+                <li><b>Desqualificação da Opinião:</b> <i>"...trata-se de mero juízo pessoal do auditor"</i>, <i>"...suposição sem lastro fático"</i>.</li>
+                <li><b>Ironia e Sarcasmo:</b> <i>"...alega o ilustre auditor"</i>, <i>"...auditor que pretende legislar por meio do relatório"</i>.</li>
+                <li><b>Contestação Técnica:</b> <i>"...não há amparo legal para a conclusão evidenciada"</i>.</li>
+            </ol>
+
+            <h3>4. Considerações Finais</h3>
+            <p>O <i>impression management</i> operado pelos advogados e contadores dos municípios no TCE de Pernambuco expõe a natureza adversarial (e muitas vezes pejorativa) das DPs, revelando uma "encenação da prestação de contas" ao invés de um genuíno acatamento e melhoria de governança. As respostas visam essencialmente minar a credibilidade da peça de auditoria, objetivando anular politicamente o parecer prévio do tribunal que recomendaria a rejeição das contas (e uma futura inelegibilidade do prefeito local).</p>
+            <p>Tais achados são fulcrais para demonstrar que a transparência dos dados (<i>accountability</i> informacional), por si só, é impotente quando os gestores constroem escudos narrativos para rechaçar sistematicamente as evidências de déficit e má gestão pública.</p>
+
+            <div class="references-section">
+                <h4>Referências</h4>
+                <p>CALDAS, O. V. (2020). <i>Falhas administrativas ou indícios de corrupção? Gerenciamento de impressões de gestores</i>. UnB.</p>
+                <p>MENDONÇA, J. R. C., &amp; Amantino-de-Andrade, J. (2003). Gerenciamento de impressões: Em busca de legitimidade. <i>RAE</i>.</p>
+                <p>PERNELET, H. R., &amp; Brennan, N. M. (2023). Impression management at board meetings: Accountability in public and private.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Artigo 5 -->
+    <div class="magazine-section" style="margin-bottom: 3cm;">
+        <div class="section-header">
+            <span>Artigos Acadêmicos - Economia Internacional e Agronegócio</span>
+            <span>Págs. 12 - 13</span>
+        </div>
+        
+        <h2 class="article-title">Análise do comportamento das exportações catarinenses de carne suína no período 2003 a 2023</h2>
+        <p class="article-authors">Yasmin Metzler, Alexandre Luís Giehl</p>
+        
+        <div class="article-abstract">
+            <p style="text-indent: 0; margin-bottom: 0;"><b>Resumo:</b> O estado de Santa Catarina possui um papel ímpar: 64,7% de suas exportações globais estão atreladas ao agronegócio. Este estudo analisa econometricamente o comportamento das exportações de carne suína nos últimos 21 anos. Utilizando testes de quebra estrutural (Bai-Perron) e decomposição sazonal, identificou-se a ruptura histórica ocorrida em 2016, a qual engatilhou um crescimento acelerado impulsionado pela Ásia. O padrão sazonal comprovou o forte repique produtivo de meados de ano (agosto) para formação de estoques asiáticos visando o inverno e o Ano Novo Chinês. Fatores sanitários transacionais e as teorias de Ricardo e Heckscher-Ohlin ditam a hegemonia barriga-verde neste mercado mundial.</p>
+        </div>
+
+        <div class="two-columns">
+            <h3>1. Fundamentação Teórica (David Ricardo e H-O)</h3>
+            <p>O desempenho das carnes catarinenses pode ser espelhado na pureza da Teoria das Vantagens Comparativas (Ricardo) e da Dotação de Fatores (Heckscher-Ohlin). O país tende a se especializar em bens cuja produção exija os fatores nos quais é geograficamente abundante: vasta disponibilidade de terras cultiváveis de grãos e <i>know-how</i> acumulado pela densa malha de integração familiar agropecuária. Como destacado pela teoria da base de exportação (Lobo, 2019), as vendas externas de SC representam o motor primário que irriga a renda das cidades interioranas (Chapecó, Concórdia).</p>
+            <p>Contudo, uma vez que a vantagem comparativa da <i>oferta</i> foi estabelecida de modo inconteste globalmente, a volatilidade de curto prazo da cadeia de suínos passou a ser ditada unicamente pela <i>demanda externa</i> e pelo temido "neoprotecionismo" (o uso de barreiras não-tarifárias ou embargos fitossanitários alegados por países parceiros para reprimir a importação, caso flagrante dos antigos boicotes da Federação Russa).</p>
+
+            <h3>2. Metodologia Econométrica</h3>
+            <p>Os pesquisadores extraíram dados mensais brutos em toneladas através do portal federal COMEX STAT, consolidando os códigos NCMs atinentes à categoria suína (fresca, refrigerada, carcaças). O processamento utilizou a linguagem <i>Python</i>.</p>
+            <p>Aplicou-se o <b>Teste de CUSUM</b> (soma cumulativa dos resíduos de MQO) e o <b>Algoritmo de Bai-Perron</b> para caçar e isolar inflexões matemáticas na tendência temporal. Concomitantemente, isolou-se as variações de padrão cíclico anual pelo estimador <i>seasonal_decompose</i> (médias móveis de 12 meses).</p>
+
+            <h3>3. Descobertas: Quebra Estrutural e o Eixo Asiático</h3>
+            <p>O rigor matemático de Bai-Perron localizou um abalo sísmico exato: <b>Maio de 2016</b> (p-valor < 0.05 no Cusum). Anterior a essa data, o histórico de SC oscilou dramaticamente. Sofreu tombos terríveis em 2005/2007 (restrições russas por focos de febre aftosa longevos) e na crise <i>subprime</i> de 2009.</p>
+            <p>A partir do "ponto de quebra" demarcado, observou-se o <i>bull market</i> da proteína (um hipercrescimento da base exportadora). A entrada massiva da China na pauta de destinos salvou a estrutura. O estopim final deu-se após o 2º semestre de 2018, quando a China teve seus rebanhos internos devastados pela Peste Suína Africana, devorando as prateleiras refrigeradas catarinenses.</p>
+            <p>A pandemia da COVID-19 em 2020 não conseguiu sufocar a rampa de expansão (apresentando apenas instabilidade curta). Já entre 2022 e 2023, o Japão e Filipinas agregaram novos volumes bilionários, diversificando os clientes do estado para além da potência chinesa.</p>
+
+            <h3>4. O Padrão Sazonal Histórico</h3>
+            <p>O filtro do algoritmo de sazonalidade revelou uma curva estatística elegante com comprimento estrito de 12 meses:</p>
+            <ul>
+                <li>As exportações acordam da letargia asiática em <b>fevereiro/março</b>.</li>
+                <li>Galgam volume de embarques marítimos constantes até atingirem o grande <b>Pico Sazonal Absoluto em Agosto</b>.</li>
+                <li>Iniciam drástica retração gradativa de setembro em diante até dezembro.</li>
+            </ul>
+            <p>Esse fenômeno decorre da complexa logística naval asiática. Considerando o tempo de navegação interoceânico de SC à Ásia (~35 dias), a China impulsiona freneticamente a formação física de estoques a partir do meio do ano, preparando-se para a hiperdemanda social do <i>Ano Novo Chinês</i> (janeiro/fevereiro), paralisando novas importações no último trimestre.</p>
+
+            <h3>5. Conclusões e Gestão de Riscos</h3>
+            <p>Santa Catarina logrou êxito em alicerçar-se no mercado mundial via eficiência técnica familiar. Contudo, os testes econométricos evidenciam o principal risco inerente à matriz: <b>a concentração predatória e perigosa da carteira em poucos "países clientes" (Rússia antigamente, China atualmente).</b></p>
+            <p>Qualquer bloqueio sanitário arbitrário, recuperação do rebanho interno oriental, ou retaliação diplomática tem o poder de despencar as curvas de tendência em 30 dias. Desta forma, impera a máxima de política estatal de incentivar o fomento e a diversificação portuária agressiva rumo a novos parceiros asiáticos (Vietnã, Coréia) como "seguro natural" das gigantescas indústrias agroalimentares do estado.</p>
+
+            <div class="references-section">
+                <h4>Referências</h4>
+                <p>CEPA/EPAGRI. <i>Sínteses Anuais da Agricultura de Santa Catarina (2005 a 2024)</i>. Florianópolis.</p>
+                <p>KRUGMAN, P.R.; WELLS, R. (2023). <i>Introdução à Economia</i>. 6. ed. Gen Atlas.</p>
+                <p>SHIKIDA, C., et al. (2016). Análise de quebras estruturais na série do preço do boi gordo. <i>Economia Aplicada</i>.</p>
+            </div>
+        </div>
+    </div>
+
+</body></html>
