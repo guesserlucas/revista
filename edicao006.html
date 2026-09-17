@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revista Sul-Brasileira de Contabilidade e Economia - Edição 006</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* Regras de Impressão e Enquadramento A4 */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background-color: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .magazine-section {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 1.2cm 1.5cm !important;
+                page-break-after: always;
+                break-after: page;
+                max-width: 100% !important;
+                min-height: 29.7cm;
+            }
+            .cover-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                page-break-after: always;
+                break-after: page;
+                height: 29.7cm !important;
+                max-height: 29.7cm !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+            .two-columns {
+                column-count: 2;
+                column-gap: 1.1cm;
+            }
+        }
+
+        @page {
+            size: A4 portrait;
+            margin: 1.2cm 1.4cm;
+        }
+
+        /* Estilos Globais */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.65;
+            color: #2d3748;
+            background-color: #e2e8f0;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Tipografia de Títulos */
+        h1, h2, h3, h4, h5 {
+            font-family: 'Merriweather', serif;
+            color: #1a3a64;
+            break-after: avoid;
+            page-break-after: avoid;
+        }
+        
+        h1 { 
+            font-size: 2.2em; 
+            font-weight: 900; 
+            margin-bottom: 0.5em; 
+            text-align: center; 
+            letter-spacing: -0.02em;
+        }
+        h2 { 
+            font-size: 1.65em; 
+            font-weight: 700; 
+            border-bottom: 2px solid #d1e0ec; 
+            padding-bottom: 0.3em; 
+            margin-top: 1.2em; 
+            margin-bottom: 0.9em; 
+        }
+        h3 { 
+            font-size: 1.25em; 
+            font-weight: 700; 
+            margin-top: 1.3em; 
+            margin-bottom: 0.6em; 
+            color: #1a3a64;
+        }
+        h4 { 
+            font-size: 1.05em; 
+            font-weight: 700; 
+            margin-top: 1.1em; 
+            margin-bottom: 0.4em; 
+            color: #2c5282; 
+        }
+        
+        p { 
+            text-align: justify; 
+            margin-bottom: 1.05em; 
+            text-indent: 1.4em; 
+            font-size: 0.93em;
+        }
+        ul, ol { 
+            text-align: justify; 
+            margin-bottom: 1.1em; 
+            padding-left: 1.8em; 
+            font-size: 0.93em;
+        }
+        li { 
+            margin-bottom: 0.4em; 
+        }
+
+        /* Contêineres de Seção da Revista */
+        .magazine-section {
+            width: 100%;
+            max-width: 21cm;
+            min-height: 29.7cm;
+            margin: 1.2cm auto;
+            background-color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            padding: 1.8cm 2cm;
+            box-sizing: border-box;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .cover-container {
+            width: 100%;
+            max-width: 21cm;
+            height: 29.7cm;
+            margin: 1.2cm auto;
+            background-color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            position: relative;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .cover {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: linear-gradient(135deg, #0b1f3a 0%, #1a3a64 50%, #2b4c7e 100%);
+        }
+
+        .cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.88;
+        }
+
+        /* Diagramação em 2 Colunas com Enquadramento Preciso */
+        .two-columns {
+            column-count: 2;
+            column-gap: 1.15cm;
+            column-fill: balance;
+            text-align: justify;
+        }
+        
+        .two-columns > h3, 
+        .two-columns > h4, 
+        .two-columns > table,
+        .two-columns > .full-width-box,
+        .two-columns > .references-section {
+            column-span: all;
+            margin-top: 1.2em;
+        }
+
+        /* Elementos Acadêmicos */
+        .article-abstract {
+            background-color: #f8fafc;
+            border-left: 4px solid #1a3a64;
+            padding: 1.1em 1.3em;
+            margin: 1.4em 0 1.6em 0;
+            font-style: italic;
+            font-size: 0.88em;
+            line-height: 1.55;
+            text-align: justify;
+        }
+        
+        .article-authors {
+            font-weight: 700;
+            color: #4a5568;
+            margin-bottom: 1.1em;
+            text-align: center;
+            font-size: 1.02em;
+            text-indent: 0;
+        }
+        
+        .article-title {
+            text-align: center;
+            border-bottom: none;
+            font-size: 1.7em;
+            line-height: 1.3;
+            margin-top: 0.2em;
+            margin-bottom: 0.4em;
+        }
+
+        .area-tag {
+            display: inline-block;
+            background-color: #edf2f7;
+            color: #2b4c7e;
+            padding: 3px 10px;
+            font-size: 0.72em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border-radius: 4px;
+            margin-bottom: 0.6em;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Tabelas e Quadros Informativos */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.1em 0;
+            font-size: 0.8em;
+            font-family: 'Lato', sans-serif;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        th, td {
+            border: 1px solid #cbd5e0;
+            padding: 6px 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #edf2f7;
+            color: #1a3a64;
+            font-weight: 700;
+        }
+        
+        .table-caption {
+            font-size: 0.76em;
+            font-weight: 700;
+            color: #4a5568;
+            margin-bottom: 4px;
+            text-indent: 0;
+        }
+        
+        .table-source {
+            font-size: 0.72em;
+            color: #718096;
+            margin-top: 4px;
+            margin-bottom: 1em;
+            text-indent: 0;
+        }
+
+        .formula {
+            font-family: 'Merriweather', serif;
+            font-style: italic;
+            font-size: 0.95em;
+            background-color: #f7fafc;
+            padding: 8px 12px;
+            text-align: center;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+            break-inside: avoid;
+        }
+
+        .references-section {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 0.8em;
+            margin-top: 1.2em;
+        }
+
+        .references-section h4 {
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.6em;
+        }
+
+        .references-section p {
+            font-size: 0.74em;
+            line-height: 1.45;
+            text-align: left;
+            text-indent: -1.8em;
+            padding-left: 1.8em;
+            margin-bottom: 0.55em;
+            color: #4a5568;
+        }
+
+        /* Cabeçalhos e Rodapés com Numeração Estrita */
+        .section-header {
+            width: 100%;
+            text-align: left;
+            font-size: 0.72em;
+            color: #718096;
+            padding-bottom: 0.4cm;
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 1.1cm;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-footer {
+            margin-top: auto;
+            padding-top: 0.4cm;
+            border-top: 1px solid #edf2f7;
+            font-size: 0.72em;
+            color: #a0aec0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Sumário Elegante */
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px dotted #a0aec0;
+            padding: 0.9em 0;
+            font-size: 0.98em;
+        }
+        .toc-title {
+            max-width: 84%;
+            font-family: 'Merriweather', serif;
+            color: #2d3748;
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+        .toc-author {
+            display: block;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.78em;
+            color: #718096;
+            font-style: italic;
+            margin-top: 3px;
+        }
+        .toc-page {
+            font-weight: 700;
+            color: #1a3a64;
+            font-size: 1.05em;
+            white-space: nowrap;
+            padding-left: 8px;
+        }
+
+        /* Utilitários Auxiliares */
+        .absolute { position: absolute; }
+        .bottom-16 { bottom: 4rem; }
+        .bottom-6 { bottom: 1.5rem; }
+        .left-0 { left: 0px; }
+        .right-0 { right: 0px; }
+        .mb-10 { margin-bottom: 2.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mt-8 { margin-top: 2rem; }
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .border { border-width: 1px; border-style: solid; }
+        .border-gray-200 { border-color: rgb(229 231 235); }
+        .bg-gray-50 { background-color: rgb(249 250 251); }
+        .p-6 { padding: 1.5rem; }
+        .text-center { text-align: center; }
+        .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+        .font-bold { font-weight: 700; }
+        .uppercase { text-transform: uppercase; }
+        .tracking-wide { letter-spacing: 0.025em; }
+        .tracking-widest { letter-spacing: 0.1em; }
+        .text-blue-900 { color: rgb(26, 58, 100); }
+        .text-gray-200 { color: rgb(229 231 235); }
+        .text-gray-600 { color: rgb(75 85 99); }
+        .text-white { color: rgb(255 255 255); }
+        .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body>
+
+    <!-- Capa: Edição 006 | Pág. 1 -->
+    <div class="cover-container">
+        <div class="cover">
+            <img src="https://www.revistasulbrasileira.net.br/capa.png" alt="Capa da Revista Sul-Brasileira de Contabilidade e Economia" onerror="this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85'">
+            <div class="absolute bottom-16 left-0 right-0 text-center text-white text-3xl font-bold" style="background-color: rgba(26, 58, 100, 0.88); padding: 1.2rem; font-family: 'Merriweather', serif; letter-spacing: 0.05em; border-top: 2px solid #63b3ed; border-bottom: 2px solid #63b3ed;">
+                EDIÇÃO 006 | SETEMBRO 2026
+            </div>
+            <div class="absolute bottom-6 left-0 right-0 text-center text-gray-200 text-lg tracking-widest uppercase font-bold" style="background-color: rgba(26, 58, 100, 0.88); padding: 0.5rem; font-size: 0.85em;">
+                REVISTASULBRASILEIRA.NET.BR
+            </div>
+        </div>
+    </div>
+
+    <!-- Sumário: Edição 006 | Pág. 2 -->
+    <div class="magazine-section">
+        <div class="section-header">
+            <span>Revista Sul-Brasileira de Contabilidade e Economia</span>
+            <span>Edição 006 | Pág. 2</span>
+        </div>
+        
+        <h1 style="margin-top: 0.5em; margin-bottom: 0.8em;">Sumário</h1>
+        <div class="area-tag" style="max-width: 320px; margin: 0 auto 2em auto;">Volume 6 • Número 3 • Trimestral</div>
+
+        <div class="mt-8 mb-10" style="padding: 0 1cm;">
+            <div class="toc-item">
+                <div class="toc-title">
+                    Palavra do Editor
+                    <span class="toc-author">Lucas Guesser</span>
+                </div>
+                <span class="toc-page">Pág. 3</span>
+            </div>
+
+            <div class="toc-item">
+                <div class="toc-title">
+                    Inconsistências na Malha Fiscal Eletrônica em Santa Catarina: Percepções das Organizações Contábeis no Município de Criciúma
+                    <span class="toc-author">Elias Pereira Vieira, Luan Philippi Machado</span>
+                </div>
+                <span class="toc-page">Págs. 4 - 5</span>
+            </div>
+
+            <div class="toc-item">
+                <div class="toc-title">
+                    Ferramentas Computacionais e Inteligência Artificial (IA): Uma Pesquisa de Levantamento para Suporte à Gestão de Escritórios de Contabilidade
+                    <span class="toc-author">Gabriele Gil Gomes, Pedro Jose Von Mecheln, Silvio Parodi Oliveira Camilo, Merisandra Côrtes de Mattos</span>
+                </div>
+                <span class="toc-page">Págs. 6 - 7</span>
+            </div>
+
+            <div class="toc-item">
+                <div class="toc-title">
+                    A Transição para a Eletromobilidade em Santa Catarina: O Papel da Celesc Distribuição na Infraestrutura de Recarga e Gestão da Rede
+                    <span class="toc-author">Lucas Guesser</span>
+                </div>
+                <span class="toc-page">Págs. 8 - 9</span>
+            </div>
+
+            <div class="toc-item">
+                <div class="toc-title">
+                    BRDE e suas Transformações no Desenvolvimento Econômico de Santa Catarina
+                    <span class="toc-author">Yuri Damasio, Alcides Goularti Filho, Ignacio Trucco</span>
+                </div>
+                <span class="toc-page">Págs. 10 - 11</span>
+            </div>
+        </div>
+
+        <div style="margin-top: auto; background-color: #f7fafc; border: 1px solid #e2e8f0; padding: 1.2em; border-radius: 6px; font-size: 0.82em; color: #4a5568;">
+            <b>Linha Editorial:</b> A <i>Revista Sul-Brasileira de Contabilidade e Economia</i> é um periódico trimestral dedicado à difusão de pesquisas aplicadas, estudos de caso e investigações empíricas que interligam as Ciências Contábeis, a Teoria Econômica, a Inovação Tecnológica e as Políticas Públicas Regionais, com ênfase no desenvolvimento do Sul do Brasil.
+        </div>
+
+        <div class="section-footer">
+            <span>Revista Sul-Brasileira de Contabilidade e Economia</span>
+            <span>Edição 006 | Setembro 2026</span>
+        </div>
+    </div>
+
+    <!-- Palavra do Editor: Edição 006 | Pág. 3 -->
+    <div class="magazine-section">
+        <div class="section-header">
+            <span>Revista Sul-Brasileira de Contabilidade e Economia</span>
+            <span>Edição 006 | Pág. 3</span>
+        </div>
+        
+        <h2>Palavra do Editor</h2>
+        
+        <div class="flex items-center mb-8 bg-gray-50 p-6 rounded-lg border border-gray-200">
+            <div style="width: 76px; height: 76px; background-color: #1a3a64; display:flex; justify-content:center; align-items:center; color: #ffffff; font-weight:bold; border-radius:50%; margin-right: 1.5rem; font-size: 1.4rem; font-family: 'Merriweather', serif; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">LG</div>
+            <div>
+                <p class="font-bold text-xl text-blue-900" style="text-indent: 0; margin-bottom: 0;">Lucas Guesser</p>
+                <p class="text-md text-gray-600 uppercase tracking-wide" style="text-indent: 0; font-size: 0.85em; margin-top: 2px;">Editor-Chefe</p>
+            </div>
+        </div>
+
+        <div class="two-columns">
+            <p>Apresentamos com imensa satisfação a 6ª edição (Setembro de 2026) da <i>Revista Sul-Brasileira de Contabilidade e Economia</i>. Consolidando nossa missão de conectar a vanguarda acadêmica às transformações fáticas da sociedade, esta edição reúne quatro artigos de elevado mérito técnico e rigor científico, abordando a fiscalização tributária digital, a revolução computacional nos escritórios contábeis, a infraestrutura estratégica para a eletromobilidade catarinense e a trajetória histórica do crédito de fomento regional.</p>
+            
+            <p>Abrimos esta edição com a pesquisa de Elias Pereira Vieira e Luan Philippi Machado sobre as <b>Inconsistências na Malha Fiscal Eletrônica em Santa Catarina</b>. A partir de um minucioso levantamento empírico com 61 organizações contábeis de Criciúma, os autores desvendam o impacto do aplicativo da SEF/SC na rotina dos profissionais. O estudo revela que a esmagadora maioria dos escritórios enfrenta inconsistências recorrentes — sobretudo a omissão de notas de entrada e de receita via cruzamento PGDAS/meios de pagamento —, evidenciando que a causa basilar decorre não da inexperiência dos contadores, mas da complexidade estrutural das obrigações acessórias digitais.</p>
+
+            <p>Na sequência, o artigo de Gabriele Gil Gomes, Pedro Jose Von Mecheln, Silvio Parodi Oliveira Camilo e Merisandra Côrtes de Mattos aborda as <b>Ferramentas Computacionais e Inteligência Artificial na Gestão Contábil</b>. Fundamentado em ampla pesquisa conduzida junto a profissionais registrados no CRCSC, o estudo traça o panorama da automação robótica (RPA), OCR e assistentes virtuais de IA, culminando na apresentação de uma cartilha orientativa para superar a assimetria tecnológica que ainda desafia os escritórios contábeis do estado.</p>
+
+            <p>O terceiro artigo, <b>A Transição para a Eletromobilidade em Santa Catarina: O Papel da Celesc Distribuição na Infraestrutura de Recarga e Gestão da Rede</b>, de nossa autoria, examina a engenharia regulatória e de potência que colocou Santa Catarina na liderança da recarga veicular pública. Avaliam-se as fases do Corredor Elétrico Catarinense, o modelo tarifário implantado pela Celesc e os complexos desafios técnicos de distorções harmônicas e impacto de ponta na rede elétrica.</p>
+
+            <p>Fechando esta edição, Yuri Damasio, sob orientação dos professores Alcides Goularti Filho e Ignacio Trucco, apresenta um estudo aprofundado sobre o <b>BRDE e suas Transformações no Desenvolvimento Econômico de Santa Catarina</b>. O trabalho reconstrói a trajetória do banco desde a superação da liquidação extrajudicial em 1992 até a marca histórica de captação por Letras de Crédito do Desenvolvimento (LCD) em 2024, atestando a indispensabilidade dos bancos públicos de fomento para sustentar o investimento de longo prazo e amortecer choques cíclicos.</p>
+
+            <p>Desejamos a todos os leitores, pesquisadores e operadores do mercado uma experiência intelectual estimulante e inspiradora.</p>
+        </div>
+
+        <div class="section-footer">
+            <span>Revista Sul-Brasileira de Contabilidade e Economia</span>
+            <span>Edição 006 | Setembro 2026</span>
+        </div>
+    </div>
+
+    <!-- Artigo 1: Págs. 4 - 5 -->
+    <div class="magazine-section">
+        <div class="section-header">
+            <span>Artigos Acadêmicos - Contabilidade Tributária</span>
+            <span>Págs. 4 - 5</span>
+        </div>
+        
+        <div class="area-tag">Contabilidade Tributária e Compliance Fiscal</div>
+        <h2 class="article-title">Inconsistências na Malha Fiscal Eletrônica em Santa Catarina: Percepções das Organizações Contábeis no Município de Criciúma</h2>
+        <p class="article-authors">Elias Pereira Vieira<sup>1</sup>, Luan Philippi Machado<sup>2</sup></p>
+        
+        <div class="article-abstract">
+            <p style="text-indent: 0; margin-bottom: 0;"><b>Resumo:</b> A digitalização dos processos fiscais tem ampliado o controle tributário nacional, com destaque para a malha fiscal eletrônica de Santa Catarina, desenvolvida pela SEF/SC em 2020 para identificar divergências nas informações prestadas pelos contribuintes através do cruzamento automatizado de obrigações acessórias. Este estudo analisa as inconformidades relacionadas à malha fiscal sob a ótica das organizações contábeis de Criciúma/SC. Trata-se de pesquisa qualiquantitativa, descritiva e de levantamento, mediante questionário estruturado aplicado a 61 profissionais contábeis entre abril e maio de 2026. Os resultados evidenciaram que 98,4% dos respondentes já enfrentaram inconsistências, sendo a omissão de nota fiscal de entrada a mais recorrente (37,7%), seguida pela omissão de receita (29,5%), tendo os erros operacionais na escrituração apontados por 54,1% como principal causa. Conclui-se que as inconformidades decorrem da complexidade estrutural das obrigações acessórias digitais e que 91,8% dos profissionais reconhecem a malha fiscal como instrumento legítimo de conformidade tributária.</p>
+            <p style="text-indent: 0; margin-top: 0.5em; margin-bottom: 0; font-size: 0.9em;"><b>Palavras-chave:</b> Fiscalização tributária; Escrituração fiscal digital; Obrigações acessórias; ICMS; Compliance tributário.</p>
+        </div>
+
+        <div class="two-columns">
+            <h3>1 Introdução e Marco da Fiscalização Eletrônica</h3>
+            <p>O avanço das tecnologias de informação impulsionou a transformação da contabilidade tradicional, exigindo dos profissionais competências analíticas e estratégicas (Trindade et al., 2025). No âmbito fazendário estadual, a Secretaria de Estado da Fazenda de Santa Catarina (SEF/SC), por intermédio da Diretoria de Administração Tributária (DIAT) e do Grupo Especialista em Planejamento Fiscal (GPLAM), implementou em setembro de 2020 o aplicativo <i>Malha Fiscal Eletrônica</i>.</p>
+            <p>Esse sistema opera por cruzamento automatizado de dados provenientes da Escrituração Fiscal Digital (EFD ICMS/IPI), Declaração do ICMS e Movimento Econômico (DIME), Nota Fiscal Eletrônica (NF-e) e Programa Gerador do Documento de Arrecadação do Simples Nacional (PGDAS-D) (SEF/SC, 2020). Em 2023, o sistema fiscalizou 269 mil contribuintes e recuperou R$ 601 milhões em receitas públicas, solucionando preventivamente 85% dos casos sem lavratura imediata de autos de infração (SEF/SC, 2024).</p>
+            <p>Diante desse cenário e do processo de extinção gradual da DIME até o segundo semestre de 2026 em prol da EFD (SEF/SC, 2025), este estudo investiga: <i>quais são as inconformidades recorrentes na malha fiscal catarinense, sob a percepção das organizações contábeis do município de Criciúma?</i></p>
+
+            <h3>2 Procedimentos Metodológicos</h3>
+            <p>A pesquisa classifica-se como qualiquantitativa, descritiva e de levantamento (survey), estruturada com base em Gil (2019). O instrumento de coleta contemplou 15 questões objetivas e uma discursiva, aplicado a profissionais de escritórios contábeis de Criciúma/SC entre 07 de abril e 22 de maio de 2026. A amostragem final reuniu 61 respostas válidas, obtidas via colaboração do Sindicato dos Contabilistas de Criciúma (SINDCONT) e busca ativa institucional. As variáveis categóricas foram tratadas por estatística descritiva e escore ponderado (escala de 1 a 3 para grau de dificuldade), enquanto os relatos abertos foram submetidos à análise de conteúdo (Bardin, 2016).</p>
+
+            <h3>3 Apresentação e Análise dos Resultados</h3>
+            <p>Quanto ao perfil, 60,7% dos respondentes atuam há mais de 10 anos na área contábil e 50,8% trabalham especificamente no setor Fiscal/Tributário. No tocante à carteira de clientes, predominam optantes do Simples Nacional (41,0%), seguidos por escritórios que atendem todos os regimes (29,5%), em atividades de comércio, indústria e serviços diretamente sujeitas ao ICMS (75,4%).</p>
+            
+            <p>A pesquisa revelou que <b>98,4% dos profissionais já enfrentaram apontamentos na malha fiscal</b>, com 54,1% vivenciando ocorrências com periodicidade mensal. A Tabela 1 sintetiza a hierarquia das inconsistências por grau de resolução e incidência:</p>
+
+            <div class="full-width-box">
+                <div class="table-caption">Tabela 1: Nível de dificuldade para resolução das inconsistências da malha fiscal (n=61)</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Inconsistência Identificada</th>
+                            <th>Fácil (%)</th>
+                            <th>Médio (%)</th>
+                            <th>Difícil (%)</th>
+                            <th>Score</th>
+                            <th>Rank</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Omissão de NF de saída</td><td>67,2%</td><td>27,9%</td><td>4,9%</td><td>1,38</td><td>1º</td></tr>
+                        <tr><td>Descumprimento de obrigações acessórias</td><td>65,6%</td><td>31,1%</td><td>3,3%</td><td>1,38</td><td>1º</td></tr>
+                        <tr><td>Omissão de NF de entrada</td><td>62,3%</td><td>31,1%</td><td>6,6%</td><td>1,44</td><td>3º</td></tr>
+                        <tr><td>Inconsistências do Simples Nacional</td><td>54,1%</td><td>41,0%</td><td>4,9%</td><td>1,51</td><td>4º</td></tr>
+                        <tr><td>Erro de classificação fiscal (CFOP/NCM)</td><td>55,7%</td><td>32,8%</td><td>11,5%</td><td>1,56</td><td>5º</td></tr>
+                        <tr><td>Divergência NF-e / EFD ICMS/IPI</td><td>49,2%</td><td>41,0%</td><td>9,8%</td><td>1,61</td><td>7º</td></tr>
+                        <tr><td>Omissão de receita (PGDAS x Cartão/PIX)</td><td>45,9%</td><td>36,1%</td><td>18,0%</td><td>1,72</td><td>9º</td></tr>
+                        <tr><td>Crédito indevido de ICMS</td><td>36,1%</td><td>49,2%</td><td>14,8%</td><td>1,79</td><td>11º</td></tr>
+                    </tbody>
+                </table>
+                <div class="table-source">Fonte: Adaptado de Vieira e Machado (2026). Escala de ponderação: 1=Fácil; 2=Médio; 3=Difícil.</div>
+            </div>
+
+            <p>Em relação às tipologias mais frequentes, a <b>omissão de nota fiscal de entrada liderou com 37,7%</b> dos apontamentos globais (sendo que 74% deste subgrupo a enfrenta mensalmente), seguida pela <b>omissão de receita com 29,5%</b> e omissão de saída com 11,5%. Entre clientes do Simples Nacional, a omissão de receita foi apontada por 60% dos respondentes como a principal dor de cabeça, originada no cruzamento do faturamento declarado no PGDAS-D com as informações eletrônicas das adquirentes de cartão e arranjos bancários.</p>
+            
+            <p>Quanto às causas geradoras, <b>54,1% dos profissionais apontaram erros operacionais na escrituração</b> como fator predominante, à frente de deficiências de controle interno (13,1%), falhas em sistemas ERPs (11,5%) e desconhecimento normativo (11,5%). Notavelmente, entre os que apontaram erros operacionais, 66,7% possuem mais de 6 anos de experiência e 60,7% sempre realizam dupla conferência antes da transmissão, comprovando que o problema não decorre de inaptidão técnica individual, mas da sobrecarga decorrente de regras fiscais voláteis.</p>
+
+            <p>Sob a ótica do impacto no escritório contábil, o <b>retrabalho operacional obteve o maior escore ponderado (4,21 em 5,0)</b>, seguido pela necessidade de ampliação dos controles internos (4,13) e elevação do risco de autuações (4,02). No âmbito qualitativo, 29% das manifestações abertas criticaram a excessiva morosidade do sistema SAT/SEF para baixar pendências já saneadas, e 19,4% alertaram para distorções graves geradas pela equiparação indiscriminada de transferências via PIX (aportes de capital e empréstimos de sócios) a faturamento mercantil tributável.</p>
+
+            <h3>4 Considerações Finais</h3>
+            <p>A investigação empírica atesta que a malha fiscal catarinense opera como mecanismo eficiente e preventivo de controle arrecadatório, reconhecida como legítima por 91,8% dos contadores de Criciúma. Não obstante, o modelo repassa substancial ônus de retrabalho às empresas contábeis. Recomenda-se que o fisco estadual implemente critérios mais inteligentes de segregação contábil nos cruzamentos de pagamentos instantâneos (PIX) e agilize o processamento de retificações, fortalecendo a conformidade cooperativa preconizada pelo compliance tributário contemporâneo.</p>
+
+            <div class="references-section">
+                <h4>Referências</h4>
+                <p>BARDIN, Laurence. <i>Análise de conteúdo</i>. São Paulo: Edições 70, 2016.</p>
+                <p>BEZERRA, S. V.; NUNES, P. R. C.; RODRIGUES, R. C. Compliance tributário: benefícios e pilares para sua implementação. In: <i>Anais do X EMPRAD</i>, Fortaleza: UNIFOR, 2023.</p>
+                <p>GIL, Antonio Carlos. <i>Métodos e técnicas de pesquisa social</i>. 7. ed. São Paulo: Atlas, 2019.</p>
+                <p>SANTA CATARINA. Secretaria de Estado da Fazenda (SEF/SC). <i>Malhas Fiscais: Fazenda arrecada R$ 601 milhões em fase de autorregularização</i>. Florianópolis: SEF/SC, 2024.</p>
+                <p>TRINDADE, J. L. et al. Contabilidade digital: desafios do profissional contábil com o avanço da tecnologia. <i>Interference Journal</i>, v. 11, n. 2, p. 3329–3349, 2025.</p>
+            </div>
+        </div>
+
+        <div class="section-footer">
+            <span>Revista Sul-Brasileira de Contabilidade e Economia</span>
+            <span>Edição 006 | Setembro 2026</span>
+        </div>
+    </div>
+
+    <!-- Artigo 2: Págs. 6 - 7 -->
+    <div class="magazine-section">
+        <div class="section-header">
+            <span>Artigos Acadêmicos - Tecnologia e Gestão Contábil</span>
+            <span>Págs. 6 - 7</span>
+        </div>
+        
+        <div class="area-tag">Inteligência Artificial e Transformação Digital Contábil</div>
+        <h2 class="article-title">Ferramentas Computacionais e Inteligência Artificial (IA): Uma Pesquisa de Levantamento para Suporte à Gestão de Escritórios de Contabilidade</h2>
+        <p class="article-authors">Gabriele Gil Gomes<sup>1</sup>, Pedro Jose Von Mecheln<sup>1</sup>, Silvio Parodi Oliveira Camilo<sup>2</sup>, Merisandra Côrtes de Mattos<sup>2</sup></p>
+        
+        <div class="article-abstract">
+            <p style="text-indent: 0; margin-bottom: 0;"><b>Resumo:</b> Avanços tecnológicos têm revolucionado a contabilidade, contexto no qual ferramentas computacionais e a Inteligência Artificial (IA) vêm conquistando espaço decisivo na automação de processos, auditoria e geração de relatórios de apoio decisório. O objetivo deste estudo é identificar as principais contribuições proporcionadas por ferramentas de computação e algoritmos de IA no aprimoramento das rotinas contábeis no estado de Santa Catarina. A pesquisa utiliza método dedutivo, natureza aplicada e abordagem descritiva, operacionalizada via survey eletrônico encaminhado aos profissionais registrados no CRCSC, obtendo 100 respostas válidas, associada a revisão sistemática na base Scopus. Os resultados revelam que, embora 62% das organizações possuam rotinas mapeadas, apenas 30% empregam soluções avançadas de automação e IA, denunciando uma lacuna de capacitação. Como contribuição aplicada, estruturou-se uma cartilha classificando ferramentas de OCR, RPA, NLP e plataformas de workflow para escritórios contábeis.</p>
+            <p style="text-indent: 0; margin-top: 0.5em; margin-bottom: 0; font-size: 0.9em;"><b>Palavras-chave:</b> Gestão contábil; Inteligência artificial; Automação robótica (RPA); Reconhecimento óptico (OCR); Eficiência operacional.</p>
+        </div>
+
+        <div class="two-columns">
+            <h3>1 Introdução e Contexto Tecnológico</h3>
+            <p>A evolução dos sistemas integrados e a introdução de modelos de aprendizado de máquina e automação inteligente vêm redefinindo o exercício profissional das Ciências Contábeis. Atividades analíticas de conciliação bancária, validação de arquivos do SPED e atendimento ao cliente passam a demandar celeridade incompatível com rotinas exclusivamente manuais (Schwindt &amp; Costa, 2021). A inteligência artificial permite liberar o capital humano das atividades operacionais repetitivas para concentrá-lo no planejamento tributário e na consultoria estratégica de negócios.</p>
+            <p>Contudo, a assimilação de tais tecnologias pelo mercado brasileiro ainda ocorre em ritmo desigual. Estudos internacionais (Alkan, 2022; Lehner et al., 2022) salientam que o sucesso da simbiose homem-máquina na área financeira repousa no mapeamento estruturado de processos e na correta parametrização de ferramentas de Automação Robótica de Processos (RPA) e Processamento de Linguagem Natural (NLP).</p>
+
+            <h3>2 Metodologia da Investigação</h3>
+            <p>O estudo caracteriza-se como pesquisa aplicada e descritiva. O procedimento empírico envolveu duas frentes: <b>a)</b> Levantamento bibliográfico estruturado na base Scopus entre 1995 e 2023 com os descritores <i>"accounting" AND "artificial" AND "intelligence"</i>, selecionando os 15 estudos seminais mais citados internacionalmente; <b>b)</b> Pesquisa de levantamento (survey) mediante questionário eletrônico disparado pelo Conselho Regional de Contabilidade de Santa Catarina (CRCSC) para 22.865 contadores, alcançando 100 respostas válidas completas.</p>
+
+            <h3>3 Resultados: O Descompasso entre Mapeamento e Adoção de IA</h3>
+            <p>A investigação evidenciou um paradoxo gerencial nos escritórios catarinenses: enquanto <b>62% das organizações declaram possuir processos e rotinas contábeis definidos formalmente</b>, apenas <b>30% utilizam ativamente ferramentas computacionais de IA</b> para automatizar suas tarefas cotidianas. Os demais 70% apontam falta de orientação técnica, custos de implantação ou desconhecimento prático sobre as soluções existentes no mercado.</p>
+            
+            <p>No tocante aos processos com maior potencial de automação, a escrituração de notas fiscais (importação de XML e conciliação de extratos bancários) e a apuração de guias de recolhimento tributário despontam como as tarefas prioritárias. Para responder a essa demanda, a Tabela 2 sintetiza a taxonomia das ferramentas investigadas:</p>
+
+            <div class="full-width-box">
+                <div class="table-caption">Tabela 2: Síntese e enquadramento funcional de ferramentas computacionais e de IA para contabilidade</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Categoria Tecnológica</th>
+                            <th>Aplicações e Plataformas Investigadas</th>
+                            <th>Utilidade Prática no Escritório Contábil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>OCR e Extração de Dados</b></td>
+                            <td>Adobe Acrobat DC, Abbyy FineReader, AWS Textract, Google Lens</td>
+                            <td>Digitalização de contratos, extração automática de dados de faturas, recibos e extratos em PDF não estruturados.</td>
+                        </tr>
+                        <tr>
+                            <td><b>RPA (Automação de Processos)</b></td>
+                            <td>UiPath, Automation Anywhere, Blue Prism, Power Automate, NEVA</td>
+                            <td>Importação de NF-e, transmissão de obrigações ao SPED, conciliação contábil/fiscal e rotinas de backup sem intervenção humana.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Agentes de IA e NLP</b></td>
+                            <td>ChatGPT, Dialogflow, IBM Watson Assistant, Amazon Lex, Copilot</td>
+                            <td>Atendimento automatizado a dúvidas correntes de clientes (prazos, certidões), análise preditiva de séries temporais e mineração de dados.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Sistemas de Gestão Especializados</b></td>
+                            <td>Acessórias, Gestta, Sieg Iris, Tarefas SCI, GClick, Taskdo</td>
+                            <td>Monitoramento de certidões negativas (CNDs), controle de calendário fiscal municipal/estadual e captura automatizada no e-CAC.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Workflows e Gestão de Tarefas</b></td>
+                            <td>Trello, Asana, Monday.com, Jira, Microsoft Planner, Zapier</td>
+                            <td>Parametrização do fluxo de trabalho das equipes, eliminação de gargalos operacionais e monitoramento de SLA por cliente.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="table-source">Fonte: Elaborado com base em Gomes et al. (2026).</div>
+            </div>
+
+            <p>O estudo demonstrou que o emprego combinado de ferramentas de OCR e RPA elimina erros de digitação e reduz em até 70% o tempo despendido nas fases preliminares de escrituração fiscal. Por sua vez, a introdução de assistentes virtuais baseados em NLP permite o atendimento 24/7 a questionamentos corriqueiros de clientes empresariais, aliviando as centrais de atendimento dos escritórios.</p>
+
+            <h3>4 Considerações Finais</h3>
+            <p>A pesquisa atesta que a Inteligência Artificial e a robotização deixaram de ser horizontes prospectivos para se tornarem imperativos de sobrevivência de mercado. A baixa taxa de utilização (30%) em Santa Catarina revela um amplo campo a ser explorado pelas entidades de classe mediante cursos de capacitação técnica aplicada.</p>
+            <p>Ao estruturar e documentar processos internos, o escritório contábil cria a base necessária para que algoritmos de aprendizado supervisionado executem tarefas repetitivas com precisão, viabilizando a elevação do contador ao posto de consultor financeiro e estratégico do cliente.</p>
+
+            <div class="references-section">
+                <h4>Referências</h4>
+                <p>ALKAN, B. Ş. Como o blockchain e a inteligência artificial afetarão os sistemas de informação contábil baseados em nuvem? In: <i>O impacto da inteligência artificial na governança</i>. Springer, 2022.</p>
+                <p>BALDWIN-MORGAN, A. A. Integrating artificial intelligence into the accounting curriculum. <i>Accounting Education</i>, v. 4, n. 3, p. 217–229, 1995.</p>
+                <p>LEHNER, O. M. et al. Artificial intelligence-based decision-making in accounting and auditing: Ethical challenges and normative thinking. <i>Accounting, Auditing &amp; Accountability Journal</i>, 2022.</p>
+                <p>SCHWINDT, M. C. S.; COSTA, S. A. Os principais impactos da inteligência artificial na contabilidade gerencial. In: <i>Anais do USP International Conference in Accounting</i>, 2021.</p>
+                <p>SULEIMAN, A. et al. How artificial intelligence changes the future of the accounting industry. <i>International Journal of Economics and Business Administration</i>, 2020.</p>
+            </div>
+        </div>
+
+        <div class="section-footer">
+            <span>Revista Sul-Brasileira de Contabilidade e Economia</span>
+            <span>Edição 006 | Setembro 2026</span>
+        </div>
+    </div>
+
+    <!-- Artigo 3: Págs. 8 - 9 -->
+    <div class="magazine-section">
+        <div class="section-header">
+            <span>Artigos Acadêmicos - Infraestrutura e Energia</span>
+            <span>Págs. 8 - 9</span>
+        </div>
+        
+        <div class="area-tag">Eletromobilidade, Regulação Elétrica e Redes Inteligentes</div>
+        <h2 class="article-title">A Transição para a Eletromobilidade em Santa Catarina: O Papel da Celesc Distribuição na Infraestrutura de Recarga e Gestão da Rede</h2>
+        <p class="article-authors">Lucas Guesser</p>
+        
+        <div class="article-abstract">
+            <p style="text-indent: 0; margin-bottom: 0;"><b>Resumo:</b> A eletrificação do transporte rodoviário constitui um dos pilares centrais da descarbonização global e da transição energética. No Brasil, as distribuidoras de energia desempenham papel estratégico como viabilizadoras da infraestrutura de recarga e gestoras do impacto dessa nova carga concentrada sobre o Sistema Elétrico de Potência (SEP). Este artigo analisa o papel da Centrais Elétricas de Santa Catarina (Celesc Distribuição) no fomento à eletromobilidade no estado de Santa Catarina. A partir de metodologia descritivo-analítica baseada em relatórios institucionais da Celesc, normativas da ANEEL e dados da ABVE/Detran-SC, examinam-se a evolução do "Corredor Elétrico Catarinense", o modelo tarifário implantado, a correlação com o crescimento da frota eletrificada e os reflexos operacionais na rede (estabilidade de tensão, curvas de carga e distorções harmônicas). Os resultados evidenciam que a atuação proativa da concessionária mitigou a "ansiedade de autonomia", posicionando SC como referência nacional em capilaridade de recarga pública.</p>
+            <p style="text-indent: 0; margin-top: 0.5em; margin-bottom: 0; font-size: 0.9em;"><b>Palavras-chave:</b> Mobilidade elétrica; Celesc Distribuição; Corredor elétrico; Infraestrutura de recarga; Qualidade da energia elétrica.</p>
+        </div>
+
+        <div class="two-columns">
+            <h3>1 Introdução e Marco Regulatório</h3>
+            <p>No cenário nacional de transição energética, a substituição de veículos movidos a combustíveis fósseis por veículos elétricos a bateria (BEV) e híbridos plug-in (PHEV) propicia expressiva descarbonização no ciclo <i>well-to-wheel</i> (do poço à roda), haja vista que mais de 85% da matriz elétrica brasileira advém de fontes renováveis (Souza et al., 2021). Todavia, a adesão dos consumidores a essa tecnologia dependia da superação da "ansiedade de autonomia" (<i>range anxiety</i>).</p>
+            <p>O marco legal da atividade de recarga foi consolidado pela Agência Nacional de Energia Elétrica (ANEEL) por meio da Resolução Normativa nº 819/2018 (incorporada à REN nº 1.000/2021), que classificou a recarga veicular como prestação de serviços comerciais com livre fixação de preços, vedando o tratamento como revenda irregular de energia. Simultaneamente, incentivou as concessionárias a desenvolverem projetos-piloto de infraestrutura mediante Chamadas Estratégicas de P&amp;D (Chamada nº 22/2018).</p>
+
+            <h3>2 O Corredor Elétrico Catarinense</h3>
+            <p>A Celesc Distribuição, atendendo mais de 3 milhões de unidades consumidoras em 264 municípios, estruturou em cooperação com a Fundação CERTI o <b>Corredor Elétrico Catarinense</b>. Iniciado experimentalmente em 2016 em Florianópolis, o programa expandiu-se pelas rodovias estruturantes do estado — BR-101 (litoral), BR-282 (ligação Leste-Oeste), BR-470 (Vale do Itajaí) e BR-116 (Planalto Serrano) —, estabelecendo postos de abastecimento elétrico a cada 50 ou 100 km.</p>
+
+            <div class="full-width-box">
+                <div class="table-caption">Tabela 3: Fases evolutivas do Corredor Elétrico Catarinense (Celesc / CERTI / ANEEL)</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fase do Projeto</th>
+                            <th>Período</th>
+                            <th>Marcos Técnicos e Operacionais</th>
+                            <th>Abrangência Territorial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Fase Piloto / P&amp;D</b></td>
+                            <td>2016 – 2019</td>
+                            <td>Estações experimentais semirrápidas; testes de interoperabilidade; recarga pública gratuita subsidiada pelo P&amp;D.</td>
+                            <td>Grande Florianópolis e eixos pontuais da BR-101 (Joinville, Balneário Camboriú, Criciúma).</td>
+                        </tr>
+                        <tr>
+                            <td><b>Expansão e Consolidação</b></td>
+                            <td>2020 – 2023</td>
+                            <td>Eletropostos rápidos multi-padrão; desenvolvimento de aplicativo mobile proprietário com telemetria via OCPP.</td>
+                            <td>Cobertura de mais de 1.500 km rodoviários, interligando 35 municípios polos.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Escala e Comercialização</b></td>
+                            <td>2024 – 2026</td>
+                            <td>Transição para tarifação por kWh consumido; estações ultrarrápidas em DC (até 150 kW); integração rumo a 100 cidades.</td>
+                            <td>Capilarização no Meio-Oeste, Planalto Serrano e Extremo-Oeste catarinense.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="table-source">Fonte: Adaptado com base em Celesc (2023), Fundação CERTI (2024) e ANEEL.</div>
+            </div>
+
+            <h3>3 Padronização Tecnológica e Modelo Tarifário</h3>
+            <p>A arquitetura física implementada pela Celesc foi dividida em dois eixos operacionais para assegurar total interoperabilidade:</p>
+            <ul>
+                <li><b>Estações Semirrápidas (AC - 22 kW):</b> Conectores Tipo 2 (Mennekes), instaladas em locais de conveniência e permanência prolongada (órgãos públicos, supermercados, universidades), demandando de 2 a 5 horas para carga plena.</li>
+                <li><b>Estações Rápidas e Ultrarrápidas (DC - 50 kW a 150 kW):</b> Conectores CCS Combo 2 e CHAdeMO em corrente contínua, permitindo elevar a bateria de 20% a 80% em 30 a 45 minutos em postos rodoviários.</li>
+            </ul>
+            <p>Em consonância com a maturidade do mercado, a Celesc instituiu a cobrança proporcional à energia efetivamente transferida:</p>
+            <div class="formula">
+                Valor Final (R$) = E<sub>consumida</sub> (kWh) × T<sub>aplicada</sub> (R$/kWh)
+            </div>
+            <p>Fixou-se a tarifa referencial de R$ 1,99 por kWh para carregamento semirrápido (AC) e R$ 2,29 por kWh para carga rápida (DC) (Celesc, 2024; NSC Total, 2026). A receita arrecadada retroalimenta os custos operacionais de conectividade e manutenção, resguardando os consumidores comuns de energia contra subsídios cruzados indesejados.</p>
+
+            <h3>4 Impactos Operacionais no Sistema Elétrico</h3>
+            <p>O avanço da infraestrutura pública alavancou o licenciamento veicular: em meados de 2026, Santa Catarina ultrapassou a marca de <b>60 mil veículos eletrificados circulantes</b> (Detran-SC, 2026), figurando entre os estados com maior índice de eletrificação per capita do país.</p>
+            <p>Essa carga concentrada, todavia, gera impactos diretos na rede de distribuição (Fernandes, 2024):</p>
+            <ol>
+                <li><b>Coincidência com o Horário de Ponta:</b> O carregamento não gerenciado no início da noite (18h-21h) sobrepõe-se ao pico do consumo residencial, exigindo reforço em subestações e alimentadores urbanos.</li>
+                <li><b>Distorções Harmônicas:</b> Os conversores estáticos CA/CC elevam a Distorção Harmônica Total de Corrente (THD<sub>i</sub>), requerendo filtros ativos para atender aos limites do Módulo 8 do PRODIST.</li>
+                <li><b>Desbalanceamento de Fases:</b> Carregadores monofásicos de 7 kW conectados à baixa tensão secundária podem induzir circulação perigosa de correntes de neutro.</li>
+            </ol>
+
+            <h3>5 Desafios Futuros e Considerações Finais</h3>
+            <p>A experiência da Celesc consolidou Santa Catarina como um dos corredores verdes mais robustos da América do Sul. Para o ciclo pós-2026, a distribuidora avança no desenvolvimento de <b>recarga inteligente (smart charging)</b>, precificação horossazonal (Tarifa Branca), hubs solares com baterias estacionárias (BESS) e integração veículo-rede (V2G), assegurando que o crescimento da mobilidade elétrica ocorra com estrita confiabilidade operativa e sustentabilidade socioeconômica.</p>
+
+            <div class="references-section">
+                <h4>Referências</h4>
+                <p>AGÊNCIA NACIONAL DE ENERGIA ELÉTRICA (ANEEL). <i>Resolução Normativa nº 1.000/2021</i>. Brasília: ANEEL, 2021.</p>
+                <p>ASSOCIAÇÃO BRASILEIRA DO VEÍCULO ELÉTRICO (ABVE). <i>Anuário da Eletromobilidade Brasileira</i>. São Paulo: ABVE, 2024.</p>
+                <p>CENTRAIS ELÉTRICAS DE SANTA CATARINA (CELESC). <i>Projeto Corredor Elétrico Catarinense: Relatório de Encerramento e Metas de Expansão</i>. Florianópolis: Celesc, 2023.</p>
+                <p>FERNANDES, V. M. D. <i>Avanço da mobilidade elétrica, alteração da curva de carga e impactos nas redes de distribuição</i>. Dissertação (Mestrado em Engenharia Elétrica) – UTFPR, Curitiba, 2024.</p>
+                <p>FUNDAÇÃO CERTI. <i>Eletroposto Celesc: Desenvolvimento e Operacionalização da Infraestrutura de Mobilidade Elétrica</i>. Florianópolis: CERTI, 2024.</p>
+            </div>
+        </div>
+
+        <div class="section-footer">
+            <span>Revista Sul-Brasileira de Contabilidade e Economia</span>
+            <span>Edição 006 | Setembro 2026</span>
+        </div>
+    </div>
+
+    <!-- Artigo 4: Págs. 10 - 11 -->
+    <div class="magazine-section" style="margin-bottom: 2cm;">
+        <div class="section-header">
+            <span>Artigos Acadêmicos - Desenvolvimento Econômico e Finanças</span>
+            <span>Págs. 10 - 11</span>
+        </div>
+        
+        <div class="area-tag">Desenvolvimento Regional, Bancos Públicos e Crédito Produtivo</div>
+        <h2 class="article-title">BRDE e suas Transformações no Desenvolvimento Econômico de Santa Catarina</h2>
+        <p class="article-authors">Yuri Damasio<sup>1</sup>, Alcides Goularti Filho<sup>2</sup>, Ignacio Trucco<sup>3</sup></p>
+        
+        <div class="article-abstract">
+            <p style="text-indent: 0; margin-bottom: 0;"><b>Resumo:</b> O artigo analisa a trajetória institucional e as operações financeiras do Banco Regional de Desenvolvimento do Extremo Sul (BRDE) no período de 1992 a 2024, após o encerramento do regime de liquidação extrajudicial decretado em 1989. Sob a perspectiva das teorias desenvolvimentista e schumpeteriana, discute-se o papel do crédito público de longo prazo como indutor do investimento produtivo, inovação e mitigação de ciclos econômicos recessivos. A pesquisa é bibliográfica e documental, fundamentada nos relatórios anuais de administração e demonstrações financeiras do banco. Os resultados demonstram sólida sustentabilidade operacional, com o BRDE passando de um agente repassador quase exclusivo do BNDES nos anos 2000 para uma instituição com fontes diversificadas de captação (bancos multilaterais externos, Letras de Crédito do Desenvolvimento - LCD e Letras Financeiras). Destaca-se a forte capilaridade do crédito concedido em Santa Catarina para o agronegócio, PMEs, cooperativas e saneamento, com 82% das operações alinhadas aos Objetivos de Desenvolvimento Sustentável (ODS).</p>
+            <p style="text-indent: 0; margin-top: 0.5em; margin-bottom: 0; font-size: 0.9em;"><b>Palavras-chave:</b> Bancos de desenvolvimento; BRDE; Crédito de longo prazo; Economia catarinense; Financiamento regional.</p>
+        </div>
+
+        <div class="two-columns">
+            <h3>1 Fundamentos Teóricos e Origens Institucionais</h3>
+            <p>O crédito de longo prazo é condição <i>sine qua non</i> para que as firmas realizem investimentos em ativos imobilizados, pesquisa e expansão da capacidade produtiva (Schumpeter, 1997; Hilferding, 1985). Em economias de industrialização retardatária, o sistema bancário privado tradicional concentra-se em operações de curto prazo e de elevada liquidez, impondo ao Estado o papel de financiador do desenvolvimento (Cardoso de Mello, 1988; Mazzucato, 2014).</p>
+            <p>Nesse contexto, em 15 de junho de 1961, os governadores Celso Ramos (SC), Leonel Brizola (RS) e Ney Braga (PR) firmaram o convênio de criação do Conselho de Desenvolvimento do Extremo Sul (CODESUL) e do <b>Banco Regional de Desenvolvimento do Extremo Sul (BRDE)</b>, com o objetivo de combater as assimetrias regionais geradas pela concentração industrial no eixo Rio-São Paulo após o Plano de Metas (Fonseca, 1988). Em Santa Catarina, o banco operou articulado ao Banco de Desenvolvimento do Estado (BDE/BESC) e aos planos de metas estaduais (PLAMEG I e II).</p>
+
+            <h3>2 A Crise da Dívida e a Reabertura em 1992</h3>
+            <p>Após anos de expansão no "milagre econômico", o esgotamento do padrão de financiamento nos anos 1980, associado à hiperinflação (Gráfico do IGP-DI atingindo 1.782% em 1989), ao endividamento dos governos estaduais controladores e à falência de bancos estaduais como o PRODUBAN, culminou na liquidação extrajudicial do BRDE decretada pelo Banco Central em 07 de março de 1989.</p>
+            <p>A instituição permaneceu paralisada por quase três anos até ter seu encerramento revogado em <b>31 de janeiro de 1992</b>, quando foi devolvida à gestão compartilhada dos três estados sulistas. O banco implementou governança rotativa rigorosa na presidência entre os estados e reestruturou seu corpo funcional, reconquistando gradualmente a credibilidade junto aos mercados financeiros e ao BNDES.</p>
+
+            <h3>3 Evolução do Padrão de Financiamento (1994 a 2024)</h3>
+            <p>A trajetória financeira do BRDE ao longo das últimas três décadas pode ser dividida em três fases estruturais distintas:</p>
+            <ul>
+                <li><b>1994–2002 (Reconstrução e Estabilização):</b> Pós-Plano Real, incorporou ativos do BADEP e atingiu pico inicial de R$ 2,5 bilhões em contratações em 1996, sofrendo com as crises internacionais e recessão de 1998/1999, que provocaram prejuízos temporários e queda do patrimônio líquido.</li>
+                <li><b>2003–2018 (Ciclo Desenvolvimentista):</b> Forte expansão do crédito apoiada pelo Sistema BNDES (BNDES Automático, Moderfrota, Pronaf, PSI), superando R$ 6,9 bilhões contratados em 2013 e gerando lucros anuais consolidados entre R$ 200 e 400 milhões.</li>
+                <li><b>2019–2024 (Desenvolvimento Recente e Mercado de Capitais):</b> Resposta anticíclica exemplar durante a pandemia de Covid-19 (programa Recupera Sul) e diversificação acelerada das fontes de funding.</li>
+            </ul>
+
+            <div class="full-width-box">
+                <div class="table-caption">Tabela 4: Indicadores operacionais consolidados do BRDE em exercícios selecionados (valores base dez/2024)</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Exercício</th>
+                            <th>Contratações Globais (R$ mi)</th>
+                            <th>Desembolsos SC (R$ mi)</th>
+                            <th>Lucro Líquido (R$ mi)</th>
+                            <th>Patrimônio Líquido (R$ mi)</th>
+                            <th>Empregos Gerados/Mantidos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1994</td><td>R$ 1.100</td><td>R$ 442</td><td>R$ 485,7</td><td>R$ 2.400</td><td>41.000</td></tr>
+                        <tr><td>1999</td><td>R$ 835</td><td>R$ 400</td><td>- R$ 165,4</td><td>R$ 1.800</td><td>15.000</td></tr>
+                        <tr><td>2004</td><td>R$ 1.900</td><td>R$ 680</td><td>R$ 235,8</td><td>R$ 2.450</td><td>44.800</td></tr>
+                        <tr><td>2009</td><td>R$ 5.200</td><td>R$ 1.200</td><td>R$ 120,9</td><td>R$ 2.500</td><td>55.000</td></tr>
+                        <tr><td>2014</td><td>R$ 4.800</td><td>R$ 1.150</td><td>R$ 370,6</td><td>R$ 3.600</td><td>38.000</td></tr>
+                        <tr><td>2019</td><td>R$ 2.500</td><td>R$ 1.050</td><td>R$ 371,0</td><td>R$ 3.750</td><td>38.200</td></tr>
+                        <tr><td>2022</td><td>R$ 6.600</td><td>R$ 1.160</td><td>R$ 493,1</td><td>R$ 4.200</td><td>53.000</td></tr>
+                        <tr><td>2024</td><td>R$ 5.900</td><td>R$ 1.780</td><td>R$ 472,4</td><td>R$ 4.520</td><td>90.000</td></tr>
+                    </tbody>
+                </table>
+                <div class="table-source">Fonte: Elaborado a partir dos Relatórios de Administração e Demonstrativos Financeiros do BRDE (1994–2024). Valores deflacionados pelo IPCA.</div>
+            </div>
+
+            <h3>4 A Relevância das Operações em Santa Catarina</h3>
+            <p>O estado de Santa Catarina tem recebido parcela expressiva dos financiamentos do BRDE. Em 2024, os desembolsos no território catarinense somaram R$ 1,78 bilhão, irrigando cooperativas agropecuárias, pequenas e médias indústrias e a cadeia de infraestrutura logística.</p>
+            <p>Destaca-se a atuação do banco como agente mandatário e gestor técnico de políticas públicas estaduais estratégicas, tais como o Fundo de Apoio aos Municípios (FUNDAM), que viabilizou mais de R$ 1 bilhão em obras municipais urbanas, e a operacionalização do Pronampe Emergencial SC, subsidiando taxas de juros para empresas atingidas por intempéries climáticas.</p>
+            
+            <p>Outro marco divisor ocorreu no exercício de 2024: com o pioneirismo nacional na emissão de <b>Letras de Crédito do Desenvolvimento (LCD)</b> — captando R$ 266,6 milhões logo na semana inicial — e a emissão de Letras Financeiras (LF), o BRDE reduziu sua dependência histórica do BNDES (cuja fatia de repasse caiu para 52,7% em 2024), captando expressivos recursos junto a organismos internacionais como AFD, BID, CAF, BEI, NDB e BIRD.</p>
+
+            <h3>5 Considerações Finais</h3>
+            <p>A análise histórica de 1992 a 2024 evidencia que o BRDE transcendeu a condição de mero operador financeiro de balcão para consolidar-se como pilar de coordenação e fomento econômico no Sul do Brasil. Apresentando índices de Basileia robustos (superiores a 17%), inadimplência inferior a 1% e mais de 80% das operações aderentes às metas de sustentabilidade da ONU, o banco demonstra que instituições financeiras públicas geridas com rigor técnico e governança cooperativa são ferramentas insubstituíveis para catalisar o desenvolvimento socioeconômico estadual.</p>
+
+            <div class="references-section">
+                <h4>Referências</h4>
+                <p>CARDOSO DE MELLO, J. M. <i>O capitalismo tardio</i>. São Paulo: Brasiliense, 1988.</p>
+                <p>FONSECA, Pedro C. Dutra. <i>BRDE: da hegemonia à crise do desenvolvimento</i>. Porto Alegre: BRDE, 1988.</p>
+                <p>GOULARTI FILHO, Alcides. <i>Formação Econômica de Santa Catarina</i>. 2. ed. Florianópolis: Editora da UFSC, 2007.</p>
+                <p>MAZZUCATO, Mariana. <i>O estado empreendedor: desmascarando o mito do setor público x setor privado</i>. São Paulo: Portfolio-Penguin, 2014.</p>
+                <p>SCHUMPETER, Joseph A. <i>Teoria do desenvolvimento econômico</i>. São Paulo: Nova Cultural, 1997.</p>
+            </div>
+        </div>
+
+        <div class="section-footer">
+            <span>Revista Sul-Brasileira de Contabilidade e Economia</span>
+            <span>Edição 006 | Setembro 2026</span>
+        </div>
+    </div>
+
+</body>
+</html>
